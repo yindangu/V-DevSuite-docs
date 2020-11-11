@@ -10,8 +10,6 @@ description: >-
 
 {% hint style="info" %}
 ####  V-DevSuite JS SDK是[银弹谷](http://www.yindangu.net/module-operation!executeOperation?componentCode=yindangu_officialwebsite&windowCode=Form_Product_VDevSuite&&token=%7B%22data%22%3A%7B%22inputParam%22%3A%7B%22variable%22%3A%7B%22formulaOpenMode%22%3A%22locationHref%22%7D%7D%7D%7D)零代码开发平台面向web端开发者提供的扩展开发工具包。
-
-#### 本SDK目前尚处于内测阶段，预计11-1正式发布。
 {% endhint %}
 
 ## **JS SDK使用步骤** <a id="JSSDK&#x4F7F;&#x7528;&#x6B65;&#x9AA4;"></a>
