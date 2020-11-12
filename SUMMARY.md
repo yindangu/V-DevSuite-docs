@@ -2,9 +2,9 @@
 
 * [V-DevSuite JS SDK](README.md)
 
-## V-DevSuite 开发工具包
+## V-DevSuite 开发工具包 <a id="vds-tools-sdks"></a>
 
-* [V-DevSuite Java SDK](vdevsuite-kai-fa-gong-ju-bao/v-devsuite-java-sdk.md)
+* [V-DevSuite Java SDK](vds-tools-sdks/v-devsuite-java-sdk.md)
 
 ## V平台插件开发指南 <a id="v-ping-tai-cha-jian-gui-fan"></a>
 
