@@ -96,10 +96,27 @@ V平台对原生技术输出的制品有两个规范要求：
 
 ## 附录一：规则与函数的差异说明
 
-在开发规则和函数的过程（关于规则与函数的功能定位，参看[这里](https://app.gitbook.com/@yindangu/s/v-devsuite/~/drafts/-MLv-ZpiRkMWScEBRYlx/v-ping-tai-cha-jian-gui-fan/vplatform-cha-jian-ti-xi-gui-fan)），唯一的差别就是入口方法的入参格式有所不同：
+在开发规则和函数的过程（关于规则与函数的功能定位，参看[这里](https://app.gitbook.com/@yindangu/s/v-devsuite/~/drafts/-MLv-ZpiRkMWScEBRYlx/v-ping-tai-cha-jian-gui-fan/vplatform-cha-jian-ti-xi-gui-fan)），技术规范上的唯一差别就是入口方法的入参格式有所不同：
 
 * 规则入参：是原生的JSON对象结构。
-* 函数入参：是原生的方法显示参数定义。
+
+```javascript
+//客户端规则的默认入口方法名为evaluate; ruleContext为规则入参,参数格式为JSON对象
+var evaluate = function (ruleContext) {
+    console.log("hello vplatform!");
+    alert(ruleContext.prop1 + " " + ruleContext.prop2 + "!");
+};
+```
+
+* 函数入参：是原生的方法显式参数定义。
+
+```javascript
+//客户端函数的默认入口方法名为evaluate; param1和param2为自定义的函数入参声明
+var evaluate = function (param1, param2) {
+    console.log("hello vplatform!");
+    return param1 + " " + param2 + "!";
+};
+```
 
 ##   附录二：样例工程源码
 
