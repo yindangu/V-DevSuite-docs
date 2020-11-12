@@ -46,21 +46,21 @@ export default {
 
 ## 制品bundle要求
 
-{% hint style="warning" %}
+{% hint style="info" %}
 V平台对原生技术输出的制品有两个要求：
 
-1. 为了能最大程度适配到各种运行环境，这里唯一的要求是需要输出为[umd](https://zhuanlan.zhihu.com/p/79695530)类型。
-2. 输出的制品需要有**全局命名空间**。
+1. 需要有入口方法定义，默认约定按evaluate作为方法名。
+2. 为了能最大程度适配到各种运行环境，这里要求编译为[UMD](https://zhuanlan.zhihu.com/p/79695530)类型，输出的制品需要有全局命名空间。
 {% endhint %}
 
-####  **通过 format 属性Rollup可以设置你想要打包成的格式类型：**
+####  **通过 format 属性，Rollup可以设置你想要打包成的格式类型：**
 
 * amd - 输出成AMD模块规则，RequireJS可以用
 * cjs - CommonJS规则，适合Node，Browserify，Webpack 等 es - 默认值，不改变代码 
 * iife - 输出自执行函数，最适合导入html中的script标签，且代码更小
 * **umd** - 通用模式，amd, cjs, iife都能用
 
-#### **通过name属性Rollup可以很方便的设置输出制品的全局命名空间：**
+#### **通过name属性，Rollup可以设置输出制品的全局命名空间：**
 
 例如本样例中把全局命名空间设置为“com.yindangu.rule.demo”。
 
@@ -93,6 +93,13 @@ V平台对原生技术输出的制品有两个要求：
 
 </html>
 ```
+
+## 规则与函数的差异
+
+在开发规则和函数的过程（关于规则与函数的功能定位，参看[这里](https://app.gitbook.com/@yindangu/s/v-devsuite/~/drafts/-MLv-ZpiRkMWScEBRYlx/v-ping-tai-cha-jian-gui-fan/vplatform-cha-jian-ti-xi-gui-fan)），唯一的差别就是入口函数的入参格式有所不同：
+
+* 规则入参：是原生的JSON对象结构。
+* 函数入参：是原生的方法显示参数定义。
 
 ##   样例工程附件
 
