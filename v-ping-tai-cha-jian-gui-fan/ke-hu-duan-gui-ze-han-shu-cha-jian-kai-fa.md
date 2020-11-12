@@ -40,12 +40,53 @@ export default {
 };
 ```
 
-Rollup 配置提供了多种打包方式，通过 format 属性可以设置你想要打包成的格式类型（**为了能最大程度适配兼容到V平台，这里唯一的要求是需要输出为umd类型，**）：
+## 制品bundle要求
+
+{% hint style="warning" %}
+V平台对原生技术输出的制品有两个要求：
+
+1. 为了能最大程度适配到各种浏览器运行环境，这里唯一的要求是需要输出为umd类型。
+2. 输出的制品入口方法需要有全局命名空间。
+{% endhint %}
+
+ 通过 **format** 属性Rollup可以设置你想要打包成的格式类型：
 
 * amd - 输出成AMD模块规则，RequireJS可以用
 * cjs - CommonJS规则，适合Node，Browserify，Webpack 等 es - 默认值，不改变代码 
 * iife - 输出自执行函数，最适合导入html中的script标签，且代码更小
 * **umd - 通用模式，amd, cjs, iife都能用**
+
+通过**name**属性Rollup可以设置你想要打包成的格式类型：
+
+## 编译打包
+
+接下来，只需要在工程根目录下执行命令rollup -c，即可打包输出dist/bundle.js到指定目录中。
+
+![](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16051486524716.png)
+
+## 本地测试
+
+可增加本地测试页面test/test.html，用于调试验证。
+
+```markup
+<html>
+
+<script src="../dist/bundle.js">
+</script>
+<!--需要的情况下，可自主通过银弹谷cdn云服务引入依赖的JavaScript公共库;
+    (如果通过ES模块引用方式，则按照以下npm包规范引入"@提供商/库名",如"@yindangu/vplatform-plugin")
+<script src="http://cdn.yindangu.com/libs/yindangu/vplatform-plugin.min.js"></script>
+-->
+<script>
+    var ruleContext = {
+        "prop1": "hello",
+        "prop2": "vplatform"
+    }
+    window.com.yindangu.rule.demo.evaluate(ruleContext);
+</script>
+
+</html>
+```
 
   
 
