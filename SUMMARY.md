@@ -10,8 +10,8 @@
 
 * [V平台插件扩展体系介绍](vplatform-plugin-dev-guide/vplatform-plugin-overview.md)
 * [V平台客户端规则/函数插件开发](vplatform-plugin-dev-guide/ke-hu-duan-gui-ze-han-shu-cha-jian-kai-fa.md)
-* [V平台服务端规则/函数插件开发](vplatform-plugin-dev-guide/fu-wu-duan-gui-ze-han-shu-cha-jian-kai-fa.md)
-* [V平台控件插件开发](vplatform-plugin-dev-guide/kong-jian-cha-jian-kai-fa.md)
+* [V平台服务端规则/函数插件开发](vplatform-plugin-dev-guide/vplugin-rule-function-server.md)
+* [V平台控件插件开发](vplatform-plugin-dev-guide/vplugin-widget.md)
 
 ## V平台插件集成发布指南 <a id="vplatform-plugin-release-guide"></a>
 
