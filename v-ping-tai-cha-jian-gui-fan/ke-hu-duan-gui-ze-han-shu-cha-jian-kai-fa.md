@@ -45,18 +45,20 @@ export default {
 {% hint style="warning" %}
 V平台对原生技术输出的制品有两个要求：
 
-1. 为了能最大程度适配到各种浏览器运行环境，这里唯一的要求是需要输出为umd类型。
+1. 为了能最大程度适配到各种运行环境，这里唯一的要求是需要输出为[umd](https://zhuanlan.zhihu.com/p/79695530)类型。
 2. 输出的制品需要有全局命名空间。
 {% endhint %}
 
- 通过 **format** 属性Rollup可以设置你想要打包成的格式类型：
+####  **通过 format 属性Rollup可以设置你想要打包成的格式类型：**
 
 * amd - 输出成AMD模块规则，RequireJS可以用
 * cjs - CommonJS规则，适合Node，Browserify，Webpack 等 es - 默认值，不改变代码 
 * iife - 输出自执行函数，最适合导入html中的script标签，且代码更小
-* **umd - 通用模式，amd, cjs, iife都能用**
+* **umd** - 通用模式，amd, cjs, iife都能用
 
-通过**name**属性Rollup可以很方便的设置输出制品的全局命名空间：例如本样例中把全局命名空间设置为“com.yindangu.rule.demo”。
+#### **通过name属性Rollup可以很方便的设置输出制品的全局命名空间：**
+
+例如本样例中把全局命名空间设置为“com.yindangu.rule.demo”。
 
 ## 编译打包
 
@@ -95,19 +97,6 @@ V平台对原生技术输出的制品有两个要求：
  
 
 
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
 
 
 
