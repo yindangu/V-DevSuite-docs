@@ -90,7 +90,11 @@ V平台对原生技术输出的制品有两个要求：
 </html>
 ```
 
-  
+##   样例工程附件
+
+{% file src="../.gitbook/assets/vplatform-client-rule-demo.zip" caption="客户端规则插件样例工程demo" %}
+
+{% file src="../.gitbook/assets/vplatform-client-function-demo.zip" caption="客户端函数插件样例工程demo" %}
 
 
 
