@@ -13,5 +13,5 @@
 * [V平台服务端规则/函数插件开发](vplatform-plugin-dev-guide/rule-function-server.md)
 * [V平台控件插件开发](vplatform-plugin-dev-guide/widget.md)
 
-## V平台插件集成发布指南 <a id="vplatform-plugin-release-guide"></a>
+## V平台插件发布指南 <a id="vplatform-plugin-release-guide"></a>
 
