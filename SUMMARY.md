@@ -13,3 +13,5 @@
 * [V平台服务端规则/函数插件开发](v-ping-tai-cha-jian-gui-fan/fu-wu-duan-gui-ze-han-shu-cha-jian-kai-fa.md)
 * [V平台控件插件开发](v-ping-tai-cha-jian-gui-fan/kong-jian-cha-jian-kai-fa.md)
 
+## 规则函数插件
+
