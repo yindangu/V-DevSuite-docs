@@ -94,7 +94,7 @@ V平台对原生技术输出的制品有两个规范要求：
 </html>
 ```
 
-## 附录一：规则与函数的差异说明
+## 其它注意事项
 
 在开发规则和函数的过程（关于规则与函数的功能定位，参看[这里](https://app.gitbook.com/@yindangu/s/v-devsuite/~/drafts/-MLv-ZpiRkMWScEBRYlx/v-ping-tai-cha-jian-gui-fan/vplatform-cha-jian-ti-xi-gui-fan)），技术规范上的唯一差别就是入口方法的入参格式有所不同：
 
@@ -118,7 +118,7 @@ var evaluate = function (param1, param2) {
 };
 ```
 
-##   附录二：样例工程源码
+##   附录一：样例工程源码
 
 {% file src="../.gitbook/assets/vplatform-client-rule-demo.zip" caption="客户端规则插件样例工程demo" %}
 
