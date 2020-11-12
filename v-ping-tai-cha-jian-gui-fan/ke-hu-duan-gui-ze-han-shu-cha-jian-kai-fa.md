@@ -96,7 +96,7 @@ V平台对原生技术输出的制品有两个规范要求：
 
 ## 附录一：规则与函数的差异说明
 
-在开发规则和函数的过程（关于规则与函数的功能定位，参看[这里](https://app.gitbook.com/@yindangu/s/v-devsuite/~/drafts/-MLv-ZpiRkMWScEBRYlx/v-ping-tai-cha-jian-gui-fan/vplatform-cha-jian-ti-xi-gui-fan)），唯一的差别就是入口函数的入参格式有所不同：
+在开发规则和函数的过程（关于规则与函数的功能定位，参看[这里](https://app.gitbook.com/@yindangu/s/v-devsuite/~/drafts/-MLv-ZpiRkMWScEBRYlx/v-ping-tai-cha-jian-gui-fan/vplatform-cha-jian-ti-xi-gui-fan)），唯一的差别就是入口方法的入参格式有所不同：
 
 * 规则入参：是原生的JSON对象结构。
 * 函数入参：是原生的方法显示参数定义。
