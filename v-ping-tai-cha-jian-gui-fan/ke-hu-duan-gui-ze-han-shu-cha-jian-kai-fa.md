@@ -56,7 +56,7 @@ V平台对原生技术输出的制品有两个要求：
 * iife - 输出自执行函数，最适合导入html中的script标签，且代码更小
 * **umd - 通用模式，amd, cjs, iife都能用**
 
-通过**name**属性Rollup可以设置你想要打包成的格式类型：
+通过**name**属性Rollup可以很方便的设置输出制品的全局命名空间：例如本样例中把全局命名空间设置为“com.yindangu.rule.demo”。
 
 ## 编译打包
 
