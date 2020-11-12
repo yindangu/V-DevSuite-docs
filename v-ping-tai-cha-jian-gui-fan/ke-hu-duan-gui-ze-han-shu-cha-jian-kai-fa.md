@@ -44,7 +44,7 @@ export default {
 };
 ```
 
-## 制品bundle要求
+## 打包配置
 
 {% hint style="info" %}
 V平台对原生技术输出的制品有两个要求：
@@ -64,7 +64,7 @@ V平台对原生技术输出的制品有两个要求：
 
 例如本样例中把全局命名空间设置为“com.yindangu.rule.demo”。
 
-## 编译打包
+## 输出制品
 
 接下来，只需要在工程根目录下执行命令rollup -c，即可打包输出dist/bundle.js到指定目录中。
 
@@ -101,7 +101,7 @@ V平台对原生技术输出的制品有两个要求：
 * 规则入参：是原生的JSON对象结构。
 * 函数入参：是原生的方法显示参数定义。
 
-##   样例工程附件
+##   附样例工程
 
 {% file src="../.gitbook/assets/vplatform-client-rule-demo.zip" caption="客户端规则插件样例工程demo" %}
 
