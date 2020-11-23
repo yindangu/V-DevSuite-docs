@@ -15,6 +15,6 @@
 
 ## V平台插件发布指南 <a id="vplatform-plugin-release-guide"></a>
 
-* [V平台规则/函数插件发布](vplatform-plugin-release-guide/rule-function.md)
+* [V平台规则插件发布](vplatform-plugin-release-guide/rule-function.md)
 * [V平台控件插件发布](vplatform-plugin-release-guide/widget.md)
 
