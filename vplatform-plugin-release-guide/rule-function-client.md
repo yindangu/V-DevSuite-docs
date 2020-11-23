@@ -1,4 +1,4 @@
-# V平台规则插件发布
+# V平台客户端规则/函数插件发布
 
 ## Getting Super Powers
 
