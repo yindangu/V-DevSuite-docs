@@ -11,6 +11,7 @@
 * [V平台插件扩展体系介绍](vplatform-plugin-dev-guide/overview.md)
 * [V平台客户端规则/函数插件开发](vplatform-plugin-dev-guide/rule-function-client.md)
 * [V平台服务端规则/函数插件开发](vplatform-plugin-dev-guide/rule-function-server.md)
+* [V平台页面插件开发](vplatform-plugin-dev-guide/page.md)
 * [V平台控件插件开发](vplatform-plugin-dev-guide/widget.md)
 
 ## V平台插件发布指南 <a id="vplatform-plugin-release-guide"></a>
