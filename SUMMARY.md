@@ -18,5 +18,6 @@
 
 * [V平台客户端规则/函数插件发布](vplatform-plugin-release-guide/rule-function-client.md)
 * [V平台服务端规则/函数插件发布](vplatform-plugin-release-guide/rule-function-server.md)
+* [V平台页面插件发布](vplatform-plugin-release-guide/page.md)
 * [V平台控件插件发布](vplatform-plugin-release-guide/widget.md)
 
