@@ -1,4 +1,4 @@
-# V平台页面插件发布
+# V平台web资源插件发布
 
 ## Getting Super Powers
 
