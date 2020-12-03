@@ -1,4 +1,4 @@
-# V平台页面插件开发
+# V平台web资源插件开发
 
 ## Getting Super Powers
 
