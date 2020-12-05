@@ -77,7 +77,7 @@ _maven不是必须的，但是没有它工作效率会比较低。_
 
 ### 创建标准maven项目
 
-![](../.gitbook/assets/tu-pian-.png)
+![](../.gitbook/assets/tu-pian-%20%282%29.png)
 
 ![](../.gitbook/assets/tu-pian-%20%281%29.png)
 
