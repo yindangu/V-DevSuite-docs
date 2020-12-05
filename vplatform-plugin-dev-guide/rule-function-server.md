@@ -132,7 +132,7 @@ _maven不是必须的，但是没有它工作效率会比较低。_
   </pluginManagement>
 ```
 
-### 下面是实例的完整pom.xml,开发时可以参考下
+#### 下面是实例的完整pom.xml,开发时可以参考下
 
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
@@ -222,58 +222,49 @@ mvn package
 com.toone.itop.paas.extension.api.IFunction
 ```
 
-实例代码：
+接下来我们做一个把数字转换成汉字的函数，例如 92287 转换汉字就是 九万二千二百八十七，实例代码：
+
+NumberUpperFunc 参数说明：
+
+```java
+入口: com.yindangu.demo.NumberUpperFunc
+参数1--需转换数字(数值类型)；
+```
 
 ```java
 package com.yindangu.demo;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.toone.itop.paas.extension.api.IFunction;
 /**
- * 指定数据实体某行某列的值转换为汉字大写
+ * 数字转换成汉字
 代码示例:NumberUpperFunc(3,"name",实体)，返回值: 九万二千二百八十七。
 入口: com.yindangu.demo.NumberUpperFunc
-参数1--行数(数值类型)；
-参数2--列名(字符) 
-参数3--日期时间
-返回指定行列值的汉字大写。 
+参数1--需转换数字(数值类型)； 
+返回汉字大写。 
  * @author jiqj
  *
  */
 public class NumberUpperFunc  implements IFunction {
 	private static final Logger log = LoggerFactory.getLogger(NumberUpperFunc.class);
 	public NumberUpperFunc(){
-		log.info("函数:指定数据实体某行某列的值转换为汉字大写");
+		log.info("函数:数字转换成汉字");
 	}
 
 	public Object evaluate(IFuncContext context) {
 		/////////////////参数检查///////////////////
-		Number rowIdx = (Number)context.getParams(0);//参数1--行数(数值类型)
-		String column = (String)context.getParams(1);//参数2--列名(字符) 
-		Date today = (Date)context.getParams(2);//参数3--日期时间
-		//List<Map> entity = (List<Map>)context.getParams(3);//参数4--实体
-		if(rowIdx == null){
+		Number nb = (Number)context.getParams(0);//参数1--需转换数字(数值类型)
+		//String column = (String)context.getParams(1);//参数2--可以接收多参数的例子
+		//Date today = (Date)context.getParams(2);//参数3--可以接收多参数的例子
+		if(nb == null){
 			throw new RuntimeException("参数1--行数不能为空！");
 		}
-		if(column == null){
-			throw new RuntimeException("参数2--列名不能为空！");
-		}
-		if(today == null){
-			;//throw new RuntimeException("参数3--实体不能为空！");
-		}
-				
-		
 		////////////////业务实现 api 完全与V平台无关////////////////////
 		BusinessFunc fb = new BusinessFunc();
-		String rs = fb.execute(rowIdx.intValue(),column,today);
+		String rs = fb.execute(nb.intValue());
 		return rs;
 	}
 	
@@ -283,48 +274,31 @@ public class NumberUpperFunc  implements IFunction {
 	 * @param args
 	 */
 	public static void main(String[] args){
-		String s = "92287";
-		if(args!=null && args.length>0){
-			s = args[0];
-		}
-		List<Map> en = new ArrayList<Map>();
-		en.add(Collections.EMPTY_MAP);
 		final List<Object> pars = new ArrayList<Object>();
-		pars.add(Integer.valueOf(s));
-		pars.add("列名x");
-		pars.add(en);
-		
+		pars.add(92287);
 		IFuncContext fc = new IFuncContext() { 
 			public int getParamSize() { 
 				return pars.size();
 			}
-			
 			public Object getParams(int idx) { 
 				return (idx < pars.size() ? pars.get(idx) : null);
 			}
 		};
 		
-		IFunction  u = new NumberUpperFunc(); 
-		Object n = u.evaluate(fc);
-		System.out.println("函数返回:"  + n);
+		IFunction  func = new NumberUpperFunc(); 
+		Object fr = func.evaluate(fc);
+		log.info("函数返回:"  + fr);
 	}
 }
 ```
 
-NumberUpperFunc 参数说明：
 
-```java
-入口: com.yindangu.demo.NumberUpperFunc
-参数1--行数(数值类型)；
-参数2--列名(字符) 
-参数3--日期时间
-```
 
 NumberUpperFunc 相当于一个接收参数的壳，BusinessFunc 才是真正的业务处理的实现
 
 ```java
 BusinessFunc fb = new BusinessFunc();
-String rs = fb.execute(rowIdx.intValue(),column,today);
+String rs = fb.execute(nb.intValue());
 return rs;
 ```
 
@@ -333,27 +307,13 @@ BusinessFunc 的具体代码，开发时请按实际业务开发：
 ```java
 package com.yindangu.demo;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import com.yindangu.demo.util.Number2UppercaseUtil;
-
 /**具体的业务类(完全与V平台无关了)*/
 class BusinessFunc{
 	/**业务实现*/
-	public String execute(int rowIdx, String column,Date today){
+	public String execute(int rowIdx ){
 		String ns =Number2UppercaseUtil.toUpperCase(rowIdx);
-		String dates = "可选参数3日期";
-		if(today!=null){
-			Calendar c = Calendar.getInstance();
-			c.setTime(today);
-			dates = c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH)+1)
-					+ "-" + c.get(Calendar.DATE)
-					+ " " + c.get(Calendar.HOUR_OF_DAY)
-					+ ":" + c.get(Calendar.MINUTE)
-					+ ":" + c.get(Calendar.SECOND);
-		}
-		return "函数正确运行,入参(" + rowIdx +  "," + column + ",日期参数:" + dates + "),返回:" + ns; 
+		return  ns; 
 	}
 }
 ```
@@ -368,7 +328,134 @@ com.yindangu.demo.util.Number2UppercaseUtil
 
 #### 规则插件需要实现接口：
 
+规则返回值必须是Map\(定义为Object是为了以后扩展\),所有返回值都要put到map里面
+
 ```java
 com.toone.itop.paas.extension.api.IRule
+```
+
+规则功能： 把实体某列转换为汉字大写。
+
+```java
+规则功能：把实体某列转换为汉字大写
+输入参数：列名-需转换的列名，实体
+输出参数：转换后的实体
+入口: com.yindangu.demo.NumberUpperRule
+代码示例:NumberUpperFunc("age",实体)
+```
+
+```java
+package com.yindangu.demo;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.toone.itop.paas.extension.api.IRule;
+/**
+规则功能：
+把实体某列转换为汉字大写
+输入参数2个：列名-字符串需转换的列名，实体
+输出参数1个：转换后的实体
+入口: com.yindangu.demo.NumberUpperRule
+代码示例:NumberUpperFunc("age",实体)
+
+参数:[{code:column,type:string},
+	{code:myentity,type:entity,"entityField": [
+       {
+            "code": [参数列],
+            "type": "int" 
+        },...
+    ]}
+
+返回 {
+  myentity:{
+     type:entity,"entityField": [
+        {
+            "code": [参数列],
+            "type": "char" 
+        }, ...
+    ]}
+  }
+ * @author jiqj 
+ */
+public class NumberUpperRule implements IRule {
+ 
+	private static final Logger log = LoggerFactory.getLogger(NumberUpperRule.class);
+	public NumberUpperRule(){
+		log.info("规则:指定数据实体某行某列的值转换为汉字大写");
+	}
+
+	/**
+	 * 规则入口
+	 * @return 返回值必须是Map(定义为Object是为了以后扩展),所有返回值都要put到map里面
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public Object evaluate(IRuleContext context) {
+		/////////////////参数检查///////////////////
+		String column = (String)context.getParams("column");//需转换的列名
+		//Date today = (Date)context.getParams("today");//日期参数--可以接收多参数的例子
+		List<Map> entity = (List<Map>)context.getParams("myentity");//实体
+		if(column == null){
+			throw new RuntimeException("参数column--列名不能为空！");
+		}
+		if(entity == null){
+			throw new RuntimeException("转换参数myentity--实体不能为空！");
+		}		
+		////////////////业务实现 api 完全与V平台无关////////////////////
+		BusinessRule br = new BusinessRule();
+		List<Map> entity2 = br.convertEntity(column, entity);
+		
+		//输出的key: myentity 具体可以构件定义
+		Map<String,Object> map = new HashMap<String, Object>();
+		map.put("myentity", entity2);
+		return map;
+	}
+	
+	/**自测代码*/
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static void main(String[] args){ 
+		List<Map> entity = mockEntity();
+		final HashMap<String,Object> pars = new HashMap<String,Object>();
+		pars.put("column", "age");//需转换的列名
+		pars.put("myentity", entity);//实体
+		
+		IRuleContext context = new IRuleContext() {
+			public int getParamSize() { 
+				return pars.size();
+			}
+			public Object getParams(String key) { 
+				return pars.get(key);
+			}
+		}; 
+		
+		
+		IRule  rule = new NumberUpperRule();
+		Map<String,Object>  result =(Map<String,Object>) rule.evaluate(context);
+		List<Map> entity2 =(List<Map>) result.get("myentity");
+		for(Map m : entity2){
+			log.info(m.get("myname") + ") 年龄: "  + m.get("age"));
+		}
+	}
+	/**自测代码*/
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	private static List<Map> mockEntity(){
+		List<Map> entity =new ArrayList();
+		Map<String,Object> m =  new HashMap();
+		m.put("myname","李四");
+		m.put("age",40);
+		entity.add(m);
+		
+		Map<String,Object> s =  new HashMap();
+		s.put("myname","张三");
+		s.put("age",39);
+		entity.add(s);
+		return entity;
+	}
+}
 ```
 
