@@ -176,13 +176,13 @@ _maven不是必须的，但是没有它工作效率会比较低。_
 			<version>3.3.0</version>
 		</dependency>
 		<!-- 第三方的包 -->
-		<dependency>
+		<!--dependency>
 			<groupId>com.yindangu.demo</groupId>
 			<artifactId>util</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/util-0.0.1-SNAPSHOT.jar</systemPath>
-		</dependency>
+		</dependency-->
 		<!-- ////////////////日志开始/////////////////// -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
