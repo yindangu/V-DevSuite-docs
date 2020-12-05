@@ -514,6 +514,8 @@ class BusinessRule{
 mvn package
 ```
 
+注意：如果使用了第3的jar包，打包插件时也要上传
+
 ## 附录一：样例工程源码
 
 {% file src="../.gitbook/assets/demo-func.zip" caption="函数maven项目示例" %}
