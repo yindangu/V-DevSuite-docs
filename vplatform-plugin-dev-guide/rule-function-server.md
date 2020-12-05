@@ -89,7 +89,7 @@ _maven不是必须的，但是没有它工作效率会比较低。_
 
 #### V3入口依赖
 
-配置 paas-extension构件
+#### 配置 paas-extension构件\(必须\)
 
 ```markup
 <dependency>
@@ -97,6 +97,18 @@ _maven不是必须的，但是没有它工作效率会比较低。_
     <artifactId>paas-extension</artifactId>
     <version>3.3.0</version>
 </dependency>
+```
+
+#### 配置maven-jar-plugin插件\(必须）
+
+如果没有配置jar-plugin，打包时可能会报"ipojo类增强出错"
+
+```markup
+<plugin><!-- 必须的插件 3.0.2 以上-->
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <version>3.0.2</version>
+</plugin>
 ```
 
 #### 导出依赖包（非必须）
@@ -138,15 +150,18 @@ _maven不是必须的，但是没有它工作效率会比较低。_
 
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<!-- parent> <groupId>com.toone.v3.platform</groupId> <artifactId>platform-parent</artifactId> 
-		<version>3.4.0-SNAPSHOT</version> </parent -->
-	<groupId>com.yindangu.demo</groupId>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>v3func</artifactId>
-	<version>1.1.0</version>
-	<packaging>jar</packaging>
+
+	<groupId>com.yindangu</groupId>
+	<artifactId>demo-rule</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>demo</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -161,12 +176,13 @@ _maven不是必须的，但是没有它工作效率会比较低。_
 			<version>3.3.0</version>
 		</dependency>
 		<!-- 第三方的包 -->
-		<!-- dependency>
-		    <groupId>com.yindangu.demo</groupId>
+		<dependency>
+			<groupId>com.yindangu.demo</groupId>
 			<artifactId>util</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency -->
-		
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/util-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
 		<!-- ////////////////日志开始/////////////////// -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -187,27 +203,31 @@ _maven不是必须的，但是没有它工作效率会比较低。_
 	</dependencies>
 
 	<build>
-		 <plugins>
-            <plugin><!-- 把依赖的包导出来，方便发布构件时选择 -->  
-	            <groupId>org.apache.maven.plugins</groupId>  
-	            <artifactId>maven-dependency-plugin</artifactId>  
-	            <executions>  
-	                <execution>
-	                    <id>copy</id>  
-	                    <phase>package</phase>  
-	                    <goals>  
-	                        <goal>copy-dependencies</goal>  
-	                    </goals>  
-	                    <configuration>  
-	                        <outputDirectory>${project.build.directory}/lib</outputDirectory>  
-	                    </configuration>  
-	                </execution>  
-	            </executions>  
-	        </plugin>
-        </plugins>
+		<plugins>
+			<plugin><!-- 必须的插件 3.0.2 以上-->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+			</plugin>
+			<plugin><!-- 把依赖的包导出来，方便发布构件时选择 -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>
-
 ```
 
 ### 函数程序架构
@@ -514,17 +534,11 @@ class BusinessRule{
 mvn package
 ```
 
-_**注意：**_
-
-1、如果使用了第3的jar包，打包插件时也要上传
-
-2、如果在开发系统打包时报："ipojo类增强出错"，可能是在eclipse内的maven被修改过\(V3平台带的maven就被修改过\)，请使用maven命令行打包。
+_**注意：**_如果使用了第3的jar包，打包插件时也要上传
 
 ## 附录一：样例工程源码
 
-{% file src="../.gitbook/assets/demo-func.zip" caption="函数maven项目示例" %}
+{% file src="../.gitbook/assets/demo-func \(1\).zip" caption="函数maven项目示例" %}
 
-{% file src="../.gitbook/assets/demo-rule.zip" caption="规则maven项目示例" %}
-
-
+{% file src="../.gitbook/assets/demo-rule \(1\).zip" caption="规则maven项目示例" %}
 
