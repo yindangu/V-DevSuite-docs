@@ -514,7 +514,11 @@ class BusinessRule{
 mvn package
 ```
 
-注意：如果使用了第3的jar包，打包插件时也要上传
+注意：
+
+1、如果使用了第3的jar包，打包插件时也要上传
+
+2、如果在开发系统打包时报："ipojo类增强出错"，可能是在eclipse内的maven被修改过\(V3平台带的maven就被修改过\)，请使用maven命令行打包。
 
 ## 附录一：样例工程源码
 
