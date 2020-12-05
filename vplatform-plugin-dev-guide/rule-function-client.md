@@ -17,33 +17,53 @@ V平台的插件体系支持业界开放性的技术开发规范，做到最大�
 在工程的src文件夹下添加main.js文件：
 
 ```javascript
-/*
- * 需求：将数值转换成中文
+ /*
+ * 需求：打折促销，将商品价格按照打折方案转换成最后销售价格
  * 客户端规则的默认入口方法名为evaluate; params为规则入参,参数格式为json对象
+ * 入参格式：
+ * {
+ * 		discount:1,//折扣
+ * 		goods:[{//商品列表
+ * 			id:"",//商品id
+ * 			price:""//商品价格
+ * 		}
+ * 		...
+ * 		]
+ * }
+ * 输出参数：
+ * {
+ * 		goods:[{//商品列表
+ * 			id:"",//商品id
+ * 			price:""//商品价格
+ * 		}
+ * 		...
+ * 		]
+ * }
  */
-let cnNum = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
-let numToCN = function(num){
-	 let numStr = num+"";
-	 let result = [];
-	 for(let i=0,len=numStr.length;i<len;i++){
-		 let index = parseInt(numStr.charAt(i));
-		result.push(cnNum[index]);
-	 }
-	 return result.join('');
- }
 let evaluate = function (params) {
     return new Promise((resolve,reject)=>{
-		let input = params.input;
-		let num = parseInt(input);
-		if(isNaN(num)){
-			reject(Error("请输入整数！"));
-		}else if(num<0){
-			reject(Error("请输入大于零的整数！"));
-		}else{
-			resolve({
-				out : numToCN(num)
-			});
-		}
+		  let discount = parseFloat(params.discount);
+		  if(isNaN(discount)){
+			  reject(Error("折扣信息有误！discount="+discount));
+		  }else if(discount<0){
+			  reject(Error("折扣需大于零！discount="+discount));
+		  }else{
+			  let goods = params.goods||[];
+			  let result = [];
+			  goods.forEach(item => {
+				  let good = {
+					  id:item.id
+				  };
+				  let price = parseFloat(item.price);
+				  if(!isNaN(price)){
+					  good.price = price * discount;
+				  }
+				  result.push(good);
+			  });
+			  resolve({
+				  goods : result
+			  });
+		  }
     });
 };
 
@@ -114,11 +134,21 @@ V平台对原生技术输出的制品有两个规范要求：
 -->
 <script>
     var params = {
-        "input": "190"
+        discount:0.7,
+        goods:[{
+            id:1,
+            price:15.5
+        },{
+            id:2,
+            price:90
+        },{
+            id:3,
+            price:101.67
+        }]
     }
     var promise = window.com.yindangu.rule.demo.evaluate(params);
     promise.then(function(result){
-        alert(result.out);
+        console.log(JSON.stringify(result.goods,null,"\t"));
     }).catch(function(err){
         console.error(err.message);
     });
@@ -129,7 +159,9 @@ V平台对原生技术输出的制品有两个规范要求：
 
 ## 其它注意事项
 
-在开发规则和函数的过程（关于规则与函数的功能定位，参看[这里](https://app.gitbook.com/@yindangu/s/v-devsuite/~/drafts/-MLv-ZpiRkMWScEBRYlx/v-ping-tai-cha-jian-gui-fan/vplatform-cha-jian-ti-xi-gui-fan)），技术规范上的唯一差别就是入口方法的入参格式有所不同：
+在开发规则和函数的过程（关于规则与函数的功能定位，参看[这里](https://app.gitbook.com/@yindangu/s/v-devsuite/~/drafts/-MLv-ZpiRkMWScEBRYlx/v-ping-tai-cha-jian-gui-fan/vplatform-cha-jian-ti-xi-gui-fan)），技术规范上有些许差异：
+
+### 插件入参
 
 * 规则入参：是原生的JSON对象结构（固定为一个参数params）。
 
@@ -147,6 +179,27 @@ var evaluate = function (params) {
 //客户端函数的默认入口方法名为evaluate; param1和param2为自定义的函数入参声明
 var evaluate = function (param1, param2) {
     console.log("hello vplatform!");
+    return param1 + " " + param2 + "!";
+};
+```
+
+### 插件返回值
+
+* 规则返回值：是原生es6的Promise实例，解决规则实现中可能出现异步逻辑场景。
+
+```javascript
+var evaluate = fuction(){
+    return new Promise((resolve,reject)=>{//创建Promise实例并返回
+        //do something
+    });
+}
+```
+
+* 函数返回值：由功能开发者决定，平台不做限制。
+
+```javascript
+//客户端函数的默认入口方法名为evaluate; param1和param2为自定义的函数入参声明
+var evaluate = function (param1, param2) {
     return param1 + " " + param2 + "!";
 };
 ```
