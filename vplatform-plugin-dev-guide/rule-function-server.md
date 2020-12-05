@@ -43,34 +43,36 @@ _maven不是必须的，但是没有它工作效率会比较低。_
 
 #### 1.maven 的 settings.xml配置
 
-在maven的conf目录，或者是Eclipse 的maven的配置
+如使用命令行，就要_**配置maven**_的conf目录的settings
+
+或者使用是_**Eclipse 的maven的配置**_，那么就配置指定的settings文件。
 
 配置目的是从第3方的maven库下载V平台的2次开发接口，就是前面提到的 函数接口 IFunction ,规则接口 IRule
 
-打开maven/settings.xml，找到profiles节点，复制下面的配置到profiles内。
+打开settings.xml，找到profiles节点，复制下面的配置到profiles内。（没有 profiles 节点就创建节点）
 
 ```markup
-		<!-- 嵌入到maven的settings.xml 这部分是必须的 -->
-		<profile>
-            <id>codingProxy</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>yindangu-v-devsuite-sdk-maven</id>
-                    <name>maven</name>
-                    <url>https://yindangu-maven.pkg.coding.net/repository/v-devsuite-sdk/maven/</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-            </repositories>
-        </profile>
-		<!-- 嵌入到maven的settings.xml 这部分是必须的 -->
+<!-- 嵌入到maven的settings.xml 这部分是必须的 -->
+<profile>
+    <id>codingProxy</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+        <repository>
+            <id>yindangu-v-devsuite-sdk-maven</id>
+            <name>maven</name>
+            <url>https://yindangu-maven.pkg.coding.net/repository/v-devsuite-sdk/maven/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</profile>
+<!-- 嵌入到maven的settings.xml 这部分是必须的 -->
 ```
 
 ## 开始
@@ -292,9 +294,7 @@ public class NumberUpperFunc  implements IFunction {
 }
 ```
 
-
-
-NumberUpperFunc 相当于一个接收参数的壳，BusinessFunc 才是真正的业务处理的实现
+NumberUpperFunc 相当于一个接收参数的壳，BusinessFunc 才是真正的业务代码的实现
 
 ```java
 BusinessFunc fb = new BusinessFunc();
@@ -458,4 +458,67 @@ public class NumberUpperRule implements IRule {
 	}
 }
 ```
+
+NumberUpperRule 接收参数转换后执行BusinessRule 业务代码的实现
+
+BusinessRule的代码实现：
+
+```java
+package com.yindangu.demo;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.yindangu.demo.util.Number2UppercaseUtil;
+
+/**具体的业务类(完全与V平台无关了)*/
+class BusinessRule{   
+	/**
+	 * 业务实现 : 把指定列转换为汉字大写
+	 * @param column
+	 * @param sourceEntity
+	 * @return
+	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public List<Map> convertEntity(String column,List<Map> sourceEntity){
+		List<Map> rds = new ArrayList<Map>();
+		if(sourceEntity == null || sourceEntity.isEmpty()){
+			Map<String,Object> map = new HashMap<String, Object>();
+			map.put(column, "没有记录");
+			rds.add(map);
+		}
+		else{
+			for(Map src: sourceEntity){
+				Map<String,Object> map = new HashMap<String, Object>(src);
+				Integer age = (Integer)map.get(column); 
+				String myage = "无";
+				if(age!=null){
+					myage = Number2UppercaseUtil.toUpperCase(age.longValue());
+				}
+				map.put(column, myage); 
+				rds.add(map);
+			}
+		}
+		return rds;
+	} 
+}
+```
+
+## 输出制品
+
+输出制品可以直接用maven命令，生成jar文件，及第3方jar。
+
+```java
+mvn package
+```
+
+## 附录一：样例工程源码
+
+{% file src="../.gitbook/assets/demo-func.zip" caption="函数maven项目示例" %}
+
+{% file src="../.gitbook/assets/demo-rule.zip" caption="规则maven项目示例" %}
+
+
 
