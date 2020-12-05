@@ -540,5 +540,5 @@ _**注意：**_如果使用了第3的jar包，打包插件时也要上传
 
 {% file src="../.gitbook/assets/demo-func \(1\).zip" caption="函数maven项目示例" %}
 
-{% file src="../.gitbook/assets/demo-rule \(1\).zip" caption="规则maven项目示例" %}
+{% file src="../.gitbook/assets/demo-rule \(2\).zip" caption="规则maven项目示例" %}
 
