@@ -6,6 +6,10 @@
 
 * [V-DevSuite Java SDK](tools-sdks/java-sdk.md)
 
+## V平台扩展开发云服务 <a id="vpaas-extender"></a>
+
+* [Hybrid App云打包](vpaas-extender/hybrid-app-package.md)
+
 ## V平台插件开发指南 <a id="vplatform-plugin-dev-guide"></a>
 
 * [V平台插件扩展体系介绍](vplatform-plugin-dev-guide/overview.md)
