@@ -20,7 +20,9 @@
 
 ![&#x4E0A;&#x4F20;&#x524D;&#x7AEF;&#x8D44;&#x6E90;&#x5305;](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16100963712886.png)
 
-这里给出一个最简单的前端资源包样例，一个html页面通过引用vds调用V服务的【移动设备硬件操作】规则，来打开App的闪光灯。
+这里给出一个最简单的前端资源包样例，一个html页面通过引用vds调用V服务的【移动设备硬件操作】规则，来打开App的闪光灯，**注意：下载该资源包后，需要将页面内vds的引用地址，修改为您自己的V服务地址。**
+
+{% file src="../.gitbook/assets/resources.zip" caption="前端资源包样例（打开App闪光灯）" %}
 
 
 
@@ -31,23 +33,6 @@
 
 
 
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
 
 
 
