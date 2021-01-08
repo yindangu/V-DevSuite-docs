@@ -1,7 +1,7 @@
 # Hybrid App云打包
 
 {% hint style="info" %}
-#### App云打包服务是基于Cordova框架搭建而成，支持用户上传自定义前端资源包，搭配V-DevSuite JS SDK可实现调用V平台与原生功能相关的规则，例如：移动设备硬件操作、获取当前App版本号等，同时，该打包服务提供补丁升级，版本升级通知，上传自定义Cordova插件等功能。
+#### Hybrid App云打包服务是基于[Cordova](http://cordova.apache.org/)框架搭建而成，支持用户上传自定义前端资源包，搭配V-DevSuite JS SDK可实现调用V平台与原生功能相关的规则，例如：移动设备硬件操作、获取当前App版本号等，同时，该打包服务提供补丁包升级、版本升级通知、上传自定义Cordova插件等功能。
 {% endhint %}
 
 ## App云打包使用步骤
@@ -12,9 +12,15 @@
 
 #### 步骤2：创建App
 
+![&#x521B;&#x5EFA;App](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16100962125228.png)
 
+#### 步骤3：配置资源包
 
+![&#x914D;&#x7F6E;&#x8D44;&#x6E90;&#x5305;](../.gitbook/assets/qi-ye-wei-xin-jie-tu-1610096299325.png)
 
+![&#x4E0A;&#x4F20;&#x524D;&#x7AEF;&#x8D44;&#x6E90;&#x5305;](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16100963712886.png)
+
+这里给出一个最简单的前端资源包样例，一个html页面通过引用vds调用V服务的【移动设备硬件操作】规则，来打开App的闪光灯。
 
 
 
