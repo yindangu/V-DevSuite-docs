@@ -24,9 +24,13 @@
 
 {% file src="../.gitbook/assets/resources.zip" caption="前端资源包样例（打开App闪光灯）" %}
 
+![&#x4E0A;&#x4F20;&#x524D;&#x7AEF;&#x8D44;&#x6E90;&#x5305;&#x540E;&#xFF0C;&#x52FE;&#x9009;App&#x7684;&#x521D;&#x59CB;&#x8BBF;&#x95EE;&#x9875;&#x9762;](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16100975536863.png)
 
+#### 步骤3：新增版本，打包App
 
+![&#x4E0A;&#x4F20;&#x56FE;&#x6807;&#x3001;&#x542F;&#x52A8;&#x56FE;&#x7247;](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16100977061910.png)
 
+![&#x914D;&#x7F6E;&#x5F15;&#x5BFC;&#x9875;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x3001;&#x9009;&#x62E9;&#x63D2;&#x4EF6;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#xFF0C;&#x5F00;&#x59CB;&#x6253;&#x5305;App](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16100977897086.png)
 
 
 
