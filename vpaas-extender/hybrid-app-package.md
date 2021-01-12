@@ -8,7 +8,7 @@
 
 #### 步骤1：登录软云
 
-注册并登录软云（[http://cloud.yindangu.com](http://cloud.yindangu.com)），选择 同望科技 - 软云控制台 - 企业信息（右上角 ![](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16104415989833.png) ） -  扩展开发云服务 - Hybrid App 云打包
+注册并登录软云（[http://cloud.yindangu.com](http://cloud.yindangu.com)），选择 同望科技 - 软云控制台 - 企业信息（右上角 ![](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16104415284156.png)   ） -  扩展开发云服务 - Hybrid App 云打包
 
 #### 步骤2：创建App
 
