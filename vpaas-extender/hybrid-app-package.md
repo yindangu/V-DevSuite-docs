@@ -1,7 +1,7 @@
 # Hybrid App云打包
 
 {% hint style="info" %}
-#### Hybrid App云打包服务是基于[Cordova](http://cordova.apache.org/)框架搭建而成，支持用户上传自定义前端资源包，搭配V-DevSuite JS SDK可实现调用V平台与原生功能相关的规则，例如：移动设备硬件操作、获取当前App版本号等，同时，该打包服务提供补丁包升级、版本升级通知、上传自定义Cordova插件等功能。
+#### Hybrid App云打包服务是基于[Cordova](http://cordova.apache.org/)框架搭建而成，支持用户上传自定义前端资源包，搭配V-DevSuite JS SDK可实现调用V平台与原生功能相关的规则（目前仅支持移动设备硬件操作、获取当前App版本号规则，其他规则陆续支持），同时，该打包服务提供补丁包升级、版本升级通知、上传自定义Cordova插件等功能。
 {% endhint %}
 
 ## App云打包使用步骤
