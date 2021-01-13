@@ -20,7 +20,7 @@
 
 ![&#x4E0A;&#x4F20;&#x524D;&#x7AEF;&#x8D44;&#x6E90;&#x5305;](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16100963712886.png)
 
-这里给出一个最简单的[前端资源包样例](https://qiniu.yindangu.net/vds/demo/demo.zip)，一个html页面通过引用vds来调用V服务的【移动设备硬件操作】规则，来打开App的闪光灯。**注意：下载该资源包后，需要将页面内vds的引用地址修改为您自己的V服务地址（vds的详细使用方法可参考**V-DevSuite JS SDK**）。**
+这里给出一个最简单的[前端资源包样例](https://qiniu.yindangu.net/vds/demo/demo.zip)，一个html页面通过引用vds来调用V服务的【移动设备硬件操作】规则，来打开App的闪光灯。**（vds的详细使用方法可参考**V-DevSuite JS SDK**）。**
 
 ![&#x4E0A;&#x4F20;&#x524D;&#x7AEF;&#x8D44;&#x6E90;&#x5305;&#x540E;&#xFF0C;&#x52FE;&#x9009;App&#x7684;&#x521D;&#x59CB;&#x8BBF;&#x95EE;&#x9875;&#x9762;](../.gitbook/assets/qi-ye-wei-xin-jie-tu-16100975536863.png)
 
