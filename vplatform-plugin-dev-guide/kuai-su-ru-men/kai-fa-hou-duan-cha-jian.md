@@ -309,3 +309,15 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 ![&#x4E0A;&#x4F20;&#x6210;&#x529F;](../../.gitbook/assets/jar-params4.png)
 
+## 使用插件
+
+上传成功，相同项目清单，开发系统刷新后，就可以使用了
+
+![&#x76F8;&#x540C;&#x9879;&#x76EE;&#x6E05;&#x5355;&#xFF0C;&#x5237;&#x65B0;](../../.gitbook/assets/jar-user1.png)
+
+使用插件，使用过程就与以前的函数一样。函数名对应元数据的code属性
+
+![&#x4F7F;&#x7528;&#x63D2;&#x4EF6;](../../.gitbook/assets/jar-user2.png)
+
+执行开发系统使用插件，插件已经发布到vstore对应项目的内置清单。执行系统产品升级就可以更新构件。
+
