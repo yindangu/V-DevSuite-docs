@@ -307,7 +307,5 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 返回每个插件的状态,只要有一个不成功，就整个构件发布不成功\(现在的截图是不成功的，如果是成功返回“成功”文字\)
 
-![](../../.gitbook/assets/dev-upload2.png)
-
 ![&#x4E0A;&#x4F20;&#x6210;&#x529F;](../../.gitbook/assets/jar-params4.png)
 
