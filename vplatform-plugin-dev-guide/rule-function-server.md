@@ -81,8 +81,6 @@ _maven不是必须的，但是没有它工作效率会比较低。_
 
 ![](../.gitbook/assets/tu-pian-%20%282%29.png)
 
-![](../.gitbook/assets/tu-pian-%20%281%29.png)
-
 一直往下就成功创建标准的mavn项目了。如果有不清楚可以百度一下。
 
 ### 配置 pom.xml
