@@ -329,3 +329,215 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 返回值函数只能单一返回值，规则是多值返回，返回方式也是key-value方式。
 
+## 函数实例
+
+这是实现把数字转换为汉字大写的函数
+
+函数需要实现IFunction接口
+
+```java
+package com.yindangu.plugin.demo.function;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.yindangu.plugin.demo.BusinessUtil;
+import com.yindangu.v3.platform.plugin.business.IResponseVo;
+import com.yindangu.v3.platform.plugin.business.api.func.IFuncContext;
+import com.yindangu.v3.platform.plugin.business.api.func.IFuncOutputVo;
+import com.yindangu.v3.platform.plugin.business.api.func.IFuncVObject;
+import com.yindangu.v3.platform.plugin.business.api.func.IFunction; 
+
+/**
+ * 数字转换成汉字
+ * @author jiqj
+ *
+ */
+public class NumberUpperFunc implements IFunction{
+	public static final String D_Code="numberConvertFunc";
+    private static final Logger log = LoggerFactory.getLogger(NumberUpperFunc.class);
+    public NumberUpperFunc(){
+        log.info("函数:数字转换成汉字");
+    }
+
+    @Override
+    public IFuncOutputVo evaluate(IFuncContext context) {
+        /////////////////参数检查///////////////////
+        Number nb = (Number)context.getInput(0);
+        if(nb == null){
+            throw new RuntimeException("参数1--行数不能为空！");
+        }
+        ////////////////业务实现 api 完全与V平台无关////////////////////
+        String rs = BusinessUtil.toChinese(nb.intValue());
+        log.info("数字（{}）转换成汉字（{}）",nb,rs);
+        //IResponseBuilder b = VDS.getBuilder().getResponseBuilder();
+        IFuncOutputVo vo = context.newOutputVo();
+        return vo.put(rs);
+    }    
+}
+
+```
+
+核心代码是业务实现：
+
+```java
+////////////////业务实现 api 完全与V平台无关////////////////////
+String rs = BusinessUtil.toChinese(nb.intValue());
+```
+
+插件元数据描述：1个入参，整型；1个返回值，文本类型；
+
+```java
+/** 函数元信息(数字转汉字) */
+	private IPluginProfileVo getNumberUpperFunc() {
+		IFunctionBuilder bf = RegVds.getPlugin().getFunctiontPlugin();
+		IPluginProfileVo p1 = bf.setCode(NumberUpperFunc.D_Code).setName("数字转汉字-name").setDesc("数字转汉字").setAuthor("徐刚")
+				.addInputParam(bf.newParam().setType(VariableType.Integer).setDesc("数字").build())
+				.setEntry(NumberUpperFunc.class)
+				.setOutput(bf.newOutput().setType(VariableType.Char).setDesc("汉字大写").build()).build();
+		return p1;
+	}
+```
+
+## 规则实例
+
+这是把实体的某列的数字转换为汉字大写
+
+规则需要实现IRule接口
+
+```java
+package com.yindangu.plugin.demo.rule;
+
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.yindangu.plugin.demo.BusinessUtil;
+import com.yindangu.v3.platform.plugin.business.api.rule.IRule;
+import com.yindangu.v3.platform.plugin.business.api.rule.IRuleContext;
+import com.yindangu.v3.platform.plugin.business.api.rule.IRuleOutputVo;
+ 
+/**
+ * 多值返回 数字转汉字
+ * @author jiqj
+ *
+ */
+public class NumberUpperRolueEntity implements IRule{
+    private static final Logger log = LoggerFactory.getLogger(NumberUpperRolueEntity.class);
+    public static final String D_Code="numberConvertEntity";
+    public static final String INPUT_USERLLIST="userList",INPUT_AGE="age";
+    public static final String OUT_USERLLIST="userList2",OUT_COUNT="count";
+    public static final String FD_AGE="age",FD_NAME="name",FD_CHINESE="chinese";
+ 
+    @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
+	public IRuleOutputVo evaluate(IRuleContext context) {
+    	String field = (String)context.getInput(FD_AGE);
+    	List<Map> entity = (List<Map>)context.getInput(INPUT_USERLLIST);
+    	//IDataView dv = (IDataView)context.getVObject().getInput(INPUT_USERLLIST);//取v原对象
+    	
+    	int count = 0;
+    	for(Map m : entity) {
+    		String name = (String)m.get(FD_NAME);
+    		Integer age = (Integer)m.get(FD_AGE);
+    		String chinese  = BusinessUtil.toChinese(age.intValue());
+    		m.put(FD_CHINESE,chinese );
+    		count++;
+    	}
+
+    	IRuleOutputVo vo = context.newOutputVo(); //VDS.getBuilder().getResponseBuilder();
+        return vo.put(OUT_USERLLIST, entity)
+        		.put(OUT_COUNT, count) ;
+    }
+
+}
+
+```
+
+插件元数据描述：
+
+2个入参:a）用户列表，实体；b\)转换的列，字符型
+
+2个返回值:a）列表，实体；b\)转换记录数，整型
+
+```java
+/** 添加规则元信息(把指定列 数字转汉字) */
+	private IPluginProfileVo getNumberUpperRolueEntity() {
+
+		IRuleBuilder br = RegVds.getPlugin().getRulePlugin();
+		// 添加规则元信息(把指定列 数字转汉字)
+		IRuleBuilder br2 = RegVds.getPlugin().getRulePlugin();
+		IEntityBuilder entryBuild = RegVds.getBuilder().getEntityProfileBuilder();
+		IRuleBuilder.IRuleInputBuilder ruleInputEntry = br.newInput().setCode(NumberUpperRolueEntity.INPUT_USERLLIST)
+				.setName("用户列表").setType(VariableType.Entity)
+				.addField(entryBuild.newField().setCode("age").setName("年龄").setType(VariableType.Integer).build())
+				.addField(entryBuild.newField().setCode("name").setName("性名").setType(VariableType.Char).build())
+				.addField(entryBuild.newField().setCode(NumberUpperRolueEntity.FD_CHINESE).setName("汉字大写")
+						.setType(VariableType.Char).build());
+
+		IRuleBuilder.IRuleOutputBuilder ruleOutputEntry = br.newOutput().setCode(NumberUpperRolueEntity.OUT_USERLLIST)
+				.setName("用户列表实体").setType(VariableType.Entity)
+				.addField(entryBuild.newField().setCode(NumberUpperRolueEntity.FD_AGE).setName("年龄")
+						.setType(VariableType.Integer).build())
+				.addField(entryBuild.newField().setCode(NumberUpperRolueEntity.FD_NAME).setName("性名")
+						.setType(VariableType.Char).build())
+				.addField(entryBuild.newField().setCode(NumberUpperRolueEntity.FD_CHINESE).setName("汉字大写")
+						.setType(VariableType.Char).build());
+
+		IPluginProfileVo p4 = br2.setCode(NumberUpperRolueEntity.D_Code).setName("把指定列 数字转汉字-entity")
+				.setDesc("把指定列 数字转汉字-实体").setAuthor("徐刚").addInput(ruleInputEntry.build())
+				.addInput(br.newInput().setCode(NumberUpperRolueEntity.INPUT_AGE).setName("转换列名")
+						.setType(VariableType.Char).build())
+				.addOutput(ruleOutputEntry.build()).addOutput(br.newOutput().setCode(NumberUpperRolueEntity.OUT_COUNT)
+						.setName("转换个数").setType(VariableType.Integer).build())
+				.setEntry(NumberUpperRolueEntity.class).build();
+
+		return p4;
+	}
+```
+
+## HttpCommand实例
+
+接收web请求处理扩展，需实现IHttpCommand接口
+
+```java
+package com.yindangu.plugin.demo.command;
+ 
+import com.yindangu.v3.platform.plugin.business.api.httpcommand.FormatType;
+import com.yindangu.v3.platform.plugin.business.api.httpcommand.IHttpCommand;
+import com.yindangu.v3.platform.plugin.business.api.httpcommand.IHttpContext;
+import com.yindangu.v3.platform.plugin.business.api.httpcommand.IHttpResultVo;
+
+public class MyHttpCommand implements IHttpCommand{
+
+	@Override
+	public IHttpResultVo execute(IHttpContext context) {
+		IHttpResultVo vo = context.newResultVo();
+		String name = context.getRequest().getParameter("mynamne");
+		vo.setValueType(FormatType.Json)
+			.setValue("{\"name\":\"数字转汉字-" + name + "\",\"entry\":\"com.yindangu.plugin.demo.function.NumberUpperFunc\",\"code\":\"numberConvertFunc\",\"desc\":\"数字转汉字\",\"output\":{\"type\":\"Char\",\"desc\":\"汉字大写\"},\"inputs\":[{\"default\":null,\"type\":\"Integer\",\"desc\":\"数字\",\"required\":true}]}")
+			//.newDownload()
+			;
+		return vo;
+	}
+
+}
+```
+
+插件元数据描述：
+
+code对应请求的opertion
+
+```java
+private IPluginProfileVo getHttpCommand() {
+		IHttpCommandBuilder cb = RegVds.getPlugin().getHttpCommandPlugin();
+		IPluginProfileVo p3 = cb.setCode("mycmd").setName("我的扩展处理").setAuthor("徐刚").setEntry(MyHttpCommand.class)
+				.build();
+		return p3;
+	}
+```
+
