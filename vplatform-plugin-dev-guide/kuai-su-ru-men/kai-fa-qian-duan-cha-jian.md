@@ -106,3 +106,94 @@ package.json
 
 ## **编写业务代码**
 
+根据package.json 配置，业务代码在 src/main.js为主文件
+
+```javascript
+/*
+ * 删除指定实体的记录，删除选中行的记录
+ * 规则编号：DeleteListSelectRow
+ * 规则配置信息:
+ * 1、entityCode 实体编号
+ */
+vds.import("vds.ds.*"); //引用了vds工具包的ds模块
+let evaluate = function (ruleContext) {
+    return new Promise((resolve,reject)=>{
+		//获取实体编号配置
+		let entity = ruleContext.getInput("entityCode");
+		if(!entity){
+			reject(Error("未找到实体,请检查实体编号配置!"));
+		}else{
+			//获取实体实例
+			let resultSet = entity.getSelectedRecords();
+			let ids = [];
+			resultSet.iterate(function(record){
+				ids.push(record.getSysId());
+			});
+			entity.deleteRecordByIds(ids);
+		}
+		resolve();
+	});
+};
+
+export {
+    evaluate
+}
+```
+
+## **编译生成define.js**
+
+```javascript
+npm install
+rollup -c rollup.config.js
+```
+
+编译后的目标文件在dist/bundle.js，如果不使用rollup，就手工编写define.js文件（标准的js文件）
+
+## **编写元数据文件**
+
+前端需要手写manifest.json文件
+
+```javascript
+{
+  "groupId":"com.yindangu.vplatform.client.rule",
+  "code":"DeleteListSelectRow",
+  "plugins":[{
+    "type":"rule",
+    "scope":"client",
+    "code":"DeleteListSelectRow",
+    "name":"删除实体中选中记录",
+    "desc":"删除指定实体的记录，删除选中行的记录",
+    "entry":"com.yindangu.rule.demo.evaluate",
+    "defineUrl":"./dist/define.js",//目标文件（必须）
+    "debugUrl":"", //测试文件（可选）
+    "inputs":[{
+      "property":{
+        "code":"entityCode",
+        "name":"实体编号",
+        "desc":"选择实体"
+      },
+      "editor":{
+        "type":"entity",
+        "required":true
+      }
+    }]
+  }]
+}
+```
+
+## **打包文件格式**
+
+zip格式，必须文件define.js,manifest.json
+
+![&#x524D;&#x7AEF;&#x683C;&#x5F0F;](../../.gitbook/assets/jar-user3.png)
+
+根据manifest.json的defineUrl配置， 文件define.js在dist目录
+
+## **发布构件**
+
+在开发系统上传，过程与后端相同
+
+## **使用构件**
+
+在开发系统上传，过程与后端相同
+
