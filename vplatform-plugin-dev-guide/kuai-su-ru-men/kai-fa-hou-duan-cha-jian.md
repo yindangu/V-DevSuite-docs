@@ -321,3 +321,11 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 执行开发系统使用插件，插件已经发布到vstore对应项目的内置清单。执行系统产品升级就可以更新构件。
 
+## 规则、函数使用说明
+
+前面的例子是函数的例子，规则与函数相差不大：
+
+函数入参是下标模式，规则的入参是key-value方式。
+
+返回值函数只能单一返回值，规则是多值返回，返回方式也是key-value方式。
+

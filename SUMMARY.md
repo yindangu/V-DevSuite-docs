@@ -15,6 +15,7 @@
 * [V平台插件扩展体系介绍](vplatform-plugin-dev-guide/overview.md)
 * [快速入门](vplatform-plugin-dev-guide/kuai-su-ru-men/README.md)
   * [开发后端插件](vplatform-plugin-dev-guide/kuai-su-ru-men/kai-fa-hou-duan-cha-jian.md)
+  * [开发前端插件](vplatform-plugin-dev-guide/kuai-su-ru-men/kai-fa-qian-duan-cha-jian.md)
 * [V平台客户端规则/函数插件开发](vplatform-plugin-dev-guide/rule-function-client.md)
 * [V平台服务端规则/函数插件开发](vplatform-plugin-dev-guide/rule-function-server.md)
 * [V平台web资源插件开发](vplatform-plugin-dev-guide/assets.md)
