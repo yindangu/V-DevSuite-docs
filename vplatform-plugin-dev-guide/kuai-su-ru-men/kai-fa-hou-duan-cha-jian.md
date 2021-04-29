@@ -6,33 +6,37 @@ description: 需要实现具体的功能是跟踪V平台开发提供的接口进
 
 ## **前提要求**
 
-* **需实现平台提供的扩展接口**
+#### 需要依赖的模块（jar包）
 
-例如：如果要实现函数扩展，那么就要实现IFunction接口。 要实现规则扩展，就要实现IRule接口。 要实现HttpCommand扩展，就要实现IHttpCommand接口。 以后平台逐步开放一些标准接口处理
+引用方式：目前支持两种，第一种是通过maven依赖进行引用；第二种是直接通过官网下载jar包进行本地引用。
 
 * **plugin-business-api模块\(必须\)**
 
-基础模块。平台开发的接口都放在这个模块，所以必须引用。引用有2种方式，第一种是通过maven引用；第二种是直接通过官网下载这个jar文件
+插件接口模块，提供插件开发需要实现的接口（interface）。
 
-* **plugin-register模块\(推荐\)**
+比如，规则插件需要实现IRule接口；函数插件需要实现IFunction接口；Command插件需要实现IHttpCommand接口。
 
-它的功能作用是：构造接口元素描述服务。我们提供的build工具，轻量级的实现，构建插件描述信息
+V-DevSuite之后会陆续放出更多的插件供开发人员进行扩展实现。
+
+* **plugin-register模块\(必须\)**
+
+插件元信息注册模块，不同的插件会提供不一样的插件元信息（如：规则的输入、输出参数名称、编码、类型...）。每个插件会提供对应的插件元信息Builder API便于开发人员构造插件元信息，供返回给插件注册器（IRegisterPlugin的getPluginProfile方法）。
 
 * **plugin-utils模块\(可选\)**
 
-功能作用是一些标准的工具，例如Json,xml,加密、解密等业界标准工具。方便二次开发的工具
+插件工具模块，如json处理、xml处理、加密、解密等常用工具类，供二次开发使用。
 
 ## 开发环境
 
-开发环境有多种方式，可以通过maven项目开发，也可以自由开发，最终生成标准jar就可以。这里介绍下本地开发的环境准备和maven环境准备
+可自由选择自己熟悉的IDE进行开发，可构建maven工程进行打包，也可按照普通java工程进行打包，最终生成标准jar包就可以。这里重点介绍本地jar包引用与maven项目的开发模式。
 
-**本地开发模式：** 需要下载系统提供的jar包，[plugin-business-api 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210429/com.yindangu.v3.platform-plugin-business-api-3.3.0.jar)\(必须\)、[plugin-register 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210429/com.yindangu.v3.platform-plugin-register-3.3.0.jar)\(推荐\) 、[plugin-utils下载 \(可选\)](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210429/com.yindangu.v3.platform-plugin-utils-3.3.0.jar)，然后引入项目。
+**本地开发模式：** 需要下载系统提供的jar包，[plugin-business-api 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210429/com.yindangu.v3.platform-plugin-business-api-3.3.0.jar)\(必须\)、[plugin-register 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210429/com.yindangu.v3.platform-plugin-register-3.3.0.jar)\(必须\) 、[plugin-utils下载 \(可选\)](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210429/com.yindangu.v3.platform-plugin-utils-3.3.0.jar)，然后引入项目。
 
-**maven模式：**我们把二次开发的包已经发布到第3方maven仓库，所以需要配置maven的settings.xml配置
+**maven模式：**V-DevSuite已经把依赖的jar发布到银弹谷的maven仓库，所以需要追加配置银弹谷的maven仓库的settings.xml配置。
 
-如使用命令行，就要_**配置maven**_的conf目录的settings
+如使用命令行，就要_**配置maven**_的conf目录的settings，
 
-或者使用是_**Eclipse 的maven的配置**_，那么就配置指定的settings文件。
+或使用_**Eclipse 的maven的配置**_，就配置指定的settings文件。
 
 打开settings.xml，找到profiles节点，复制下面的配置到profiles内。（没有 profiles 节点就创建节点）
 
@@ -60,7 +64,7 @@ description: 需要实现具体的功能是跟踪V平台开发提供的接口进
 <!-- 嵌入到maven的settings.xml 这部分是必须的 -->
 ```
 
-**maven依赖配置**
+**项目中的maven依赖配置**
 
 ```markup
 		<!-- ////////////////插件依赖开始/////////////////// -->
@@ -99,7 +103,7 @@ description: 需要实现具体的功能是跟踪V平台开发提供的接口进
 
 * 创建标准的maven工程
 
-开发插件时，maven不是必须的，最终的成品是标准jar文件就可以了。
+开发插件时，maven不是必须的，最终的成品是标准jar文件即可。
 
 * 引用plugin-business-api，plugin-register两个构件
 
@@ -208,9 +212,9 @@ description: 需要实现具体的功能是跟踪V平台开发提供的接口进
 </project>
 ```
 
-## 编写实现
+## 插件实现样例
 
-例子是函数的实现，对规则也是类似
+本样例是服务端函数插件的实现，规则插件类似
 
 ```java
 package com.yindangu.plugin.demo.function;
@@ -234,30 +238,32 @@ import com.yindangu.v3.platform.plugin.business.api.func.IFunction;
  *
  */
 public class NumberUpperFunc implements IFunction{
-	public static final String D_Code="numberConvertFunc";
+
+	  public static final String D_Code="numberConvertFunc";
+	
     private static final Logger log = LoggerFactory.getLogger(NumberUpperFunc.class);
+    
     public NumberUpperFunc(){
         log.info("函数:数字转换成汉字");
     }
 
     @Override
     public IFuncOutputVo evaluate(IFuncContext context) {
-        /////////////////参数检查///////////////////
+        /////////////////输入参数检查///////////////////
         Number nb = (Number)context.getInput(0);
         if(nb == null){
             throw new RuntimeException("参数1--行数不能为空！");
         }
-        ////////////////业务实现 api 完全与V平台无关////////////////////
+        ////////////////业务实现 api 完全与平台无关////////////////////
         String rs = BusinessUtil.toChinese(nb.intValue());
         log.info("数字（{}）转换成汉字（{}）",nb,rs);
-        //IResponseBuilder b = VDS.getBuilder().getResponseBuilder();
         IFuncOutputVo vo = context.newOutputVo();
         return vo.put(rs);
     }
     
 
     /**
-     * 单机调试代码
+     * 本地调试代码
      * @param args
      */
     public static void main(String[] args){
@@ -272,16 +278,14 @@ public class NumberUpperFunc implements IFunction{
             public Object getInput(int idx) {  
                 return (idx < pars.size() ? pars.get(idx) : null);
             }
-			@Override
-			public IFuncVObject getVObject() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-			@Override
-			public IFuncOutputVo newOutputVo() {
-				// TODO Auto-generated method stub
-				return null;
-			}
+        		@Override
+        		public IFuncVObject getVObject() {
+        			return null;
+        		}
+        		@Override
+        		public IFuncOutputVo newOutputVo() {
+        			return null;
+        		}
         };
         
         IFunction  func = new NumberUpperFunc(); 
@@ -291,19 +295,15 @@ public class NumberUpperFunc implements IFunction{
 }
 ```
 
-## 构件注册器
+## 插件注册器使用样例
 
-构件注册器的作用是说明构件的作用等信息。一个构件可以注册多个插件，例如可以把函数、规则、前端的规则、函数都可以放在一个构件里。
+插件注册器（IRegisterPlugin）是V-DevSuite注册扩展插件的总接口，每个构件（插件jar包）只允许提供一个IRegisterPlugin的实现，用来汇聚该构件所开发的全部插件及插件的元信息。
 
-**最重要的作用**是定义插件的入参、出参：
+前面插件实现样例中，实现的函数，函数的输入参数类型是整形，函数的返回值是字符型，函数的名称、描述、作者、函数class、输入参数名称、返回值名称，都使用函数插件元信息的创建器IFunctionBuilder进行构造，最后执行build\(\)得到IPluginProfileVo对象添加到List中，返回给IRegisterPlugin的getPluginProfile即完成插件注册。
 
-a\)在开发系统可以定义参数编辑框。
+插件注册器实现类的getComponentProfile方法，用于收集返回插件构件本身的编码名称，这个编码名称在构件安装到执行系统（V-AppServer）的时候需要用到，用于标识该插件构件名称、编码。
 
-b\)在V平台调用是可以做参数转换及传递。上面的例子就有1个整型的入参，1个字符串的返回值\(函数只有1个返回值，规则可以多个\)
-
-注册器需实现IRegisterPlugin接口，对插件信息描述
-
-**注意：**注册器的类必须就只有注册效果的代码，不要把业务处理的代码也加到注册器的类里。
+**注意：**插件注册器的实现类的只允许编写注册插件相关的代码，不能加入业务逻辑处理的代码，否则部署插件可能会因出现依赖问题导致部署不通过。
 
 ```java
 package com.yindangu.plugin.demo;
@@ -331,6 +331,7 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 	}
 
 	@Override
+	//	插件注册器返回插件元信息对象
 	public List<IPluginProfileVo> getPluginProfile() {
 		IPluginProfileVo func = getNumberUpperFunc();
 		return Arrays.asList(func );
@@ -338,6 +339,7 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 	/** 函数元信息(数字转汉字) */
 	private IPluginProfileVo getNumberUpperFunc() {
+	
 		IFunctionBuilder bf = RegVds.getPlugin().getFunctiontPlugin();
 		IPluginProfileVo p1 = bf.setCode(NumberUpperFunc.D_Code).setName("数字转汉字-name").setDesc("数字转汉字").setAuthor("徐刚")
 				.addInputParam(bf.newParam().setType(VariableType.Integer).setDesc("数字").build())
@@ -348,9 +350,11 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 }
 ```
 
-## 插件元数据说明
+## 规则插件元信息使用样例
 
-元数据信息将决定开发系统的入参、出参定义界面 例如下面的规则有3个入参，4个出参。在元数据定义时可以定义入参的类型、编辑入参时使用什么样的编辑器。
+规则插件元信息中的规则的输入、输出参数描述，主要是用于规则部署并安装到V-DevSuite的开发工具（V-AppDesigner）后，在进行无码开发配置中，规则链选择这个二次开发的规则插件后，规则的配置界面的输入、输出参数的展现。
+
+比如这个例子当中，“把指定数字值转汉字”这个二次开发规则的配置界面中，规则的输入参数设置中的姓名、年龄是以表达式方式提供参数的设置，性别是以枚举值的方式进行参数的设置，规则的返回值参数设置中的年龄、姓名、退休、汉字大写是用表达式方式提供参数的设置。这些参数名称、编辑器的类型都是在二次开发规则插件的时候，在插件注册器中声明规则插件元信息进行注册的（注：参数若不指定编辑器则默认提供表达式编辑器）。
 
 ![&#x5F00;&#x53D1;&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x89C4;&#x5219;&#x53C2;&#x6570;&#x7684;&#x754C;&#x9762;](../../.gitbook/assets/jar-params.png)
 
@@ -364,17 +368,17 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 ## 编译jar
 
-使用maven命令打包标准的jar即可。如果有使用第3方jar，就把它们加入到jar的lib目录
+使用maven命令打包标准的jar包即可。如果有使用第三方jar包，则需要把它们加入到当前jar的lib目录下。
 
 ![jar&#x7684;&#x7ED3;&#x6784;](../../.gitbook/assets/jar-format.png)
 
-**lib目录**:maven打包后是没有的，如果有使用第3方jar，需要手工创建lib,把它们加入到jar的lib目录。maven的"maven-dependency-plugin"插件可以把当前工程依赖的jar以前输出到target，可以很方便的加入到jar中。
+**lib目录**:使用maven打包是不会自动生成lib目录的，如果有使用第三方jar包，需要手工创建lib目录，把它们手供加入到lib目录。建议使用maven的"maven-dependency-plugin"插件，该插件可以把当前工程依赖的第三方jar前输出到target，便于收集并的加入到jar的lib目录中。
 
-**manifest.json：**如果包含了前端的插件，就需要这个文件。否则jar增强后，V平台自动创建。
+**manifest.json：**如果打包的jar同时包含了前端的插件（允许前端、后端插件一起打包到一个jar的），就需要提供这个文件，后面前端插件开发的章节会详细描述这个文件如何编写，如果只是打包后台插件的jar包，则无需创建此文件。
 
 ## 发布插件
 
-制作jar后，就要上传V平台进行注册、增强
+打包好jar后，就要使用V-AppDesigner进行构件的部署
 
 ![&#x5F00;&#x53D1;&#x7CFB;&#x7EDF;&#x4E0A;&#x4F20;&#x6784;&#x4EF6;](../../.gitbook/assets/dev-upload1.png)
 
@@ -384,21 +388,25 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 ## 使用插件
 
-上传成功，相同项目清单，开发系统刷新后，就可以使用了
+上传部署成功后，在开发系统如图点击项目刷新后，就可以在V-AppDesigner的规则链配置中选择使用已部署的规则函件、函数插件了。
 
-![&#x76F8;&#x540C;&#x9879;&#x76EE;&#x6E05;&#x5355;&#xFF0C;&#x5237;&#x65B0;](../../.gitbook/assets/jar-user1.png)
+![&#x5237;&#x65B0;&#x9879;&#x76EE;](../../.gitbook/assets/jar-user1.png)
 
-使用插件，使用过程就与以前的函数一样。函数名对应元数据的code属性
+插件的使用
 
-![&#x4F7F;&#x7528;&#x63D2;&#x4EF6;](../../.gitbook/assets/jar-user2.png)
+这里举例函数插件，使用方式就与平台提供的函数一样。函数名对应函数插件注册的元数据中的code属性。
 
-执行开发系统使用插件，插件已经发布到vstore对应项目的内置清单。执行系统产品升级就可以更新构件。
+![&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x63D2;&#x4EF6;](../../.gitbook/assets/jar-user2.png)
+
+执行系统（V-AppServer）插件的使用
+
+插件构件jar部署后，会自动关联到对应项目的内置清单当中（可在VTeam项目中查看）。执行系统需要把部署到项目中的构件选入已安装的项目主清单中，并重新生成清单，迁移到执行系统上对应已安装清单的阶段，之后执行系统进行产品升级，就可以更新到该插件构件。
 
 ## 规则、函数使用说明
 
-前面的例子是函数的例子，规则与函数相差不大：
+前面的插件实现样例讲述的是函数插件的例子，规则插件与函数插件的实现类似。
 
-函数入参是下标模式，规则的入参是key-value方式。
+函数入参是index数组下标模式，规则的入参是key-value方式。
 
 返回值函数只能单一返回值，规则是多值返回，返回方式也是key-value方式。
 
