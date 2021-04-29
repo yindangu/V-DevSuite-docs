@@ -10,4 +10,6 @@
     * [函数二次开发入门](vplatform-plugin-dev-guide/kuai-su-ru-men/kai-fa-qian-duan-cha-jian/han-shu-er-ci-kai-fa-ru-men.md)
 * [后端进阶开发](vplatform-plugin-dev-guide/hou-duan-jin-jie-kai-fa/README.md)
   * [数据处理DataView](vplatform-plugin-dev-guide/hou-duan-jin-jie-kai-fa/shu-ju-chu-li-dataview.md)
+  * [缓存模块](vplatform-plugin-dev-guide/hou-duan-jin-jie-kai-fa/huan-cun-mo-kuai.md)
+  * [附件模块](vplatform-plugin-dev-guide/hou-duan-jin-jie-kai-fa/fu-jian-mo-kuai.md)
 
