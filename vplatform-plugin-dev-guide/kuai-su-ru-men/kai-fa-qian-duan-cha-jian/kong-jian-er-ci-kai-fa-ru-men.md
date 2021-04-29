@@ -20,44 +20,143 @@ description: >-
     groupId:"com.yindangu.widget",//组织id
     code:"JGDevTextBox",   
     plugins:[{
-        type:"widget",
-        icon:"",//控件图标
-        code:"JGDevTextBox",//控件编号
-        name:"二次开发文本",//控件名称
-        scope:"smartclient",//控件应用范围
-        desc:"",//控件描述
-        author:"",//开发者
-        defineUrl:"",//控件脚本定义url
-        debugUrl:"",//控件测试脚本定义url
-        designerDefineUrl:"",//设计器定义脚本url
-        visible:true//是否在设计器中显示
-	    properties:[{//使用数组，方便属性排序,可选
-            code:"",//属性编号，
-            name:"".//属性名称，
-            type:"",//属性类型
-            desc:""//属性描述，
-            default:null//默认值,
-		    editor:{//编辑器信息，可选
-			    type:"",//编辑器类型
-		    },
-		    access:{//访问权限信息，可选
-			    designer:{
-				    visible:true,//是否显示
-			    },
-			    rule:{//规则
-				    readable:true,//是否可读
-				    writable:true//是否可写
-			    },
-			    webDesigner:{
-				    readable:true,//是否可读
-				    writable:true//是否可写
-			    }
-		    }
-	    }],
-	    dependencies:[{//控件依赖信息，可选
-		    type:""//依赖类型,枚举值：本地资源(asset),云控件(cloud)
-	    }]
-    }]
+			"type": "widget",
+			"icon": "./JGDevTextBox.png",
+			"code": "JGDevTextBox",
+			"name": "二次开发文本",
+			"desc": "简单的二次开发文本控件",
+			"defineUrl": "./JGDevTextBox.js",
+			"visible": true,
+			"properties": [{
+					"code": "Alias",
+					"name": "标题",
+					"desc": "文本中显示的标题",
+					"default": "按钮",
+					"type": "char",
+					"editor": {
+						"type": "char",
+						"placeholder": "请输入标题"
+					},
+					"access": {
+						"rule": {
+							"readable": true,
+							"writable": true
+						},
+						"webDesigner": {
+							"readable": true,
+							"writable": true
+						}
+					}
+				}, {
+					"code": "Top",
+					"name": "上边距",
+					"desc": "上边距",
+					"type": "integer",
+					"default": 0,
+					"editor": {
+						"type": "top"
+					}
+				}, {
+					"code": "Left",
+					"name": "左边距",
+					"desc": "左边距",
+					"type": "integer",
+					"default": 0,
+					"editor": {
+						"type": "left"
+					}
+				}, {
+					"code": "MultiWidth",
+					"name": "宽度",
+					"desc": "宽度",
+					"type": "integer",
+					"default": 50,
+					"editor": {
+						"type": "width"
+					}
+				}, {
+					"code": "MultiHeight",
+					"name": "高度",
+					"desc": "高度",
+					"default": 50,
+					"type": "integer",
+					"editor": {
+						"type": "height"
+					}
+				},{
+					"code": "datasource",
+					"name": "数据源",
+					"desc": "绑定数据源",
+					"default": null,
+					"type": "char",
+					"editor": {
+						"type": "entity"
+					}
+				},{
+					"code": "fieldCode",
+					"name": "字段",
+					"desc": "绑定的数据源字段",
+					"default": null,
+					"type": "char",
+					"editor": {
+						"type": "field",
+						"entityProp":"datasource"
+					}
+				},{
+					"code": "TitleWidth",
+					"name": "标题宽度",
+					"desc": "标题宽度",
+					"default": 76,
+					"type": "integer",
+					"editor": {
+						"type": "integer",
+						"min":0
+					}
+				}, {
+					"code": "OnLabelClick",
+					"name": "标题点击事件",
+					"type": "funtion",
+					"desc": "点击标题时触发",
+					"editor": {
+						"type": "ruleset"
+					}
+				}, {
+					"code": "OnKeyDown",
+					"name": "键盘按下事件",
+					"type": "funtion",
+					"desc": "键盘按下时触发",
+					"editor": {
+						"type": "ruleset"
+					}
+				}, {
+					"code": "OnLeave",
+					"name": "焦点离开事件",
+					"type": "funtion",
+					"desc": "焦点离开时触发",
+					"editor": {
+						"type": "ruleset"
+					}
+				}, {
+					"code": "Disabled",
+					"name": "禁用",
+					"type": "boolean",
+					"desc": "禁用控件",
+					"editor": {
+						"type": "boolean"
+					},
+					"access": {
+						"rule": {
+							"readable": true,
+							"writable": true
+						},
+						"webDesigner": {
+							"readable": true,
+							"writable": true
+						}
+					}
+				}
+			]
+	}]
 }
 
 ```
