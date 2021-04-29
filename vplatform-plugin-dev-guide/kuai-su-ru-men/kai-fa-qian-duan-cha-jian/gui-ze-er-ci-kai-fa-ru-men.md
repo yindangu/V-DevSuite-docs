@@ -21,7 +21,7 @@ description: >-
     code:"moneyToChinese",//插件编号
     plugins:[{
 			"type":"rule",//插件类型，规则为rule
-			"code":"NumToChineseRule",//规则编号
+			"code":"moneyToChineseRule",//规则编号
 			"catalog":"other",//规则分类
 			"name":"数字转大写汉字(前端规则)",//规则名称
 			"desc":"数字转大写汉字(前端规则)",//规则描述
