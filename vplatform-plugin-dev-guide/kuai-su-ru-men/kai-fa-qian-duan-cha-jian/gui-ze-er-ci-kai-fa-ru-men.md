@@ -335,24 +335,43 @@ com.yindangu.client.rule.moneyToChinese = function(ruleContext){
 平台vds提供了mock命名空间，方便开发人员对规则进行验证，mock提供init接口，以规则元数据作为入参，根据规则元信息随机生成规则配置数据，具体使用如下：
 
 ```text
-vds.config({
-    debug: true,
-    import: [ "vds.mock.*"]
-}).ready(function () {
-    vds.mock.init("../manifest.json").then(function(mock){
-        mock.get("moneyToChinese").then(function(ruleMock){
-            var result = ruleMock.exec();
-            result.then(function(){
-                console.log("规则执行成功！");
-            }).catch(function(e){
-                console.log("规则执行失败！错误信息："+e.message);
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>函数验证</title>
+        <script src="http://localhost:8080/module-operation!executeOperation?operation=vds-sdk-js"></script>
+        <script src="./moneyToChinese.js"></script>
+        <script>
+            vds.config({
+                debug: true,
+                import: [ "vds.mock.*"]
+            }).ready(function () {
+                vds.mock.init("../manifest.json").then(function(mock){
+                    mock.get("moneyToChinese").then(function(ruleMock){
+                        var result = ruleMock.exec();
+                        result.then(function(){
+                            console.log("规则执行成功！");
+                        }).catch(function(e){
+                            console.log("规则执行失败！错误信息："+e.message);
+                        });
+                    });
+                });
             });
-        });
-    });
-});
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
 ```
 
+其中http://localhost:8080为执行系统服务地址，moneyChinese.js为规则定义脚本文件。
+
 ## 规则部署
+
+        规则部署前，需要将元数据manifest.json文件及规则定义js文件打包成zip，其中manifest.json文件需放置在根目录下，其他文件可以自定义目录，在元数据中填入相对路径即可。
 
 ## 规则安装
 
