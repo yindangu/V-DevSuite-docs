@@ -394,10 +394,101 @@ properties属性值为数据组，方便属性在编辑器中显示时，进行�
 在了解smartclient相关知识后，就可以按照smartclient扩展规范扩展控件，如下：
 
 ```text
-
+isc.ClassFactory.defineClass("JGDevTextBox", "DynamicForm");
+isc.JGDevTextBox.addProperties({
+	//文本标题
+	Alias: "文本",
+	//文本高度
+	MultiHeight: 30,
+	//文本宽度
+	MultiWidth: 235,
+	//左边距
+	Left : 50,
+	//绑定数据源
+	datasource:null,
+	//绑定字段
+	fieldCode:null,
+	//标题宽度
+	TitleWidth:76,
+	//上边距
+	Top : 50,
+	//标题点击事件
+	OnLabelClick: null,
+	//键盘按下事件
+	OnKeyDown: null,
+	//焦点离开事件
+	OnLeave: null
+});
+isc.JGDevTextBox.addMethods({
+	init: function () {
+		this.titleWidth = this.TitleWidth;
+		this.left = this.Left;
+		this.top = this.Top;
+		this.width = this.MultiWidth;
+		this.height = this.MultiHeight;
+		this.enabled = !this.Disabled;
+		this.valuesManager = isc.ValuesManager.getByDatasource(this.datasource);
+		this.items = [{
+			width:"*",
+			title : this.Alias,
+			type : "text",
+			name : this.fieldCode,
+			titleClick : this.OnLabelClick,
+			blur : this.handleBlur
+		}];
+		return this.Super("init", arguments);
+	},
+	handleBlur : function(){
+		//焦点离开后同步文本框的数据到数据源
+		this.form.valuesManager.saveData();
+		if(this.OnLeave){
+			//触发焦点离开事件
+			this.OnLeave();
+		}
+	}
+});
 ```
 
 ## 本地验证
+
+```text
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控件测试页面</title>
+    <script src="http://localhost:8080/module-operation!executeOperation?operation=vds-sdk-js"></script>
+    <script>
+        vds.config({
+            debug: true,
+            import : "vds.mock.*"
+        }).ready(function () {
+            vds.mock.init("./manifest.json").then(function (mock) {
+                mock.get("JGDevTextBox").then(function (widgetMock) {
+                    widgetMock.exec(function(properties){
+                        var widget = isc.JGDevTextBox.create(properties);
+                        widget.show();
+                    });
+                }).catch(function (error) {
+                    console.error(error.message);
+                    throw error;
+                });;
+            }).catch(function (error) {
+                console.error(error.message);
+                throw error;
+            });;
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+其中http://localhost:8080为执行系统服务链接。
 
 ## 控件部署
 
