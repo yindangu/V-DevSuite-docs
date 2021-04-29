@@ -8,7 +8,6 @@
 
 ## V平台插件开发指南 <a id="vplatform-plugin-dev-guide"></a>
 
-* [删-V平台插件扩展体系介绍](vplatform-plugin-dev-guide/overview.md)
 * [快速入门](vplatform-plugin-dev-guide/kuai-su-ru-men/README.md)
   * [开发后端插件](vplatform-plugin-dev-guide/kuai-su-ru-men/kai-fa-hou-duan-cha-jian.md)
   * [开发前端插件](vplatform-plugin-dev-guide/kuai-su-ru-men/kai-fa-qian-duan-cha-jian/README.md)
