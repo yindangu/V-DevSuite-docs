@@ -22,6 +22,79 @@ description: 需要实现具体的功能是跟踪V平台开发提供的接口进
 
 功能作用是一些标准的工具，例如Json,xml,加密、解密等业界标准工具。方便二次开发的工具
 
+## 开发环境
+
+开发环境有多种方式，可以通过maven项目开发，也可以自由开发，最终生成标准jar就可以。这里介绍下本地开发的环境准备和maven环境准备
+
+**本地开发模式：** 需要下载系统提供的jar包，[plugin-business-api 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210429/com.yindangu.v3.platform-plugin-business-api-3.3.0.jar)\(必须\)、[plugin-register 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210429/com.yindangu.v3.platform-plugin-register-3.3.0.jar)\(推荐\) 、[plugin-utils下载 \(可选\)](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210429/com.yindangu.v3.platform-plugin-utils-3.3.0.jar)，然后引入项目。
+
+**maven模式：**我们把二次开发的包已经发布到第3方maven仓库，所以需要配置maven的settings.xml配置
+
+如使用命令行，就要_**配置maven**_的conf目录的settings
+
+或者使用是_**Eclipse 的maven的配置**_，那么就配置指定的settings文件。
+
+打开settings.xml，找到profiles节点，复制下面的配置到profiles内。（没有 profiles 节点就创建节点）
+
+```markup
+<!-- 嵌入到maven的settings.xml 这部分是必须的 -->
+<profile>
+    <id>codingProxy</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+        <repository>
+            <id>yindangu-v-devsuite-sdk-maven</id>
+            <name>maven</name>
+            <url>https://yindangu-maven.pkg.coding.net/repository/v-devsuite-sdk/maven/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</profile>
+<!-- 嵌入到maven的settings.xml 这部分是必须的 -->
+```
+
+**maven依赖配置**
+
+```markup
+		<!-- ////////////////插件依赖开始/////////////////// -->
+		<dependency>
+  			<groupId>com.yindangu.v3.platform</groupId>
+  	  	<artifactId>plugin-business-api</artifactId>
+			  <version>3.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yindangu.v3.platform</groupId>
+			<artifactId>plugin-register</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yindangu.v3.platform</groupId>
+			<artifactId>plugin-utils</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<!-- ////////////////插件依赖结束//////////////////// -->
+```
+
+**本地依赖**：如果不想配置maven的setings.xml，可以先下载后再本地依赖
+
+```markup
+	<!-- ////////////////插件依赖开始/////////////////// -->
+		<dependency>
+  			<groupId>com.yindangu.v3.platform</groupId>
+  	  	<artifactId>plugin-business-api</artifactId>
+			  <version>3.3.0</version>
+			  <scope>system</scope>
+        <systemPath>${basedir}/lib/com.yindangu.v3.platform-plugin-business-api-3.3.0.jar</systemPath>
+		</dependency>
+```
+
 ## **创建工程**
 
 * 创建标准的maven工程
@@ -585,5 +658,7 @@ private IPluginProfileVo getHttpCommand() {
 
 直接http访问
 
+[http://\[ip\]:\[prot\]/module-operation!executeOperation?operation=mycmd](http://10.1.28.163:8080/module-operation!executeOperation?operation=mycmd)
 
+![command&#x8BBF;&#x95EE;&#x7684;&#x6548;&#x679C;](../../.gitbook/assets/jar-user4.png)
 
