@@ -20,8 +20,7 @@ description: >-
     groupId:"com.yindangu.client.rule",//组织id
     code:"moneyToChinese",//插件编号
     plugins:[{
-			"type":"rule",
-			"scope":"client",
+			"type":"rule",//插件类型，规则为rule
 			"code":"NumToChineseRule",
 			"catalog":"other",
 			"name":"数字转大写汉字(前端规则)",
