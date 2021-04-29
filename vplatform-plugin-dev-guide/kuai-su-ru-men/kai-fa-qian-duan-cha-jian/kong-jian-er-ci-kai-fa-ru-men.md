@@ -494,7 +494,7 @@ isc.JGDevTextBox.addMethods({
 
         控件部署前，需要将元数据manifest.json文件及控件定义js文件打包成zip，其中manifest.json文件需放置在根目录下，其他文件可以自定义目录，在元数据中填入相对路径即可。
 
-![&#x63A7;&#x4EF6;&#x538B;&#x7F29;&#x5305;](https://gblobscdn.gitbook.com/assets%2F-MKdnMpEXew2dgfykkLs%2F-MZRHDcUwKMzrU3CFjj2%2F-MZRHqu4bpxc-sVeI8f_%2Fimage.png?alt=media&token=5f9ecf02-b440-4f89-9fba-1d05af47e371)
+![&#x63A7;&#x4EF6;&#x538B;&#x7F29;&#x5305;](../../../.gitbook/assets/image%20%2812%29.png)
 
         此时控件二次开发工作已完成，进入开发系统（开发系统使用参考这里），在开始-》扩展管理-》上传中，选择控件压缩包即可，如下图：
 
