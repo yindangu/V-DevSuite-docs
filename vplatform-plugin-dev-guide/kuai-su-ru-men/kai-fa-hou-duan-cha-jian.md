@@ -333,6 +333,20 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 这是实现把数字转换为汉字大写的函数
 
+函数接口
+
+```java
+/**函数接口*/
+public interface IFunction extends IPluginBase{
+    /** 
+     * 函数入口
+     * @param context 上下文对象
+     * @return 返回单值
+     */
+    public IFuncOutputVo evaluate(IFuncContext context) ;
+}
+```
+
 函数需要实现IFunction接口
 
 ```java
@@ -405,6 +419,20 @@ String rs = BusinessUtil.toChinese(nb.intValue());
 ## 规则实例
 
 这是把实体的某列的数字转换为汉字大写
+
+规则接口
+
+```java
+/** 二次开发规则接口*/
+public interface IRule extends IPluginBase{
+    /**
+     * 规则入口
+     * @param context 上下文对象
+     * @return 
+     */
+    public IRuleOutputVo evaluate(IRuleContext context) ;
+}
+```
 
 规则需要实现IRule接口
 
@@ -505,6 +533,20 @@ public class NumberUpperRolueEntity implements IRule{
 接收web请求处理扩展，需实现IHttpCommand接口
 
 ```java
+/**
+ * 处理页面http请求（对应com.toone的 HttpCommandBase）
+ * 
+ * @author jiqj
+ *
+ */
+public interface IHttpCommand extends IPluginBase {
+	public IHttpResultVo execute(IHttpContext context);
+}
+```
+
+command需要实现IHttpCommand接口
+
+```java
 package com.yindangu.plugin.demo.command;
  
 import com.yindangu.v3.platform.plugin.business.api.httpcommand.FormatType;
@@ -540,4 +582,8 @@ private IPluginProfileVo getHttpCommand() {
 		return p3;
 	}
 ```
+
+直接http访问
+
+
 
