@@ -512,5 +512,5 @@ isc.JGDevTextBox.addMethods({
 
         待开发系统安装完成后，二次开发控件的使用方法与平台内部提供的控件一样，在普通窗体中拖拽出来使用，如下图：
 
-
+![&#x63A7;&#x4EF6;&#x4F7F;&#x7528;](../../../.gitbook/assets/image%20%2814%29.png)
 
