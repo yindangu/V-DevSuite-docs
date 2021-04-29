@@ -30,7 +30,7 @@ description: >-
 			"defineUrl":"./moneyToChineseRule.js",//规则定义脚本url
 			"debugUrl":"./debug.js",//调试脚本url
 			"inputs":[{//规则输入信息
-				"code":"price",//输入编号
+				"code":"money",//输入编号
 				"name":"单价",//输入名称
 				"type":"number",//输入类型
 				"desc":"转换前的单价数值",//输入描述
