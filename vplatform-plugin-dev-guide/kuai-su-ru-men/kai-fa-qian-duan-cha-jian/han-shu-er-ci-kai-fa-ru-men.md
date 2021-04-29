@@ -360,7 +360,7 @@ vds.config({
 	debug: true,
 	import: [ "vds.ds.*"]
 }).ready(function () {
-	//这
+	//这里编写验证逻辑
 });
 ```
 
