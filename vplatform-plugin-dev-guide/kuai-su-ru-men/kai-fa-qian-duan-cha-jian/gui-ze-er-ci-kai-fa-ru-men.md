@@ -373,7 +373,21 @@ com.yindangu.client.rule.moneyToChinese = function(ruleContext){
 
         规则部署前，需要将元数据manifest.json文件及规则定义js文件打包成zip，其中manifest.json文件需放置在根目录下，其他文件可以自定义目录，在元数据中填入相对路径即可。
 
+![&#x89C4;&#x5219;&#x538B;&#x7F29;&#x5305;](https://gblobscdn.gitbook.com/assets%2F-MKdnMpEXew2dgfykkLs%2F-MZRHDcUwKMzrU3CFjj2%2F-MZRHqu4bpxc-sVeI8f_%2Fimage.png?alt=media&token=5f9ecf02-b440-4f89-9fba-1d05af47e371)
+
+        此时规则二次开发工作已完成，进入开发系统（开发系统使用参考这里），在开始-》扩展管理-》上传中，选择规则压缩包即可，如下图：
+
+![&#x89C4;&#x5219;&#x90E8;&#x7F72;](https://gblobscdn.gitbook.com/assets%2F-MKdnMpEXew2dgfykkLs%2F-MZRI-pVTRR1BShvh5cM%2F-MZRJgelG6oBavhO9LdY%2Fimage.png?alt=media&token=129a4f19-a633-42a2-bc64-daa0c10fc3b6)
+
 ## 规则安装
 
+        规则部署完毕后，函数已提交到平台仓库受控，开发系统中还未安装该规则，此时需要使用开发系统中开始-》安装构件-》搜索（搜索值为插件编号）-》安装，如下图：
+
+![&#x89C4;&#x5219;&#x5B89;&#x88C5;](../../../.gitbook/assets/image%20%283%29.png)
+
+待提示构件安装成功后，构件安装完成。
+
 ## 规则使用
+
+        待开发系统安装完成后，二次开发规则的使用方法与平台内部提供的规则一样，在方法编辑中直接选取使用，如下图：
 
