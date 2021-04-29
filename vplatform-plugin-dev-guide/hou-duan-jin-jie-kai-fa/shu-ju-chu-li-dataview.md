@@ -1,5 +1,5 @@
 ---
-description: 数据模块包括DataView体现模块，数据更新模块Das。
+description: 数据模块包括DataView体系模块，数据更新模块Das。
 ---
 
 # 数据处理DataView

@@ -1,10 +1,6 @@
 # Table of contents
 
-* [删-V-DevSuite JS SDK](README.md)
-
-## 删-V平台扩展开发云服务 <a id="vpaas-extender"></a>
-
-* [删-Hybrid App云打包](vpaas-extender/hybrid-app-package.md)
+* [V-DevSuite](README.md)
 
 ## V平台插件开发指南 <a id="vplatform-plugin-dev-guide"></a>
 
