@@ -278,7 +278,7 @@ com.yindangu.client.function.moneyToChinese = function(money){
 
 函数部署前，需要将元数据manifest.json文件及函数定义js文件打包成zip，其中manifest.json文件需放置在根目录下，其他文件可以自定义目录，在元数据中填入相对路径即可。
 
-![&#x51FD;&#x6570;&#x538B;&#x7F29;&#x5305;](../../../.gitbook/assets/image%20%283%29.png)
+![&#x51FD;&#x6570;&#x538B;&#x7F29;&#x5305;](../../../.gitbook/assets/image%20%284%29.png)
 
 此时函数二次开发工作已完成，进入开发系统（开发系统使用参考这里），在开始-》扩展管理-》上传中，选择函数压缩包即可，如下图：
 
@@ -288,7 +288,7 @@ com.yindangu.client.function.moneyToChinese = function(money){
 
 函数部署完毕后，函数已提交到平台仓库受控，开发系统中还未安装该函数，此时需要使用开发系统中开始-》安装构件-》搜索（搜索值为插件编号）-》安装，如下图：
 
-![&#x51FD;&#x6570;&#x5B89;&#x88C5;](../../../.gitbook/assets/image%20%282%29.png)
+![&#x51FD;&#x6570;&#x5B89;&#x88C5;](../../../.gitbook/assets/image%20%283%29.png)
 
 待提示构件安装成功后，构件安装完成。
 
@@ -296,7 +296,7 @@ com.yindangu.client.function.moneyToChinese = function(money){
 
 待开发系统安装完成后，二次开发函数的使用方法与平台内部提供的函数一样，在表达式编辑器中直接使用，如下图：
 
-![](../../../.gitbook/assets/image%20%284%29.png)
+![](../../../.gitbook/assets/image%20%285%29.png)
 
 ## 高阶晋级
 
@@ -306,7 +306,28 @@ com.yindangu.client.function.moneyToChinese = function(money){
 
 首先按照nodejs规范创建nodejs插件，编写源码。如下图：
 
+![](../../../.gitbook/assets/image%20%282%29.png)
 
+使用打包插件打包源码，本文已rollup为例，配置如下：
+
+```bash
+import babel from "rollup-plugin-babel";
+import { terser } from 'rollup-plugin-terser';
+// rollup.config.js
+export default {
+  input: 'src/moneyToChineseFunc.js',//源码主入口路径
+  output: {
+    file: 'dist/moneyToChineseFunc.js',//打包输出路径
+    format:'umd',//编译出umd格式
+'com.yindangu.fu.demo'
+    sourcemap:true
+  },
+  plugins: [
+    babel({ runtimeHelpers: true }),//babel转换
+    terser()//脚本压缩
+  ]
+};
+```
 
 ### 集成使用vds
 
