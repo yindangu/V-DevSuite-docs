@@ -314,9 +314,16 @@ com.yindangu.client = com.yindangu.client||{};
 com.yindangu.client.rule = com.yindangu.client.rule||{};
 com.yindangu.client.rule.moneyToChinese = function(ruleContext){
     return new Promise(function(resolve,reject){
-        var money = ruleContext.getInput("money");
-        //这里编写实现逻辑，并返回结果
-        
+        try{
+            var money = ruleContext.getInput("money");
+            //这里编写实现逻辑，并将转换结果赋值给res
+            var res = ;
+            var output = ruleContext.newOuput();
+            output.set("out",res);
+            resolve();    
+        }catch(e){
+            reject(e);
+        }  
     });
 }
 ```
