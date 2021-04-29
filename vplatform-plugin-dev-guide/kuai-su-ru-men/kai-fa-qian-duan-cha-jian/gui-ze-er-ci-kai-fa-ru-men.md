@@ -141,9 +141,7 @@ description: >-
         <p>&#x4E8B;&#x52A1;&#x7C7B;&#x578B;,&#x679A;&#x4E3E;&#x503C;:</p>
         <p>transaction(&#x6709;&#x4E8B;&#x52A1;),</p>
         <p>none(&#x65E0;&#x4E8B;&#x52A1;),</p>
-        <p>unknown(&#x672A;&#x77E5;)&#xFF0C;</p>
-        <p>&#x8BE6;&#x60C5;&#x53C2;&#x8003;&#xFF1A;<a href="https://docs.qq.com/doc/DREhCWEZpQ3NKYmVn">&#x89C4;&#x5219;&#x4E8B;&#x52A1;&#x7C7B;&#x578B;</a>
-        </p>
+        <p>unknown(&#x672A;&#x77E5;)</p>
       </td>
     </tr>
     <tr>
@@ -235,7 +233,7 @@ description: >-
 
 #### 编辑器定义信息\(editor\)
 
-        编辑器信息，描述当前属性使用何种编辑器及编辑器元信息；该属性为可选属性，如未设置，则使用文本编辑器编辑；详细参考[属性编辑器定义](https://docs.qq.com/doc/DREtEV1RRdG9MRm9S)；
+        编辑器信息，描述当前属性使用何种编辑器及编辑器元信息；该属性为可选属性，如未设置，则使用文本编辑器编辑；详细参考属性编辑器定义；
 
 ### outputs属性
 
