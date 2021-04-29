@@ -38,94 +38,12 @@ description: >-
 				"editor":{//输入编辑器
 					"type":"expression"//编辑器类型
 				}
-			},{
-				"code":"sum",
-				"name":"总价",
-				"type":"number",
-				"desc":"转换的总价数值",
-				"default":null,
-				"editor":{
-					"type":"expression"
-				}
-			},{
-				"code":"entity",
-				"name":"实体",
-				"type":"entity",
-				"desc":"转换的实体数值",
-				"default":null,
-				"editor":{
-					"type":"entity"
-				},
-				"fields":[{
-					"code":"id",
-					"name":"编码",
-					"type":"char",
-					"desc":"编码数据"
-				},{
-					"code":"sum",
-					"name":"总价",
-					"type":"integer",
-					"desc":"总价数据"
-				},{
-					"code":"sum_cn",
-					"name":"总价（汉字）",
-					"type":"char",
-					"desc":"总价数据"
-				}]
-			},{
-				"code":"field",
-				"name":"字段编码",
-				"type":"char",
-				"desc":"需要转换成大写金额的字段编码",
-				"default":null,
-				"editor":{
-					"type":"expression"
-				}
-			},{
-				"code":"outField",
-				"name":"字段编码",
-				"type":"char",
-				"desc":"转换成大写金额保存的字段编码",
-				"default":null,
-				"editor":{
-					"type":"expression"
-				}
 			}],
 			"outputs":[{
-				"code":"price_cn",
+				"code":"out",
 				"type":"char",
-				"name":"单价",
-				"desc":"转换后的单价数值"
-			},{
-				"code":"sum_cn",
-				"type":"char",
-				"name":"总价",
-				"desc":"转换后的总价数值"
-			},{
-				"code":"entity",
-				"name":"实体",
-				"type":"entity",
-				"desc":"转换的实体数值",
-				"default":null,
-				"editor":{
-					"type":"entity"
-				},
-				"fields":[{
-					"code":"id",
-					"name":"编码",
-					"type":"char",
-					"desc":"编码数据"
-				},{
-					"code":"sum",
-					"name":"总价",
-					"type":"integer",
-					"desc":"总价数据"
-				},{
-					"code":"sum_cn",
-					"name":"总价（汉字）",
-					"type":"char",
-					"desc":"总价数据"
-				}]
+				"name":"转换结果",
+				"desc":"转换后结果"
 			}]
 	}]
 }
