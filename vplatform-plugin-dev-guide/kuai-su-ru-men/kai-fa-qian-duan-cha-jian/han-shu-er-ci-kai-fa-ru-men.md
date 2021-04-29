@@ -233,7 +233,7 @@ var moneyToChinese = function(money){
          如此，该需求实现完毕。现在深入思考下，上面存在什么问题？ 因moneyToChinese定义为全局方法，有可能会被其他引入的第三方js库或其他开发人员编写的代码给覆盖掉，因此平台建议给函数添加命名空间，命名空间规范建议使用java的包名规范。现在我们改造下上述代码：
 
 ```bash
-//命名空间为：com.yindangu.client.function.convert
+//命名空间为：com.yindangu.client.function
 com = this.com||{};
 com.yindangu = com.yindangu||{};
 com.yindangu.client = com.yindangu.client||{};
