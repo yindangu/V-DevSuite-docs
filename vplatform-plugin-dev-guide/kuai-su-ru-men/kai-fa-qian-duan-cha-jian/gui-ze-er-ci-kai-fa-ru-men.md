@@ -315,10 +315,12 @@ com.yindangu.client.rule = com.yindangu.client.rule||{};
 com.yindangu.client.rule.moneyToChinese = function(ruleContext){
     return new Promise(function(resolve,reject){
         try{
+            //获取配置信息
             var money = ruleContext.getInput("money");
             //这里编写实现逻辑，并将转换结果赋值给res
             var res = ;
             var output = ruleContext.newOuput();
+            //设置返回值
             output.set("out",res);
             resolve();    
         }catch(e){
@@ -329,6 +331,26 @@ com.yindangu.client.rule.moneyToChinese = function(ruleContext){
 ```
 
 ## 本地验证
+
+平台vds提供了mock命名空间，方便开发人员对规则进行验证，mock提供init接口，以规则元数据作为入参，根据规则元信息随机生成规则配置数据，具体使用如下：
+
+```text
+vds.config({
+    debug: true,
+    import: [ "vds.mock.*"]
+}).ready(function () {
+    vds.mock.init("../manifest.json").then(function(mock){
+        mock.get("moneyToChinese").then(function(ruleMock){
+            var result = ruleMock.exec();
+            result.then(function(){
+                console.log("规则执行成功！");
+            }).catch(function(e){
+                console.log("规则执行失败！错误信息："+e.message);
+            });
+        });
+    });
+});
+```
 
 ## 规则部署
 
