@@ -161,7 +161,7 @@ description: >-
 
 ```
 
-{% embed url="https://元数据文件名称固定为manifest.json，其中各部分定义如下：" %}
+元数据文件名称固定为manifest.json，其中各部分定义如下
 
 ### plugins定义
 
@@ -383,13 +383,13 @@ properties属性值为数据组，方便属性在编辑器中显示时，进行�
 | readable | Boolean | true | 描述该属性是否能在web设计器中读取 |
 | writable | Boolean | true | 描述该属性是否能在web设计器中编辑 |
 
-本地开发
+## 本地开发
 
-本地验证
+## 本地验证
 
-控件部署
+## 控件部署
 
-控件安装
+## 控件安装
 
-控件使用
+## 控件使用
 
