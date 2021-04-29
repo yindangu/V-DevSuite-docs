@@ -307,13 +307,17 @@ inputs属性值为数据组，方便属性在编辑器中显示时，进行排�
 了解平台规范后，规则实现如下：
 
 ```text
-//命名空间为：com.yindangu.client.rule.convert
+//命名空间为：com.yindangu.client.rule
 com = this.com||{};
 com.yindangu = com.yindangu||{};
 com.yindangu.client = com.yindangu.client||{};
-com.yindangu.client.function = com.yindangu.client.function||{};
-com.yindangu.client.function.moneyToChinese = function(money){
-    //这里编写实现逻辑，并返回结果
+com.yindangu.client.rule = com.yindangu.client.rule||{};
+com.yindangu.client.rule.moneyToChinese = function(ruleContext){
+    return new Promise(function(resolve,reject){
+        var money = ruleContext.getInput("money");
+        //这里编写实现逻辑，并返回结果
+        
+    });
 }
 ```
 
