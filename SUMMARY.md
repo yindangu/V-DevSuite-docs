@@ -2,10 +2,6 @@
 
 * [删-V-DevSuite JS SDK](README.md)
 
-## V-DevSuite 开发工具包 <a id="tools-sdks"></a>
-
-* [删-V-DevSuite Java SDK](tools-sdks/java-sdk.md)
-
 ## 删-V平台扩展开发云服务 <a id="vpaas-extender"></a>
 
 * [删-Hybrid App云打包](vpaas-extender/hybrid-app-package.md)
@@ -20,12 +16,4 @@
 * [后端进阶开发](vplatform-plugin-dev-guide/hou-duan-jin-jie-kai-fa.md)
 * [删-V平台客户端规则/函数插件开发](vplatform-plugin-dev-guide/rule-function-client.md)
 * [删-V平台服务端规则/函数插件开发](vplatform-plugin-dev-guide/rule-function-server.md)
-* [删-V平台控件插件开发](vplatform-plugin-dev-guide/widget.md)
-
-## V平台插件发布指南 <a id="vplatform-plugin-release-guide"></a>
-
-* [删-V平台客户端规则/函数插件发布](vplatform-plugin-release-guide/rule-function-client.md)
-* [删-V平台服务端规则/函数插件发布](vplatform-plugin-release-guide/rule-function-server.md)
-* [删-V平台web资源插件发布](vplatform-plugin-release-guide/assets.md)
-* [删-V平台控件插件发布](vplatform-plugin-release-guide/widget.md)
 
