@@ -343,7 +343,7 @@ com.yindangu.client.rule.moneyToChinese = function(ruleContext){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>函数验证</title>
         <script src="http://localhost:8080/module-operation!executeOperation?operation=vds-sdk-js"></script>
-        <script src="./moneyToChinese.js"></script>
+        <script src="./define.js"></script>
         <script>
             vds.config({
                 debug: true,
@@ -367,7 +367,7 @@ com.yindangu.client.rule.moneyToChinese = function(ruleContext){
 </html>
 ```
 
-其中http://localhost:8080为执行系统服务地址，moneyChinese.js为规则定义脚本文件。
+其中http://localhost:8080为执行系统服务地址，define.js为规则定义脚本文件。
 
 ## 规则部署
 
