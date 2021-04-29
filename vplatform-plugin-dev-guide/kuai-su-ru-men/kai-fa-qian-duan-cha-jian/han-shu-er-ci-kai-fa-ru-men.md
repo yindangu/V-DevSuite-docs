@@ -9,59 +9,11 @@ description: >-
 
          在进行前端函数二次开发之前，首先需要了解前端函数二次开发的开发流程，以便于在整体轮廓上理解二次开发流程。如下图
 
-![&#x524D;&#x7AEF;&#x51FD;&#x6570;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;](../../../.gitbook/assets/image.png)
-
-## 本地开发
-
-        抛开V平台函数二次开发规范，在本地需要实现此需求，我们该怎么做？ 首先新建一个js文件（如：moneyToChinese.js），在js文件中定义一个方法，在方法体中实现需求，如下所示：
-
-```bash
-var moneyToChinese = function(money){
-    //这里编写实现逻辑，并返回结果
-}
-```
-
-         如此，该需求实现完毕。现在深入思考下，上面存在什么问题？ 因moneyToChinese定义为全局方法，有可能会被其他引入的第三方js库或其他开发人员编写的代码给覆盖掉，因此平台建议给函数添加命名空间，命名空间规范建议使用java的包名规范。现在我们改造下上述代码：
-
-```bash
-//命名空间为：com.yindangu.client.function.convert
-com = this.com||{};
-com.yindangu = com.yindangu||{};
-com.yindangu.client = com.yindangu.client||{};
-com.yindangu.client.function = com.yindangu.client.function||{};
-com.yindangu.client.function.moneyToChinese = function(money){
-    //这里编写实现逻辑，并返回结果
-}
-```
-
-       至此，整个函数逻辑开发完毕。
-
-## 本地验证
-
-      沿用普通js验证方法，首先创建一个html文件（如：index.html），引入上述新建的js文件，编写验证逻辑进行验证。
-
-```bash
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>函数验证</title>
-        <script src="./moneyToChinese.js"></script>
-        <script>
-            var res = com.yindangu.client.function.moneyToChinese(456.14);
-            console.log(res);
-        </script>
-    </head>
-    <body>
-    </body>
-</html>
-```
+![&#x51FD;&#x6570;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;&#x56FE;](../../../.gitbook/assets/image%20%287%29.png)
 
 ## 元数据编辑
 
-平台前端函数中，除了函数的实现逻辑外，还需要一些其他的信息（如函数描述，入参及返回值定义等），因此需要添加一份元数据。元数据文件名称固定为manifest.json，其内容格式如下：
+在二次开发函数前，首先需要明确当前函数需求，确定当前函数名称、入参及返回值等信息。当以上信息固化下来后，插件元信息已经完成，以下为元数据详细描述，其内容格式：
 
 ```bash
 {
@@ -80,8 +32,7 @@ com.yindangu.client.function.moneyToChinese = function(money){
         inputs:[{//函数入参信息定义,可选
             type:"number",//入参类型，
             desc:"金额",//入参描述，
-            required:true,//是否必填
-            default:null//默认值
+            required:true//是否必填
         }],
         output:{//可选
             type:"char",//函数输出类型,
@@ -91,6 +42,8 @@ com.yindangu.client.function.moneyToChinese = function(money){
 }
 
 ```
+
+元数据文件名称固定为manifest.json，其中各部分定义如下：
 
 ### plugins定义
 
@@ -221,13 +174,6 @@ com.yindangu.client.function.moneyToChinese = function(money){
       <td style="text-align:left">false</td>
       <td style="text-align:left">&#x662F;&#x5426;&#x5FC5;&#x586B;</td>
     </tr>
-    <tr>
-      <td style="text-align:left">default</td>
-      <td style="text-align:left">Any</td>
-      <td style="text-align:left">&#x5426;</td>
-      <td style="text-align:left">null</td>
-      <td style="text-align:left">&#x5165;&#x53C2;&#x9ED8;&#x8BA4;&#x503C;</td>
-    </tr>
   </tbody>
 </table>
 
@@ -273,6 +219,54 @@ com.yindangu.client.function.moneyToChinese = function(money){
     </tr>
   </tbody>
 </table>
+
+## 本地开发
+
+        抛开V平台函数二次开发规范，在本地需要实现此需求，我们该怎么做？ 首先新建一个js文件（如：moneyToChinese.js），在js文件中定义一个方法，在方法体中实现需求，如下所示：
+
+```bash
+var moneyToChinese = function(money){
+    //这里编写实现逻辑，并返回结果
+}
+```
+
+         如此，该需求实现完毕。现在深入思考下，上面存在什么问题？ 因moneyToChinese定义为全局方法，有可能会被其他引入的第三方js库或其他开发人员编写的代码给覆盖掉，因此平台建议给函数添加命名空间，命名空间规范建议使用java的包名规范。现在我们改造下上述代码：
+
+```bash
+//命名空间为：com.yindangu.client.function.convert
+com = this.com||{};
+com.yindangu = com.yindangu||{};
+com.yindangu.client = com.yindangu.client||{};
+com.yindangu.client.function = com.yindangu.client.function||{};
+com.yindangu.client.function.moneyToChinese = function(money){
+    //这里编写实现逻辑，并返回结果
+}
+```
+
+       至此，整个函数逻辑开发完毕。
+
+## 本地验证
+
+      沿用普通js验证方法，首先创建一个html文件（如：index.html），引入上述新建的js文件，编写验证逻辑进行验证。
+
+```bash
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>函数验证</title>
+        <script src="./moneyToChinese.js"></script>
+        <script>
+            var res = com.yindangu.client.function.moneyToChinese(456.14);
+            console.log(res);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+```
 
 ## 函数部署
 
@@ -391,5 +385,23 @@ vds.config({
 </html>
 ```
 
+### 函数验证增强
 
+vds提供了mock命名空间，方便开发人员对函数进行验证，mock提供init接口，以函数元数据作为入参，根据元信息随机生成函数入参数据，具体使用如下：
+
+```bash
+vds.config({
+    debug: true,
+    import: [ "vds.mock.*"]
+}).ready(function () {
+    vds.mock.init("../manifest.json").then(function(mock){
+        mock.get("moneyToChinese").then(function(functionMock){
+            var result = functionMock.exec();
+            console.log(result);
+        });
+    });
+});
+```
+
+上述使用到的vds接口详细信息请参考vds使用指南。
 
