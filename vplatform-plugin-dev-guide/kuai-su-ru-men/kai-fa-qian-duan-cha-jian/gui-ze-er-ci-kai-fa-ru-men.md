@@ -21,12 +21,12 @@ description: >-
     code:"moneyToChinese",//插件编号
     plugins:[{
 			"type":"rule",//插件类型，规则为rule
-			"code":"NumToChineseRule",
-			"catalog":"other",
-			"name":"数字转大写汉字(前端规则)",
-			"desc":"数字转大写汉字(前端规则)",
-			"transactionType":"none",
-			"entry":"com.yindangu.rule.demo.common.NumToChineseRule",
+			"code":"NumToChineseRule",//规则编号
+			"catalog":"other",//规则分类
+			"name":"数字转大写汉字(前端规则)",//规则名称
+			"desc":"数字转大写汉字(前端规则)",//规则描述
+			"transactionType":"none",//是否有事务
+			"entry":"com.yindangu.client.demo.common.NumToChineseRule",
 			"defineUrl":"./client-demo/rule/dist/NumToChineseRule.js",
 			"debugUrl":"./client-demo/rule/debug/rule.js",
 			"inputs":[{
