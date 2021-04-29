@@ -26,17 +26,17 @@ description: >-
 			"name":"数字转大写汉字(前端规则)",//规则名称
 			"desc":"数字转大写汉字(前端规则)",//规则描述
 			"transactionType":"none",//是否有事务
-			"entry":"com.yindangu.client.demo.common.NumToChineseRule",
-			"defineUrl":"./client-demo/rule/dist/NumToChineseRule.js",
-			"debugUrl":"./client-demo/rule/debug/rule.js",
-			"inputs":[{
-				"code":"price",
-				"name":"单价",
-				"type":"number",
-				"desc":"转换前的单价数值",
-				"default":null,
-				"editor":{
-					"type":"expression"
+			"entry":"com.yindangu.client.rule.moneyToChineseRule",//规则主入口
+			"defineUrl":"./moneyToChineseRule.js",//规则定义脚本url
+			"debugUrl":"./debug.js",//调试脚本url
+			"inputs":[{//规则输入信息
+				"code":"price",//输入编号
+				"name":"单价",//输入名称
+				"type":"number",//输入类型
+				"desc":"转换前的单价数值",//输入描述
+				"default":null,//默认值
+				"editor":{//输入编辑器
+					"type":"expression"//编辑器类型
 				}
 			},{
 				"code":"sum",
