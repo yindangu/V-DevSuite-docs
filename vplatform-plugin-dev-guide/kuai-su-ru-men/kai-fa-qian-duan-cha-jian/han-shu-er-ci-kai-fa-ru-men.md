@@ -319,7 +319,7 @@ export default {
   output: {
     file: 'dist/moneyToChineseFunc.js',//打包输出路径
     format:'umd',//编译出umd格式
-'com.yindangu.fu.demo'
+    name:'com.yindangu.client.function',//定义全局命名空间
     sourcemap:true
   },
   plugins: [
@@ -328,6 +328,8 @@ export default {
   ]
 };
 ```
+
+配置详细含义请前往rollup官网查看，待打包完成后，调整manifest.json文件，将函数定义中defineUrl执行打包结果文件即可。
 
 ### 集成使用vds
 
