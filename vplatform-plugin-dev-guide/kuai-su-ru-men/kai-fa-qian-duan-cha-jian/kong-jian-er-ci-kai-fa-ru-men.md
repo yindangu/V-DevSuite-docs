@@ -385,6 +385,18 @@ properties属性值为数据组，方便属性在编辑器中显示时，进行�
 
 ## 本地开发
 
+目前平台控件是基于smartclient UI框架进行封装的，因此控件二次需要先了解smartclient相关知识，以下提供smartclient官方文档：
+
+1、[smartclient属性说明文档](https://www.smartclient.com/smartclient-release/isomorphic/system/reference/?id=group..docViewerHelp)
+
+2、[smartclient在线样例](https://www.smartclient.com/smartclient/showcase/?id=Welcome)
+
+在了解smartclient相关知识后，就可以按照smartclient扩展规范扩展控件，如下：
+
+```text
+
+```
+
 ## 本地验证
 
 ## 控件部署
