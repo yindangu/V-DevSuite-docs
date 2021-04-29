@@ -146,12 +146,12 @@ vds.ds.exists("ds1");//true:存在,false:不存在
 
 ```text
 var datasource = vds.ds.mock([{
-	"id":“”“”,
+	"id":"1",
 	"name":"张三",
 	"sex":"male",
 	"age":35
 },{
-	"id":2,
+	"id":"1",
 	"name":"李四",
 	"sex":"female",
 	"age":26
