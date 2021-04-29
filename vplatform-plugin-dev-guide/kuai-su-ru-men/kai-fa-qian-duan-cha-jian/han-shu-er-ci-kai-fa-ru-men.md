@@ -364,7 +364,32 @@ vds.config({
 });
 ```
 
+完整的验证页面如下：
 
+```bash
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>函数验证</title>
+        <script src="http://localhost:8080/module-operation!executeOperation?operation=vds-sdk-js"></script>
+        <script src="./dist/moneyToChineseFunc.js"></script>
+        <script>
+            vds.config({
+                debug: true,
+                import: [ "vds.ds.*"]
+            }).ready(function () {
+                var res = com.yindangu.client.function.moneyToChinese(456.14);
+                console.log(res);
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+```
 
 
 
