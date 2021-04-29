@@ -391,7 +391,7 @@ properties属性值为数据组，方便属性在编辑器中显示时，进行�
 
 2、[smartclient在线样例](https://www.smartclient.com/smartclient/showcase/?id=Welcome)
 
-在了解smartclient相关知识后，就可以按照smartclient扩展规范扩展控件，如下：
+在了解smartclient相关知识后，就可以按照smartclient扩展规范扩展控件，平台完成对接smartclient数据源，开发人员无需学习平台任何其他控件规范信息，控件定义脚本如下：
 
 ```text
 isc.ClassFactory.defineClass("JGDevTextBox", "DynamicForm");
