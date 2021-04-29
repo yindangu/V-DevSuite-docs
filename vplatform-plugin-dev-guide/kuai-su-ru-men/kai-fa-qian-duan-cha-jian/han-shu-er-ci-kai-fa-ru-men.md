@@ -333,5 +333,38 @@ export default {
 
 ### 集成使用vds
 
-平台提供一系列接口供二次开发调用，接口列表参考前端vds使用
+平台提供一系列接口供二次开发调用，接口列表参考前端vds使用指南。二次开发在使用前，需先将接口命名空间引入，如需要使用平台数据源相关接口，需如下引入：
+
+```bash
+vds.import("vds.ds.*");
+```
+
+引入完成后，在函数中即可使用vds.ds命名空间，如根据数据源编号获取数据源实例
+
+```bash
+var ds = vds.ds.lookup("user");//返回数据源实例
+```
+
+函数在使用平台vds提供的接口后，本地验证需要有所调整：
+
+1、引入vds
+
+```bash
+<script src="http://localhost:8080/module-operation!executeOperation?operation=vds-sdk-js"></script>
+```
+
+2、验证逻辑执行时机调整
+
+```bash
+vds.config({
+	debug: true,
+	import: [ "vds.ds.*"]
+}).ready(function () {
+	//这
+});
+```
+
+
+
+
 
