@@ -299,7 +299,7 @@ public class NumberUpperFunc implements IFunction{
 
 插件注册器（IRegisterPlugin）是V-DevSuite注册扩展插件的总接口，每个构件（插件jar包）只允许提供一个IRegisterPlugin的实现，用来汇聚该构件所开发的全部插件及插件的元信息。
 
-前面插件实现样例中，实现的函数，函数的输入参数类型是整形，函数的返回值是字符型，函数的名称、描述、作者、函数class、输入参数名称、返回值名称，都使用函数插件元信息的创建器IFunctionBuilder进行构造，最后执行build\(\)得到IPluginProfileVo对象添加到List中，返回给IRegisterPlugin的getPluginProfile即完成插件注册。
+前面函数插件实现样例中，函数的输入参数类型是整形，函数的返回值是字符型，函数的名称、描述、作者、函数class、输入参数名称、返回值名称，都使用函数插件元信息的创建器IFunctionBuilder进行构造，最后执行build\(\)得到IPluginProfileVo对象添加到List中，返回给IRegisterPlugin的getPluginProfile即完成插件注册。
 
 插件注册器实现类的getComponentProfile方法，用于收集返回插件构件本身的编码名称，这个编码名称在构件安装到执行系统（V-AppServer）的时候需要用到，用于标识该插件构件名称、编码。
 
