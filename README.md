@@ -1,8 +1,4 @@
----
-description: V-DevSuite插件开发参考指南
----
-
-# V-DevSuite
+# V-DevSuite插件开发参考指南
 
 ## **前言**
 

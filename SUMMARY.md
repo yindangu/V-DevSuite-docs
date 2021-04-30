@@ -1,6 +1,6 @@
 # Table of contents
 
-* [V-DevSuite](README.md)
+* [V-DevSuite插件开发参考指南](README.md)
 
 ## V平台插件开发指南 <a id="vplatform-plugin-dev-guide"></a>
 
