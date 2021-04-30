@@ -20,7 +20,7 @@ V-DevSuite只关注基础功能的提供（如：基础规则、函数、控件�
 
 ### **插件与V-DevSuite的关系**
 
-* 所有V-DevSuite插件以构件方式安装到V-DevSuite，可上传至VStore（云仓库）并使用VTeam（软件开发协同工具）进行构件清单的管理。
+* 所有V-DevSuite插件以构件方式安装到V-DevSuite，可上传至VStore（云仓库）并使用[VTeam](http://team.yindangu.com)（软件开发协同工具）进行构件清单的管理。
 * V-DevSuite对所有开发者扩展的V-DevSuite插件都是一致对待处理的
 * V-DevSuite插件可以随V-DevSuite安装、升级和卸载，不会影响V-DevSuite的运行
 
