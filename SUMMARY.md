@@ -7,6 +7,7 @@
       * [开发后端插件](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/kuai-su-ru-men-1/kai-fa-hou-duan-cha-jian.md)
       * [开发前端插件](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/kuai-su-ru-men-1/kai-fa-qian-duan-cha-jian.md)
     * [后端进阶开发](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/README.md)
+      * [参数编辑器](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/can-shu-bian-ji-qi.md)
       * [数据处理DataView](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/shu-ju-chu-li-dataview.md)
       * [缓存模块](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/huan-cun-mo-kuai.md)
       * [附件模块](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/fu-jian-mo-kuai.md)
