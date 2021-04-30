@@ -382,7 +382,7 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 ![&#x5F00;&#x53D1;&#x7CFB;&#x7EDF;&#x4E0A;&#x4F20;&#x6784;&#x4EF6;](../../.gitbook/assets/dev-upload1.png)
 
-返回每个插件的状态,只要有一个不成功，就整个构件发布不成功\(现在的截图是不成功的，如果是成功返回“成功”文字\)
+返回每个插件的状态,只要有一个不成功，就整个构件发布不成功
 
 ![&#x4E0A;&#x4F20;&#x6210;&#x529F;](../../.gitbook/assets/jar-params4.png)
 
@@ -651,9 +651,7 @@ public class MyHttpCommand implements IHttpCommand{
 }
 ```
 
-插件元数据描述：
-
-code对应请求的opertion
+**插件元数据描述：**
 
 ```java
 private IPluginProfileVo getHttpCommand() {
@@ -664,9 +662,11 @@ private IPluginProfileVo getHttpCommand() {
 	}
 ```
 
-直接http访问
+**直接http访问**
 
 [http://\[ip\]:\[prot\]/module-operation!executeOperation?operation=mycmd](http://10.1.28.163:8080/module-operation!executeOperation?operation=mycmd)
+
+code对应请求的opertion
 
 ![command&#x8BBF;&#x95EE;&#x7684;&#x6548;&#x679C;](../../.gitbook/assets/jar-user4.png)
 
