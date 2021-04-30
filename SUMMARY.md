@@ -13,4 +13,5 @@
   * [数据处理DataView](hou-duan-jin-jie-kai-fa/shu-ju-chu-li-dataview.md)
   * [缓存模块](hou-duan-jin-jie-kai-fa/huan-cun-mo-kuai.md)
   * [附件模块](hou-duan-jin-jie-kai-fa/fu-jian-mo-kuai.md)
+* [FAQ](faq.md)
 
