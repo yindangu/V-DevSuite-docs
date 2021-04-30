@@ -378,7 +378,7 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 ## 发布插件
 
-打包好jar后，就要使用V-AppDesigner进行构件的部署
+打包好jar后，就要使用V-AppDesigner进行构件的部署，[《零代码软件开发工具套件》](http://www.yindangu.com/module-operation!executeOperation?componentCode=yindangu_officialwebsite&windowCode=Form_Product_VDevSuite&token=%7B%22data%22%3A%7B%22inputParam%22%3A%7B%22variable%22%3A%7B%22formulaOpenMode%22%3A%22locationHref%22%7D%7D%7D%7D)
 
 ![&#x5F00;&#x53D1;&#x7CFB;&#x7EDF;&#x4E0A;&#x4F20;&#x6784;&#x4EF6;](../../.gitbook/assets/dev-upload1.png)
 
