@@ -66,7 +66,8 @@ V-DevSuite只关注基础功能的提供（如：基础规则、函数、控件�
       <td style="text-align:left">
         <p>&#x7528;&#x4E8E;&#x5904;&#x7406;HTTP&#x7684;&#x8BF7;&#x6C42;&#x4E0E;&#x54CD;&#x5E94;&#xFF08;&#x7C7B;&#x4F3C;&#xFF1A;Servlet&#xFF09;</p>
         <p>Command&#x6267;&#x884C;&#x7EAF;java&#x4EE3;&#x7801;&#xFF0C;&#x5728;jvm&#x4E2D;&#x8FD0;&#x884C;&#x3002;</p>
-        <p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Command&#x63D2;&#x4EF6;&#x4E8C;&#x6B21;&#x5F00;&#x53D1;&#x6765;&#x5B8C;&#x6210;HTTP&#x8BF7;&#x6C42;&#x7684;&#x7684;&#x5904;&#x7406;&#x53CA;&#x54CD;&#x5E94;&#x3002;</p>
+        <p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E8C;&#x6B21;&#x5F00;&#x53D1;V-DevSuite
+          Command&#x63D2;&#x4EF6;&#x6765;&#x5B8C;&#x6210;HTTP&#x8BF7;&#x6C42;&#x7684;&#x7684;&#x5904;&#x7406;&#x53CA;&#x54CD;&#x5E94;&#x3002;</p>
       </td>
     </tr>
   </tbody>
