@@ -814,7 +814,5 @@ isc.JGDevTextBox.addMethods({
 
 ##  demo实例代码 <a id="demo-shi-li-dai-ma"></a>
 
-‌
-
-下载[demo代码](http://download.yindangu.com/yindangu-plugin/plugin-demo/20210430/94plugin-demo-client.zip)
+‌下载[demo代码](http://download.yindangu.com/yindangu-plugin/plugin-demo/20210430/94plugin-demo-client.zip)
 
