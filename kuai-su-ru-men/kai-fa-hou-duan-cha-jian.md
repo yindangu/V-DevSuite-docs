@@ -356,21 +356,21 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 比如这个例子当中，“把指定数字值转汉字”这个二次开发规则的配置界面中，规则的输入参数设置中的姓名、年龄是以表达式方式提供参数的设置，性别是以枚举值的方式进行参数的设置，规则的返回值参数设置中的年龄、姓名、退休、汉字大写是用表达式方式提供参数的设置。这些参数名称、编辑器的类型都是在二次开发规则插件的时候，在插件注册器中声明规则插件元信息进行注册的（注：参数若不指定编辑器则默认提供表达式编辑器）。
 
-![&#x5F00;&#x53D1;&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x89C4;&#x5219;&#x53C2;&#x6570;&#x7684;&#x754C;&#x9762;](../../.gitbook/assets/jar-params.png)
+![&#x5F00;&#x53D1;&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x89C4;&#x5219;&#x53C2;&#x6570;&#x7684;&#x754C;&#x9762;](../.gitbook/assets/jar-params.png)
 
 对应下面的代码描述
 
-![&#x5165;&#x53C2;\(&#x7EA2;&#x8272;&#x5708;\)&#x3001;&#x51FA;&#x53C2;\(&#x7EFF;&#x8272;&#x5708;\)&#x63CF;&#x8FF0;](../../.gitbook/assets/jar-params2.png)
+![&#x5165;&#x53C2;\(&#x7EA2;&#x8272;&#x5708;\)&#x3001;&#x51FA;&#x53C2;\(&#x7EFF;&#x8272;&#x5708;\)&#x63CF;&#x8FF0;](../.gitbook/assets/jar-params2.png)
 
 性别是枚举类型，需要使用下拉框
 
-![&#x679A;&#x4E3E;&#x5B9A;&#x4E49;](../../.gitbook/assets/jar-params3.png)
+![&#x679A;&#x4E3E;&#x5B9A;&#x4E49;](../.gitbook/assets/jar-params3.png)
 
 ## 编译jar
 
 使用maven命令打包标准的jar包即可。如果有使用第三方jar包，则需要把它们加入到当前jar的lib目录下。
 
-![jar&#x7684;&#x7ED3;&#x6784;](../../.gitbook/assets/jar-format.png)
+![jar&#x7684;&#x7ED3;&#x6784;](../.gitbook/assets/jar-format.png)
 
 **lib目录**:使用maven打包是不会自动生成lib目录的，如果有使用第三方jar包，需要手工创建lib目录，把它们手供加入到lib目录。建议使用maven的"maven-dependency-plugin"插件，该插件可以把当前工程依赖的第三方jar前输出到target，便于收集并的加入到jar的lib目录中。
 
@@ -380,23 +380,23 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 打包好jar后，就要使用V-AppDesigner进行构件的部署，[《零代码软件开发工具套件》](http://www.yindangu.com/module-operation!executeOperation?componentCode=yindangu_officialwebsite&windowCode=Form_Product_VDevSuite&token=%7B%22data%22%3A%7B%22inputParam%22%3A%7B%22variable%22%3A%7B%22formulaOpenMode%22%3A%22locationHref%22%7D%7D%7D%7D)
 
-![&#x5F00;&#x53D1;&#x7CFB;&#x7EDF;&#x4E0A;&#x4F20;&#x6784;&#x4EF6;](../../.gitbook/assets/dev-upload1.png)
+![&#x5F00;&#x53D1;&#x7CFB;&#x7EDF;&#x4E0A;&#x4F20;&#x6784;&#x4EF6;](../.gitbook/assets/dev-upload1.png)
 
 返回每个插件的状态,只要有一个不成功，就整个构件发布不成功
 
-![&#x4E0A;&#x4F20;&#x6210;&#x529F;](../../.gitbook/assets/jar-params4.png)
+![&#x4E0A;&#x4F20;&#x6210;&#x529F;](../.gitbook/assets/jar-params4.png)
 
 ## 使用插件
 
 上传部署成功后，在开发系统如图点击项目刷新后，就可以在V-AppDesigner的规则链配置中选择使用已部署的规则函件、函数插件了。
 
-![&#x5237;&#x65B0;&#x9879;&#x76EE;](../../.gitbook/assets/jar-user1.png)
+![&#x5237;&#x65B0;&#x9879;&#x76EE;](../.gitbook/assets/jar-user1.png)
 
 插件的使用
 
 这里举例函数插件，使用方式就与平台提供的函数一样。函数名对应函数插件注册的元数据中的code属性。
 
-![&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x63D2;&#x4EF6;](../../.gitbook/assets/jar-user2.png)
+![&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x63D2;&#x4EF6;](../.gitbook/assets/jar-user2.png)
 
 执行系统（V-AppServer）插件的使用
 
@@ -668,5 +668,5 @@ private IPluginProfileVo getHttpCommand() {
 
 code对应请求的opertion
 
-![command&#x8BBF;&#x95EE;&#x7684;&#x6548;&#x679C;](../../.gitbook/assets/jar-user4.png)
+![command&#x8BBF;&#x95EE;&#x7684;&#x6548;&#x679C;](../.gitbook/assets/jar-user4.png)
 

@@ -9,7 +9,7 @@ description: >-
 
         在进行前端规则二次开发之前，首先需要了解前端规则二次开发的开发流程，以便于在整体轮廓上理解二次开发流程。如下图
 
-![&#x89C4;&#x5219;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;](../../../.gitbook/assets/image%20%287%29.png)
+![&#x89C4;&#x5219;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;](../../.gitbook/assets/image%20%287%29.png)
 
 ## 元数据定义
 
@@ -381,7 +381,7 @@ com.yindangu.client.rule.moneyToChinese = function(ruleContext){
 
         规则部署完毕后，函数已提交到平台仓库受控，开发系统中还未安装该规则，此时需要使用开发系统中开始-》安装构件-》搜索（搜索值为插件编号）-》安装，如下图：
 
-![&#x89C4;&#x5219;&#x5B89;&#x88C5;](../../../.gitbook/assets/image%20%289%29.png)
+![&#x89C4;&#x5219;&#x5B89;&#x88C5;](../../.gitbook/assets/image%20%289%29.png)
 
 待提示构件安装成功后，构件安装完成。
 
@@ -389,5 +389,5 @@ com.yindangu.client.rule.moneyToChinese = function(ruleContext){
 
         待开发系统安装完成后，二次开发规则的使用方法与平台内部提供的规则一样，在方法编辑中直接选取使用，如下图：
 
-![](../../../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
