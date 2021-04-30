@@ -1,6 +1,6 @@
 # Table of contents
 
-* [V-DevSuite插件开发参考指南](README.md)
+* [V-DevSuite插件](README.md)
 * [扩展开发](kuo-zhan-kai-fa/README.md)
   * [V-DevSuite插件开发指南](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/README.md)
     * [概述](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/gai-shu.md)
