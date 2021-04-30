@@ -185,7 +185,7 @@ rollup -c rollup.config.js
 
 zip格式，必须文件define.js,manifest.json
 
-![&#x524D;&#x7AEF;&#x683C;&#x5F0F;](../../.gitbook/assets/jar-user3.png)
+![&#x524D;&#x7AEF;&#x683C;&#x5F0F;](../.gitbook/assets/jar-user3.png)
 
 根据manifest.json的defineUrl配置， 文件define.js在dist目录
 

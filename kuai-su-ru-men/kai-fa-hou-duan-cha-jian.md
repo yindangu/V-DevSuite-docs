@@ -299,43 +299,6 @@ public class NumberUpperFunc implements IFunction{
 
 插件注册器（IRegisterPlugin）是V-DevSuite注册扩展插件的总接口，每个构件（插件jar包）只允许提供一个IRegisterPlugin的实现，用来汇聚该构件所开发的全部插件及插件的元信息。
 
-前面函数插件实现样例中，函数的输入参数类型是整形，函数的返回值是字符型，函数的名称、描述、作者、函数class、输入参数名称、返回值名称，都使用函数插件元信息的创建器IFunctionBuilder进行构造，最后执行build\(\)得到IPluginProfileVo对象添加到List中，返回给IRegisterPlugin的getPluginProfile即完成插件注册。
-
-```java
-@Override
-//	插件注册器返回插件元信息对象
-public List<IPluginProfileVo> getPluginProfile() {
-	IPluginProfileVo func = getNumberUpperFunc();
-	return Arrays.asList(func );
-}
-
-/** 函数元信息(数字转汉字) */
-private IPluginProfileVo getNumberUpperFunc() {
-	IFunctionBuilder bf = RegVds.getPlugin().getFunctiontPlugin();
-	IPluginProfileVo p1 = bf.setCode(NumberUpperFunc.D_Code)
-			.setName("数字转汉字-name").setDesc("数字转汉字").setAuthor("徐刚")
-			.addInputParam(
-						bf.newParam().setType(VariableType.Integer).setDesc("数字").build()
-					)
-			.setEntry(NumberUpperFunc.class)
-			.setOutput(
-						bf.newOutput().setType(VariableType.Char).setDesc("汉字大写").build()
-					).build();
-	return p1;
-}
-```
-
-插件注册器实现类的getComponentProfile方法，用于收集返回插件构件本身的编码名称。这个编码名称在构件安装到执行系统（V-AppServer）的时候需要用到，用于标识该插件构件名称、编码。
-
-```java
-@Override
-public IComponentProfileVo getComponentProfile() {
-	return RegVds.getPlugin().getComponetProfile().setGroupId("com.yindangu.plugin").setCode("mydemo").build();
-}
-```
-
-**注意：**插件注册器的实现类的只允许编写注册插件相关的代码，不能加入业务逻辑处理的代码，否则部署插件可能会因出现依赖问题导致部署不通过。
-
 ```java
 package com.yindangu.plugin.demo;
 
@@ -380,6 +343,49 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 	}
 }
 ```
+
+
+
+前面函数插件实现样例中，函数的输入参数类型是整形，函数的返回值是字符型，函数的名称、描述、作者、函数class、输入参数名称、返回值名称，都使用函数插件元信息的创建器IFunctionBuilder进行构造，最后执行build\(\)得到IPluginProfileVo对象添加到List中，返回给IRegisterPlugin的getPluginProfile即完成插件注册。
+
+```java
+@Override
+//	插件注册器返回插件元信息对象
+public List<IPluginProfileVo> getPluginProfile() {
+	IPluginProfileVo func = getNumberUpperFunc();
+	return Arrays.asList(func );
+}
+
+/** 函数元信息(数字转汉字) */
+private IPluginProfileVo getNumberUpperFunc() {
+	IFunctionBuilder bf = RegVds.getPlugin().getFunctiontPlugin();
+	IPluginProfileVo p1 = bf.setCode(NumberUpperFunc.D_Code)
+			.setName("数字转汉字-name").setDesc("数字转汉字").setAuthor("徐刚")
+			.addInputParam(
+						bf.newParam().setType(VariableType.Integer).setDesc("数字").build()
+					)
+			.setEntry(NumberUpperFunc.class)
+			.setOutput(
+						bf.newOutput().setType(VariableType.Char).setDesc("汉字大写").build()
+					).build();
+	return p1;
+}
+```
+
+
+
+插件注册器实现类的getComponentProfile方法，用于收集返回插件构件本身的编码名称。这个编码名称在构件安装到执行系统（V-AppServer）的时候需要用到，用于标识该插件构件名称、编码。
+
+```java
+@Override
+public IComponentProfileVo getComponentProfile() {
+	return RegVds.getPlugin().getComponetProfile().setGroupId("com.yindangu.plugin").setCode("mydemo").build();
+}
+```
+
+\*\*\*\*
+
+**注意：**插件注册器的实现类的只允许编写注册插件相关的代码，不能加入业务逻辑处理的代码，否则部署插件可能会因出现依赖问题导致部署不通过。
 
 ## 规则插件元信息使用样例
 
@@ -431,7 +437,13 @@ public class MyRegisterPlug2 implements IRegisterPlugin {
 
 执行系统（V-AppServer）插件的使用
 
-插件构件jar部署后，会自动关联到对应项目的内置清单当中（可在VTeam项目中查看）。执行系统需要把部署到项目中的构件选入已安装的项目主清单中，并重新生成清单，迁移到执行系统上对应已安装清单的阶段，之后执行系统进行产品升级，就可以更新到该插件构件。
+在开发工具\(V-AppDesigner\)做本地调试（此功能正在开发中...）
+
+插件构件jar部署后，开发工具加载相同云项目的无码开发人员，会收到项目可更新提示，手动更新项目后，插件构件会自动安装进开发工具，如果此时开发工具的测试服务已经启动（右下角第三盏绿灯亮起），插件会制动安装到测试服务，立即可以在本地测试服务进行调试和查看效果，如果测试服务未启动，则会把插件保存至测试服务预安装目录，待测试服务手动启动后，自动安装。
+
+在独立服务器版（V-AppServer）运行
+
+插件构件jar部署后，会自动关联到对应项目的内置清单当中（可在[VTeam](http://team.yindangu.com)项目中查看）。执行系统需要把部署到项目中的构件选入已安装的项目主清单中，并重新生成清单，迁移到执行系统上对应已安装清单的阶段，之后执行系统进行产品升级，就可以更新到该插件构件。
 
 ## 规则、函数使用说明
 
