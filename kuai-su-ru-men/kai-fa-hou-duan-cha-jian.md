@@ -301,7 +301,38 @@ public class NumberUpperFunc implements IFunction{
 
 前面函数插件实现样例中，函数的输入参数类型是整形，函数的返回值是字符型，函数的名称、描述、作者、函数class、输入参数名称、返回值名称，都使用函数插件元信息的创建器IFunctionBuilder进行构造，最后执行build\(\)得到IPluginProfileVo对象添加到List中，返回给IRegisterPlugin的getPluginProfile即完成插件注册。
 
+```java
+@Override
+//	插件注册器返回插件元信息对象
+public List<IPluginProfileVo> getPluginProfile() {
+	IPluginProfileVo func = getNumberUpperFunc();
+	return Arrays.asList(func );
+}
+
+/** 函数元信息(数字转汉字) */
+private IPluginProfileVo getNumberUpperFunc() {
+	IFunctionBuilder bf = RegVds.getPlugin().getFunctiontPlugin();
+	IPluginProfileVo p1 = bf.setCode(NumberUpperFunc.D_Code)
+			.setName("数字转汉字-name").setDesc("数字转汉字").setAuthor("徐刚")
+			.addInputParam(
+						bf.newParam().setType(VariableType.Integer).setDesc("数字").build()
+					)
+			.setEntry(NumberUpperFunc.class)
+			.setOutput(
+						bf.newOutput().setType(VariableType.Char).setDesc("汉字大写").build()
+					).build();
+	return p1;
+}
+```
+
 插件注册器实现类的getComponentProfile方法，用于收集返回插件构件本身的编码名称。这个编码名称在构件安装到执行系统（V-AppServer）的时候需要用到，用于标识该插件构件名称、编码。
+
+```java
+@Override
+public IComponentProfileVo getComponentProfile() {
+	return RegVds.getPlugin().getComponetProfile().setGroupId("com.yindangu.plugin").setCode("mydemo").build();
+}
+```
 
 **注意：**插件注册器的实现类的只允许编写注册插件相关的代码，不能加入业务逻辑处理的代码，否则部署插件可能会因出现依赖问题导致部署不通过。
 
