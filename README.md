@@ -22,13 +22,15 @@ V-DevSuite\(银弹谷零代码软件开发套件\)是通过拖、拉、拽配置
 
 V-DevSuite只关注基础功能的提供（如：基础规则、函数、控件、表设计、查询...），基础应用的提供（如：流程、权限、组织、登录、账户、门户、定时任务、事项消息...）以及模块的管理（如：安装、运行、升级、卸载...），其他技术或平台工具则以插件（Plugin）形式开放给开发者。
 
-### **V-DevSuite插件与V-DevSuite的关系**
+### **插件与V-DevSuite的关系**
 
 * 所有V-DevSuite插件以构件方式安装到V-DevSuite，可上传至VStore（云仓库）并使用VTeam（软件开发协同工具）进行构件清单的管理。
 * V-DevSuite对所有开发者扩展的V-DevSuite插件都是一致对待处理的
 * V-DevSuite插件可以随V-DevSuite安装、升级和卸载，不会影响V-DevSuite的运行
 
-### **V-DevSuite支持的插件类型（持续更新中...）**
+### **V-DevSuite支持的插件类型**
+
+（持续更新中...）
 
 <table>
   <thead>
