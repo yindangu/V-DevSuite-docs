@@ -670,3 +670,7 @@ code对应请求的opertion
 
 ![command&#x8BBF;&#x95EE;&#x7684;&#x6548;&#x679C;](../.gitbook/assets/jar-user4.png)
 
+## demo实例代码
+
+下载[demo代码](http://download.yindangu.com/yindangu-plugin/plugin-demo/20210430/94plugin-demo-service.zip)
+
