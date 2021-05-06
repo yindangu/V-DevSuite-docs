@@ -514,3 +514,9 @@ isc.JGDevTextBox.addMethods({
 
 ![&#x63A7;&#x4EF6;&#x4F7F;&#x7528;](../../../.gitbook/assets/image%20%2814%29.png)
 
+## 注意事项
+
+1、目前暂不支持容器类型控件二次开发
+
+2、目前暂不支持平台控件扩展二次开发
+
