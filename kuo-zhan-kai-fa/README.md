@@ -1,2 +1,2 @@
-# V-DevSuite扩展
+# V-DevSuite
 
