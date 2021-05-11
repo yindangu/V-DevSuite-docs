@@ -17,5 +17,6 @@
       * [函数插件开发](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/han-shu-plugin-dev.md)
       * [规则插件开发](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/gui-ze-plugin-dev.md)
       * [控件插件开发](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/kong-jian-plugin-dev.md)
+    * [API文档](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/api-wen-dang.md)
     * [FAQ](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/faq.md)
 
