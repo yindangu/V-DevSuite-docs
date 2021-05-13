@@ -15,9 +15,9 @@ description: 前端插件的开发快速入门介绍
 
 V平台的插件体系支持业界开放性的技术开发规范，做到最大的包容性。这里以JavaScript 官方模块化标准的 ES6规范来进行样例工程开发说明（如果希望使用其它的业界常用模块化开发标准，如CommonJS 和 AMD等，V平台仍然可支持适配）。
 
-另外，这里建议使用[rollup](https://www.rollupjs.com/)作为JavaScript 模块打包器（当然，也可自选其它方式，如[webpack](https://webpack.js.org/)）,下面安装rollup开发过程为例子进行说明
+另外，这里建议使用rollup 作为JavaScript 模块打包器（当然，也可自选其它方式，如[webpack](https://webpack.js.org/)）,下面安装rollup开发过程为例子进行说明
 
-_rollup不是必须的，但是没有它工作效率比较低。_
+_rollup不是必须的，但是没有它工作效率比较低。_[_《rollup 中文文档》_](https://www.rollupjs.com/)\_\_
 
 * 安装node [node.js 安装详细步骤教程](https://blog.csdn.net/antma/article/details/86104068)
 
@@ -47,6 +47,24 @@ npm rollup -v
 ```
 
 * **rollup配置**
+
+**rollup只是编译工具，工作目录需要手工创建。**
+
+例如示例中在d:/myproject 创建 mydemo文件夹，然后把 rollup.config.js，package.json 复制到工作目录mydemo里。然后创建src文件夹，并且创建main.js，在main.js编写业务处理代码。
+
+配置文件rollup.config.js指定了源码入口：
+
+```javascript
+input: 'src/main.js',//源码主入口路径
+```
+
+配置文件package.json指定了源码入口：
+
+```javascript
+ "main": "./src/main.js",
+```
+
+完整的配置文件
 
 rollup.config.js
 
