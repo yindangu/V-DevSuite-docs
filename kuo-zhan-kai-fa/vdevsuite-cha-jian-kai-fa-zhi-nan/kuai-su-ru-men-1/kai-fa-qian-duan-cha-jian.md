@@ -50,7 +50,7 @@ npm rollup -v
 
 **rollup只是编译工具，工作目录需要手工创建。**
 
-例如示例中在d:/myproject 创建 mydemo文件夹，然后把 rollup.config.js，package.json 复制到工作目录mydemo里。然后创建src文件夹，并且创建main.js，在main.js编写业务处理代码。
+例如示例中在d:/myproject 创建 mydemo文件夹，然后把 rollup.config.js，package.json 复制到工作目录mydemo里。然后创建src文件夹，并且创建main.js，在main.js编写业务处理代码；如果不想使用main.js作为入口，需要修改配置文件的对应参数。
 
 配置文件rollup.config.js指定了源码入口：
 
