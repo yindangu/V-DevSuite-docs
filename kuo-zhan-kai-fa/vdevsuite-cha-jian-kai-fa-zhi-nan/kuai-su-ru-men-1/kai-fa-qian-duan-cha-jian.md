@@ -187,7 +187,7 @@ rollup -c rollup.config.js
     "inputs":[{
         "code":"entityCode",
         "name":"实体编号",
-        "desc":"选择实体"
+        "desc":"选择实体",
         "editor":{
           "type":"entity",
           "required":true
