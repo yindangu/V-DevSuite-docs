@@ -185,15 +185,13 @@ rollup -c rollup.config.js
     "defineUrl":"./dist/define.js",//目标文件（必须）
     "debugUrl":"", //测试文件（可选）
     "inputs":[{
-      "property":{
         "code":"entityCode",
         "name":"实体编号",
         "desc":"选择实体"
-      },
-      "editor":{
-        "type":"entity",
-        "required":true
-      }
+        "editor":{
+          "type":"entity",
+          "required":true
+        }
     }]
   }]
 }
