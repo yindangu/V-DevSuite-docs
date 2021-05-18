@@ -170,11 +170,11 @@ npm install
 rollup -c rollup.config.js
 ```
 
-编译后的目标文件在dist/bundle.js，如果不使用rollup，就手工编写define.js文件（标准的js文件）
+编译后的目标文件生成在dist/bundle.js路径，如果不使用rollup，可手工编写define.js文件（标准的js文件）。
 
 ## **编写元数据文件**
 
-前端需要手写manifest.json文件
+前端需要手工编写manifest.json文件
 
 ```javascript
 {
@@ -204,7 +204,7 @@ rollup -c rollup.config.js
 
 ## **打包文件格式**
 
-zip格式，必须文件define.js,manifest.json
+将以上两个文件（manifest.json和define.js）打包压缩成zip格式的压缩包，其中manifest.json必须放置在压缩包的根目录下，定义文件（define.js）目录根据manifest.json中defineUrl属性值决定。上述配置压缩包目录结构如下：
 
 ![&#x524D;&#x7AEF;&#x683C;&#x5F0F;](../../../.gitbook/assets/jar-user3.png)
 
