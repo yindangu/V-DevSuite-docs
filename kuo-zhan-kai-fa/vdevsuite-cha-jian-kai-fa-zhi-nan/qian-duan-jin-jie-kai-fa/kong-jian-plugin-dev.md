@@ -489,7 +489,7 @@ isc.JGDevTextBox.addMethods({
 </html>
 ```
 
-其中http://localhost:8080为执行系统服务链接。
+其中http://localhost:8080为V平台应用服务地址。
 
 ## 控件部署
 
