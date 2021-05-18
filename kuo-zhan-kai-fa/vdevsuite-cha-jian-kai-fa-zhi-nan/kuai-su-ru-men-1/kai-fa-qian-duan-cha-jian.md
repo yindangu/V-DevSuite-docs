@@ -137,19 +137,24 @@ vds.import("vds.ds.*"); //引用了vds工具包的ds模块
 let evaluate = function (ruleContext) {
     return new Promise((resolve,reject)=>{
 		//获取实体编号配置
-		let entity = ruleContext.getInput("entityCode");
-		if(!entity){
-			reject(Error("未找到实体,请检查实体编号配置!"));
+		let entityCode = ruleContext.getInput("entityCode");
+		if(!entityCode ){
+			reject(Error("未配置实体编号，请检查!"));
 		}else{
 			//获取实体实例
-			let resultSet = entity.getSelectedRecords();
-			let ids = [];
-			resultSet.iterate(function(record){
-				ids.push(record.getSysId());
-			});
-			entity.deleteRecordByIds(ids);
+			let entity = vds.ds.lookup(entityCode);
+			if(entity ){
+				let resultSet = entity.getSelectedRecords();
+				let ids = [];
+				resultSet.iterate(function(record){
+					ids.push(record.getSysId());
+				});
+				entity.deleteRecordByIds(ids);
+				resolve();
+			}else{
+				reject(Error("未找到实体，将检查实体编号是否正确!编号："entityCode ));
+			}
 		}
-		resolve();
 	});
 };
 
@@ -189,7 +194,7 @@ rollup -c rollup.config.js
         "name":"实体编号",
         "desc":"选择实体",
         "editor":{
-          "type":"entity",
+          "type":"expression",
           "required":true
         }
     }]
