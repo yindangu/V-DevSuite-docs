@@ -226,14 +226,14 @@ description: >-
       <td style="text-align:left">Object</td>
       <td style="text-align:left">&#x5426;</td>
       <td style="text-align:left">null</td>
-      <td style="text-align:left">&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x4FE1;&#x606F;</td>
+      <td style="text-align:left"><a href="https://yindangu.gitbook.io/v-devsuite/kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/shu-xing-bian-ji-qi-ding-yi">&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x4FE1;&#x606F;</a>&#xFF0C;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;expression&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;</td>
     </tr>
   </tbody>
 </table>
 
 #### 编辑器定义信息\(editor\)
 
-        编辑器信息，描述当前属性使用何种编辑器及编辑器元信息；该属性为可选属性，如未设置，则使用文本编辑器编辑；详细参考属性编辑器定义；
+        编辑器信息，描述当前属性使用何种编辑器及编辑器元信息；该属性为可选属性，如未设置，则使用文本编辑器编辑；详细参考[属性编辑器定义](https://yindangu.gitbook.io/v-devsuite/kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/shu-xing-bian-ji-qi-ding-yi)；
 
 ### outputs属性
 
@@ -296,7 +296,7 @@ description: >-
 
 在本地开发前，首先需要了解平台对规则主入口方法定义规范：
 
-1、规则主入口方法入参为RuleContext实例，其定义参考RuleContext接口说明文档
+1、规则主入口方法入参为RuleContext实例，其定义参考[RuleContext接口说明文档](http://vstore-developer.yindangu.com/jsdoc/index.html)
 
 2、规则主入口方法返回值Promise实例，平台会解决其浏览器兼容性问题
 
