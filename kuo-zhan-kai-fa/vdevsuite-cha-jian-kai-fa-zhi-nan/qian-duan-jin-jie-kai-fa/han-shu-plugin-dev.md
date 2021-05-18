@@ -270,7 +270,7 @@ com.yindangu.client.function.moneyToChinese = function(money){
 
 ## 函数部署
 
-        函数部署前，需要将元数据manifest.json文件及函数定义js文件打包成zip，其中manifest.json文件需放置在根目录下，其他文件可以自定义目录，在元数据中填入相对路径即可。
+        函数部署前，需要将元数据manifest.json文件及函数定义js文件打包成zip，**其中manifest.json文件需放置在根目录下**，其他文件可以自定义目录，在元数据中填入相对路径即可。
 
 ![&#x51FD;&#x6570;&#x538B;&#x7F29;&#x5305;](../../../.gitbook/assets/image%20%284%29.png)
 
@@ -327,7 +327,7 @@ export default {
 
 ### 集成使用vds
 
-        平台提供一系列接口供二次开发调用，接口列表参考前端vds使用指南。二次开发在使用前，需先将接口命名空间引入，如需要使用平台数据源相关接口，需如下引入：
+        平台提供一系列接口供二次开发调用，接口列表参考[前端vds使用指南](https://yindangu.gitbook.io/v-devsuite/kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/qian-duan-vds-shi-yong-zhi-nan)。二次开发在使用前，需先将接口命名空间引入，如需要使用平台数据源相关接口，需如下引入：
 
 ```bash
 vds.import("vds.ds.*");
@@ -346,6 +346,8 @@ var ds = vds.ds.lookup("user");//返回数据源实例
 ```bash
 <script src="http://localhost:8080/module-operation!executeOperation?operation=vds-sdk-js"></script>
 ```
+
+其中http://localhost:8080为V平台引用服务地址。
 
 2、验证逻辑执行时机调整
 
@@ -403,5 +405,5 @@ vds.config({
 });
 ```
 
-上述使用到的vds接口详细信息请参考vds使用指南。
+上述使用到的vds接口详细信息请参考[vds使用指南](https://yindangu.gitbook.io/v-devsuite/kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/qian-duan-vds-shi-yong-zhi-nan)。
 
