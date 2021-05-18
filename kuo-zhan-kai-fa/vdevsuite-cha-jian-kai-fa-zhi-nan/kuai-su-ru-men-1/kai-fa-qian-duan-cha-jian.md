@@ -152,7 +152,7 @@ let evaluate = function (ruleContext) {
 				entity.deleteRecordByIds(ids);
 				resolve();
 			}else{
-				reject(Error("未找到实体，将检查实体编号是否正确!编号："entityCode ));
+				reject(Error("未找到实体，将检查实体编号是否正确!编号：" + entityCode ));
 			}
 		}
 	});
