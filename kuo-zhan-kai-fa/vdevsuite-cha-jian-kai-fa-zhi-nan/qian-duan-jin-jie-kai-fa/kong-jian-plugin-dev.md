@@ -342,14 +342,15 @@ properties属性值为数据组，方便属性在编辑器中显示时，进行�
       <td style="text-align:left">Object</td>
       <td style="text-align:left">&#x5426;</td>
       <td style="text-align:left"></td>
-      <td style="text-align:left">&#x7F16;&#x8F91;&#x5668;&#x4FE1;&#x606F;</td>
+      <td style="text-align:left"><a href="https://yindangu.gitbook.io/v-devsuite/kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/shu-xing-bian-ji-qi-ding-yi">&#x7F16;&#x8F91;&#x5668;&#x4FE1;&#x606F;</a>
+      </td>
     </tr>
   </tbody>
 </table>
 
 #### 编辑器定义信息\(editor\)
 
-编辑器信息，描述当前属性使用何种编辑器及编辑器元信息；该属性为可选属性，如未设置，则使用文本编辑器编辑；详细参考属性编辑器定义；
+编辑器信息，描述当前属性使用何种编辑器及编辑器元信息；该属性为可选属性，如未设置，则使用文本编辑器编辑；详细参考[属性编辑器定义](https://yindangu.gitbook.io/v-devsuite/kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/shu-xing-bian-ji-qi-ding-yi)；
 
 #### 访问信息\(access\)
 
