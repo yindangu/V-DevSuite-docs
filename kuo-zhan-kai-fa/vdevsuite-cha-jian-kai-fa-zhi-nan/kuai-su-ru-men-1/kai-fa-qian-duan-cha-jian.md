@@ -128,8 +128,8 @@ package.json
 
 ```javascript
 /*
- * 删除指定实体的记录，删除选中行的记录
- * 规则编号：DeleteListSelectRow
+ * 删除指定实体的当前行记录
+ * 规则编号：DeleteListCurrentRow
  * 规则配置信息:
  * 1、entityCode 实体编号
  */
@@ -144,12 +144,10 @@ let evaluate = function (ruleContext) {
 			//获取实体实例
 			let entity = vds.ds.lookup(entityCode);
 			if(entity ){
-				let resultSet = entity.getSelectedRecords();
-				let ids = [];
-				resultSet.iterate(function(record){
-					ids.push(record.getSysId());
-				});
-				entity.deleteRecordByIds(ids);
+				let record = entity.getCurrentRecord();
+				if(record){
+					entity.deleteRecordByIds([record.getSysId()]);
+				}
 				resolve();
 			}else{
 				reject(Error("未找到实体，将检查实体编号是否正确!编号：" + entityCode ));
@@ -179,13 +177,13 @@ rollup -c rollup.config.js
 ```javascript
 {
   "groupId":"com.yindangu.vplatform.client.rule",
-  "code":"DeleteListSelectRow",
+  "code":"DeleteListCurrentRow",
   "plugins":[{
     "type":"rule",
     "scope":"client",
-    "code":"DeleteListSelectRow",
-    "name":"删除实体中选中记录",
-    "desc":"删除指定实体的记录，删除选中行的记录",
+    "code":"DeleteListCurrentRow",
+    "name":"删除实体中当前行记录",
+    "desc":"删除实体中当前行记录",
     "entry":"com.yindangu.rule.demo.evaluate",
     "defineUrl":"./dist/define.js",//目标文件（必须）
     "debugUrl":"", //测试文件（可选）
