@@ -226,11 +226,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.yindangu.plugin.demo.BusinessUtil;
-import com.yindangu.v3.platform.plugin.business.IResponseVo;
-import com.yindangu.v3.platform.plugin.business.api.func.IFuncContext;
-import com.yindangu.v3.platform.plugin.business.api.func.IFuncOutputVo;
-import com.yindangu.v3.platform.plugin.business.api.func.IFuncVObject;
-import com.yindangu.v3.platform.plugin.business.api.func.IFunction; 
+import com.yindangu.v3.business.plugin.business.IResponseVo;
+import com.yindangu.v3.business.plugin.business.api.func.IFuncContext;
+import com.yindangu.v3.business.plugin.business.api.func.IFuncOutputVo;
+import com.yindangu.v3.business.plugin.business.api.func.IFuncVObject;
+import com.yindangu.v3.business.plugin.business.api.func.IFunction;
 
 /**
  * 数字转换成汉字
@@ -306,12 +306,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.yindangu.plugin.demo.function.NumberUpperFunc;
-import com.yindangu.v3.platform.plugin.reg.api.base.IRegisterPlugin;
-import com.yindangu.v3.platform.plugin.reg.api.model.IComponentProfileVo;
-import com.yindangu.v3.platform.plugin.reg.api.model.IPluginProfileVo;
-import com.yindangu.v3.platform.plugin.reg.api.model.VariableType;
-import com.yindangu.v3.platform.plugin.vds.reg.api.builder.IFunctionBuilder;
-import com.yindangu.v3.platform.plugin.vds.reg.common.RegVds;
+import com.yindangu.v3.plugin.vds.reg.api.IRegisterPlugin;
+import com.yindangu.v3.plugin.vds.reg.api.builder.IEntityBuilder;
+import com.yindangu.v3.plugin.vds.reg.api.builder.IFunctionBuilder;
+import com.yindangu.v3.plugin.vds.reg.api.builder.IRuleBuilder;
+import com.yindangu.v3.plugin.vds.reg.api.model.IComponentProfileVo;
+import com.yindangu.v3.plugin.vds.reg.api.model.IPluginProfileVo;
+import com.yindangu.v3.plugin.vds.reg.api.model.VariableType;
+import com.yindangu.v3.plugin.vds.reg.common.RegVds;
 
 /**
  * 构件注册器(注册入口)
@@ -707,11 +709,11 @@ private IPluginProfileVo getHttpCommand() {
 
 **直接http访问**
 
-[http://\[ip\]:\[prot\]/module-operation!executeOperation?operation=mycmd](http://10.1.28.163:8080/module-operation!executeOperation?operation=mycmd)
+[http://\[ip\]:\[prot\]/module-operation!executeOperation?operation=com\_yindangu\_plugin\_xiezxTest\_mycmd](http://10.1.28.163:8080/module-operation!executeOperation?operation=com_yindangu_plugin_xiezxTest_mycmd)
 
 code对应请求的opertion
 
-![command&#x8BBF;&#x95EE;&#x7684;&#x6548;&#x679C;](../../../.gitbook/assets/jar-user4.png)
+![command&#x7684;&#x6548;&#x679C;](../../../.gitbook/assets/a.png)
 
 ## demo实例代码
 
