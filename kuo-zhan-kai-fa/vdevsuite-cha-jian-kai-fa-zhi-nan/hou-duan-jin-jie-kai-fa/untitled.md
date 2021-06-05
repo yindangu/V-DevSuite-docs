@@ -240,5 +240,7 @@
 
 ## 附：后台函数、规则示例源码
 
+[后台函数的demo源码工程\(20210604\).zip](http://download.yindangu.com/yindangu-plugin/plugin-demo/20210430/demo-function-20210604.zip)
 
+[后台规则的demo源码工程\(20210604\).zip](http://download.yindangu.com/yindangu-plugin/plugin-demo/20210430/demo-vrule-20210604.zip)
 
