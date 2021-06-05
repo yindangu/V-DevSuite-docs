@@ -244,3 +244,5 @@
 
 [后台规则的demo源码工程\(20210604\)](http://download.yindangu.com/yindangu-plugin/plugin-demo/20210430/demo-vrule-20210604.zip)
 
+_\(注：若点击无法下载，请右键选择“链接另存为”进行下载\)_
+
