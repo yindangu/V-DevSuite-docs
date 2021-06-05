@@ -719,3 +719,5 @@ code对应请求的opertion
 
 下载[demo代码](http://download.yindangu.com/yindangu-plugin/plugin-demo/20210430/94plugin-demo-service.zip)
 
+_\(注：若点击无法下载，请右键选择“链接另存为”进行下载\)_
+
