@@ -1,8 +1,8 @@
 # Table of contents
 
-* [V-DevSuite介绍](README.md)
+* [V-DevSuite简介](README.md)
 * [V-DevSuite](kuo-zhan-kai-fa/README.md)
-  * [概述](kuo-zhan-kai-fa/gai-shu.md)
+  * [总体描述](kuo-zhan-kai-fa/gai-shu.md)
   * [插件开发指南](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/README.md)
     * [快速入门](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/kuai-su-ru-men-1/README.md)
       * [开发后端插件](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/kuai-su-ru-men-1/kai-fa-hou-duan-cha-jian.md)
