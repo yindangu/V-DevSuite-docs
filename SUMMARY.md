@@ -12,6 +12,7 @@
       * [数据处理DataView](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/shu-ju-chu-li-dataview.md)
       * [缓存模块](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/huan-cun-mo-kuai.md)
       * [附件模块](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/fu-jian-mo-kuai.md)
+      * [服务调用](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/fu-wu-tiao-yong.md)
       * [VSCode实战](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/hou-duan-jin-jie-kai-fa/untitled.md)
     * [前端进阶开发](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/README.md)
       * [前端vds使用指南](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/qian-duan-vds-shi-yong-zhi-nan.md)
