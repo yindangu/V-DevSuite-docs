@@ -12,7 +12,15 @@ description: 实际开发中经常有些业务逻辑相同，可以重用的逻�
 
 ## 规范（未完）
 
-1、服务提供的方法不能抛异常。代替方案是返回{success:true,message:xx,value:object}方式。
+前提：不能传递对象，例如非java的基础对象、异常实例对传递不了。所以就引出很多规范细节
+
+1、参数类型：只能是java的基本类型。例如String、Integer等。HashMap、ArrayList会考虑开放。
+
+后期会提供工具，如果远程参数工具统一规范处理。
+
+2、返回值类型也是一样。
+
+3、服务提供的方法不能抛异常。代替方案是返回{success:true,message:xx,value:object}方式。
 
 因为通过远程调用、跨容器调用抛出的异常都捕捉不精确，所以只能通过返回值判断是否处理成功。
 
@@ -41,6 +49,8 @@ description: 实际开发中经常有些业务逻辑相同，可以重用的逻�
 ```text
 IMyServer service = VDS.getIntance().getService(IMyServer.class, "com.xx.yy.MyService");
 ```
+
+取得对象后就和本地对象使用方式一样。只是服务的实现会通过代理，在另一个容器运行。
 
 ## 后记（未完）
 
