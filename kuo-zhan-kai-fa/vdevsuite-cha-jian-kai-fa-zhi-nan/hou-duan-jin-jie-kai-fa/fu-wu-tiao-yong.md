@@ -28,6 +28,18 @@ description: 实际开发中经常有些业务逻辑相同，可以重用的逻�
 
 1.创建接口，接口需要继承 IOutService 接口
 
+```java
+package com.yindangu.v3.business.plugin.business.api.service;
+/**
+ * 外部服务<br/>
+ * 外部的定义是构件外面，不在同一构件内的类和接口都是外部服务<br/>
+ * 外部服务可以是相同jvm的构件提供的服务，也可能是远程的jvm提供的服务。
+ * @author jiqj
+ *
+ */
+public interface IOutService extends IPluginBase{}
+```
+
 导出接口包分发给使用者引用，接口包含的基本是接口，可以运行有少量的值对象ValueObject（Vo）,只能包含get/set方法，但不能包含逻辑：是否空、取值范围都不要包含。依赖其他包尽量少。
 
 2.实现接口的业务处理（这部分不）
