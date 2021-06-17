@@ -42,7 +42,7 @@ public interface IOutService extends IPluginBase{}
 
 导出接口包分发给使用者引用，接口包含的基本是接口，可以运行有少量的值对象ValueObject（Vo）,只能包含get/set方法，但不能包含逻辑：是否空、取值范围都不要包含。依赖其他包尽量少。
 
-2.实现接口的业务处理（这部分不）
+2.实现接口的业务处理（这部分不需要公开）
 
 3.按一般的插件发布。
 
