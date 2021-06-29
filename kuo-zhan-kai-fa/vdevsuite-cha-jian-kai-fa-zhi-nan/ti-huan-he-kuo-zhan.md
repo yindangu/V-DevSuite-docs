@@ -24,9 +24,17 @@ description: 现平台提供了很多规则、函数，项目中有些特殊场�
 
 3、提交构件。（提交云空间）
 
-约定：平台建议只修改“Desc”属性，元信息定义比较复杂为了控制参数的一致性，修改了其他属性可能导致编译不通过。
+#### 约定
 
-平台关键元信息不能修改：机构id\(groupId\)、构件编码\(component.code\)、插件编码\(plugin.code\)不能修改。
+a、平台建议只修改“Desc”属性，元信息定义比较复杂为了控制参数的一致性，修改了其他属性可能导致编译不通过。
+
+b、每个构件包含的插件数量要相同。
+
+目前平台的构件和插件都是一对一的（一个构件只包含一个插件），但以后可能会一个构件包含多个插件。如果a构件包含了b、c、d三个插件，如果a1替换了a构件，但是a1构件只包含了b、c两个插件，这样系统就会丢失了d插件。
+
+#### **其他信息说明**
+
+**关键元信息**不能修改：机构id\(groupId\)、构件编码\(component.code\)、插件编码\(plugin.code\)不能修改。
 
 ```java
 	@Override
@@ -81,7 +89,7 @@ description: 现平台提供了很多规则、函数，项目中有些特殊场�
  }
 ```
 
-入参、返回值不能修改：参数个数、类型都不允许修改
+**入参、返回值**不能修改：参数个数、类型都不允许修改
 
 ```java
 /** 函数元信息(数字转汉字) */
@@ -100,11 +108,189 @@ description: 现平台提供了很多规则、函数，项目中有些特殊场�
 	}
 ```
 
-作者信息：作者信息在发布云空间是自动获取登录人。
+**作者信息：**作者信息在发布云空间是自动获取登录人。
 
-## 3.扩展
+## 3.扩展\(后端\)
 
-相当于创建新的规则，操作过程就跟着demo的过程。
+相当于创建新的规则、函数，操作过程就跟着demo的过程。
+
+### 函数
+
+直接复制平台的代码和元信息描述后，需要修改机构id\(groupId\)、构件编码\(component.code\)、插件编码\(plugin.code\)为自定义的内容。
+
+扩展的函数与平台的函数已经没有必然的关系，参数信息、返回值等都可以按需改造。
+
+### 函数示例
+
+函数比较简单，取得平台原码后，需要修改的地方：
+
+a\)修改pom.xml文件: groupId，artifactId，version等都要修改。
+
+b\)修改插件注册器: groupId,component.code,plugin.code。
+
+d\)增加扩展参数：扩展方式与demo的一样。
+
+具体请参考demo
+
+### 规则
+
+扩展平台规则可以使用现有的配置界面，还可以增加额外参数。平台现有的规则没有入参、返回值的，扩展的额外参数只能通过入参、返回值实现。
+
+以扩展清除实体记录\(ClearEntityData\)规则进行说明
+
+默认的配置
+
+```java
+public class ClearEntityRegister implements IRegisterPlugin {
+	public static final String D_COMPONENT="Serverrule_" + ClearEntityData.D_RULE_CODE;
+	/** 插件作者 */
+	public final static String D_Author = "同望科技";
+    /** 组织标识 */
+	public final static String D_GroupId = "com.toone.v3.platform";
+	
+    
+    @Override
+    public IComponentProfileVo getComponentProfile() {
+        return RegVds.getPlugin()
+                .getComponentProfile()
+                .setGroupId(D_GroupId)
+                .setCode(D_COMPONENT)
+                .setVersion("3.4.0")
+                .build();
+    }
+
+    @Override
+    public List<IPluginProfileVo> getPluginProfile() {
+    	IPluginProfileVo pro = getRuleProfile();
+        return Collections.singletonList(pro);
+    }
+
+ 
+    private IRuleProfileVo getRuleProfile() {
+    	IRuleBuilder ruleBuilder = RegVds.getPlugin().getRulePlugin();
+    	ruleBuilder.setAuthor(D_Author)
+                .setCode(ClearEntityData.D_RULE_CODE)
+                .setDesc(ClearEntityData.D_RULE_DESC)
+                .setName(ClearEntityData.D_RULE_NAME)
+                .setEntry(ClearEntityData.class)
+                ;
+
+        return ruleBuilder.build();
+    }
+}
+```
+
+扩展配置取得原码后，需要修改的地方：
+
+a\)修改pom.xml文件: groupId，artifactId，version等都要修改。
+
+b\)修改插件注册器ClearEntityRegister: groupId,component.code,plugin.code。
+
+c\)配置扩展平台规则属性：manifest.json（references属性）**【重要】**
+
+```java
+[{
+    type:"rule",//插件类型
+    code:"",//规则编号
+    name:"",//规则名称
+    deprecated:false,//是否已弃用
+    desc:"",//规则描述
+    author:"",//开发者
+    entry:"",//规则主入口
+    scope:"",//规则应用范围
+    catalog:"",//规则所属目录
+    transactionType:"",//事务类型
+    defineUrl:"",//规则定义脚本文件url
+    debugUrl:""//规则测试脚本文件url
+    reference:{//可选，基于已有规则扩展，目前只支持平台规则
+        groupId:"com.toone.v3.platform",//必填，组织id
+        scope:"client",//可选，默认值为client，枚举值：client、server
+        componentCode:"Webrule_AbortRule",//必填，构件编号
+        pluginCode:"AbortRule"//必填，插件编号
+    },
+    inputs:[{//使用数组，方便属性排序,可选
+		code:"",//属性编号，
+		name:""//属性名称，
+        type:"",//属性类型
+		desc:""//属性描述，
+		default:null//默认值,
+		editor:{//编辑器信息，可选
+			type:"",//编辑器类型
+		}
+	}],
+    outputs:[{
+        code:""//规则输出编号,
+        type:""//规则输出类型,
+        name:"",//规则输出名称,
+        desc:"",//规则输出描述,
+        fields:[{//输出类型为entity时,此属性生效
+            code:""//列编号,
+            type:""//列类型,
+            name:"",//列名称,
+            desc:""//列描述
+        }...]
+    }]
+}]
+```
+
+d\)增加扩展参数：扩展方式与demo的一样。
+
+### 规则示例
+
+例如清除实体记录的规则需要增加写操作日志标志参数，如果参数为1，就要记录数据被谁清除的记录。
+
+1\)修改pom.xml\(只截取了需要修改的部分\)
+
+```markup
+<groupId>com.mydemo</groupId>
+<artifactId>demo_ClearEntityData</artifactId>
+<version>3.4.0</version>
+<description>后台规则-清除实体数据，并且记录清除人</description> 
+```
+
+2\)修改插件注册器ClearEntityRegister.java\(增加入参和返回值，已经修改groupid等参数\)
+
+```java
+public class ClearEntityRegister implements IRegisterPlugin {
+	
+    @Override
+    public IComponentProfileVo getComponentProfile() {
+        return RegVds.getPlugin()
+                .getComponentProfile()
+                .setGroupId("com.mydemo") //这3个元素按需要修改
+                .setCode("demo")
+                .setVersion("1.0.0")
+                .build();
+    }
+
+    @Override
+    public List<IPluginProfileVo> getPluginProfile() {
+    	IPluginProfileVo pro = getRuleProfile();
+        return Collections.singletonList(pro);
+    }
+
+ 
+    private IRuleProfileVo getRuleProfile() {
+    	IRuleBuilder ruleBuilder = RegVds.getPlugin().getRulePlugin();
+    	IRuleBuilder.IRuleInputBuilder rulePlog = ruleBuilder.newInput()
+    			.setCode(ClearEntityData.D_PARAM_WRITELOG)
+				.setName("需要写日志标志").setType(VariableType.Boolean);
+    	IRuleBuilder.IRuleOutputBuilder ruleOut = ruleBuilder.newOutput()
+    			.setCode(ClearEntityData.D_PARAM_ClearCount)
+    			.setName("返回清除记录数")
+    			.setType(VariableType.Integer);
+    	
+    	ruleBuilder.setAuthor("jiqj")
+                .setCode(ClearEntityData.D_RULE_CODE)//这3个元素按需要修改
+                .setDesc(ClearEntityData.D_RULE_DESC)
+                .setName(ClearEntityData.D_RULE_NAME)
+                .setEntry(ClearEntityData.class)
+                .addInput(rulePlog.build())//增加入参
+                .addOutput(ruleOut.build()); //增加返回值
+        return ruleBuilder.build();
+    }
+}
+```
 
 
 
@@ -124,9 +310,11 @@ description: 现平台提供了很多规则、函数，项目中有些特殊场�
 
 **扩展**模式就没有以上问题，唯一的缺点就是前期投入时间多一些。
 
-{% embed url="https://5.版本控制策略" %}
+## 5.版本控制策略
 
-版本
+版本控制策略适合所有的构件。
+
+
 
 \*\*\*\*
 
