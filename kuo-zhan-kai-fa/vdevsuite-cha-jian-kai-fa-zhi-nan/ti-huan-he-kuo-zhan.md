@@ -136,57 +136,28 @@ d\)增加扩展参数：扩展方式与demo的一样。
 
 扩展平台规则可以使用现有的配置界面，还可以增加额外参数。平台现有的规则没有入参、返回值的，扩展的额外参数只能通过入参、返回值实现。
 
-以扩展清除实体记录\(ClearEntityData\)规则进行说明
-
-默认的配置
-
-```java
-public class ClearEntityRegister implements IRegisterPlugin {
-	public static final String D_COMPONENT="Serverrule_" + ClearEntityData.D_RULE_CODE;
-	/** 插件作者 */
-	public final static String D_Author = "同望科技";
-    /** 组织标识 */
-	public final static String D_GroupId = "com.toone.v3.platform";
-	
-    
-    @Override
-    public IComponentProfileVo getComponentProfile() {
-        return RegVds.getPlugin()
-                .getComponentProfile()
-                .setGroupId(D_GroupId)
-                .setCode(D_COMPONENT)
-                .setVersion("3.4.0")
-                .build();
-    }
-
-    @Override
-    public List<IPluginProfileVo> getPluginProfile() {
-    	IPluginProfileVo pro = getRuleProfile();
-        return Collections.singletonList(pro);
-    }
-
- 
-    private IRuleProfileVo getRuleProfile() {
-    	IRuleBuilder ruleBuilder = RegVds.getPlugin().getRulePlugin();
-    	ruleBuilder.setAuthor(D_Author)
-                .setCode(ClearEntityData.D_RULE_CODE)
-                .setDesc(ClearEntityData.D_RULE_DESC)
-                .setName(ClearEntityData.D_RULE_NAME)
-                .setEntry(ClearEntityData.class)
-                ;
-
-        return ruleBuilder.build();
-    }
-}
-```
-
 扩展配置取得原码后，需要修改的地方：
 
 a\)修改pom.xml文件: groupId，artifactId，version等都要修改。
 
-b\)修改插件注册器ClearEntityRegister: groupId,component.code,plugin.code。
+b\)修改插件注册器groupId,component.code,plugin.code。
 
 c\)配置扩展平台规则属性：manifest.json（references属性）**【重要】**
+
+references：说明扩展平台的具体规则
+
+前端配置json
+
+```java
+reference:{
+  groupId:"组织id，平台规则基本就是：com.toone.v3.platform"
+  scope:"client",//可选，默认值为client，枚举值：client、server
+  componentCode:"Webrule_AbortRule",//必填，构件编号
+  pluginCode:"AbortRule"//必填，插件编号
+},
+```
+
+完整的结构：
 
 ```java
 [{
@@ -233,11 +204,13 @@ c\)配置扩展平台规则属性：manifest.json（references属性）**【重�
 }]
 ```
 
+
+
 d\)增加扩展参数：扩展方式与demo的一样。
 
 ### 规则示例
 
-例如清除实体记录的规则需要增加写操作日志标志参数，如果参数为1，就要记录数据被谁清除的记录。
+例如清除实体记录\(ClearEntityData\)的规则需要增加写操作日志标志参数，如果参数为1，就要记录数据被谁清除的记录。
 
 1\)修改pom.xml\(只截取了需要修改的部分\)
 
@@ -252,7 +225,6 @@ d\)增加扩展参数：扩展方式与demo的一样。
 
 ```java
 public class ClearEntityRegister implements IRegisterPlugin {
-	
     @Override
     public IComponentProfileVo getComponentProfile() {
         return RegVds.getPlugin()
