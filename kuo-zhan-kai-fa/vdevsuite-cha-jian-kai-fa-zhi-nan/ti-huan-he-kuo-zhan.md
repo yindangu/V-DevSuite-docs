@@ -146,7 +146,7 @@ c\)配置扩展平台规则属性：manifest.json（references属性）**【重�
 
 references：说明扩展平台的具体规则
 
-前端配置json
+前端配置json\(前后其实都一样，只是表现方式不同而已\)
 
 ```java
 reference:{
@@ -218,7 +218,7 @@ d\)增加扩展参数：扩展方式与demo的一样。
 <groupId>com.mydemo</groupId>
 <artifactId>demo_ClearEntityData</artifactId>
 <version>3.4.0</version>
-<description>后台规则-清除实体数据，并且记录清除人</description> 
+<description>后台规则-清除实体数据，并且记录清除人</description>
 ```
 
 2\)修改插件注册器ClearEntityRegister.java\(增加入参和返回值，已经修改groupid等参数\)
@@ -246,19 +246,19 @@ public class ClearEntityRegister implements IRegisterPlugin {
     	IRuleBuilder ruleBuilder = RegVds.getPlugin().getRulePlugin();
     	IRuleBuilder.IRuleInputBuilder rulePlog = ruleBuilder.newInput()
     			.setCode(ClearEntityData.D_PARAM_WRITELOG)
-				.setName("需要写日志标志").setType(VariableType.Boolean);
+				  .setName("需要写日志标志").setType(VariableType.Boolean);
     	IRuleBuilder.IRuleOutputBuilder ruleOut = ruleBuilder.newOutput()
     			.setCode(ClearEntityData.D_PARAM_ClearCount)
     			.setName("返回清除记录数")
     			.setType(VariableType.Integer);
     	
     	ruleBuilder.setAuthor("jiqj")
-                .setCode(ClearEntityData.D_RULE_CODE)//这3个元素按需要修改
-                .setDesc(ClearEntityData.D_RULE_DESC)
-                .setName(ClearEntityData.D_RULE_NAME)
-                .setEntry(ClearEntityData.class)
-                .addInput(rulePlog.build())//增加入参
-                .addOutput(ruleOut.build()); //增加返回值
+           .setCode(ClearEntityData.D_RULE_CODE)//这3个元素按需要修改
+           .setDesc(ClearEntityData.D_RULE_DESC)
+           .setName(ClearEntityData.D_RULE_NAME)
+           .setEntry(ClearEntityData.class)
+           .addInput(rulePlog.build())//增加入参
+           .addOutput(ruleOut.build()); //增加返回值
         return ruleBuilder.build();
     }
 }
