@@ -110,7 +110,7 @@ b、每个构件包含的插件数量要相同。
 
 **作者信息：**作者信息在发布云空间是自动获取登录人。
 
-## 3.扩展\(后端\)
+## 3.扩展
 
 相当于创建新的规则、函数，操作过程就跟着demo的过程。
 
@@ -223,7 +223,7 @@ d\)增加扩展参数：扩展方式与demo的一样。
 
 2\)修改插件注册器ClearEntityRegister.java\(增加入参和返回值，已经修改groupid等参数\)，注意要设置扩展的规则信息
 
-设置扩展的规则信息：
+设置扩展的规则信息\(前后端其实都一样，只是表现方式不同而已\)：
 
 ```java
 IRuleReferenceBuilder refBuilder = ruleBuilder.newReference()
@@ -299,9 +299,37 @@ public class ClearEntityRegister implements IRegisterPlugin {
 
 ```
 
-编译安装都开发系统会显示【原始配置】、【扩展配置】
+编译安装到开发系统会显示【原始配置】、【扩展配置】
 
 ![&#x6269;&#x5C55;&#x914D;&#x7F6E;](../../.gitbook/assets/image%20%2834%29.png)
+
+逻辑实现代码获取参数与demo一样，通过上下文获取：
+
+后端：
+
+```java
+//获取扩展参数
+Boolean writeLog = (Boolean)context.getInput(D_PARAM_WRITELOG);
+if(writeLog!=null && writeLog) {
+	clearCount = + 10000; 
+}
+//输出返回值
+return context.newOutputVo()
+		.put("clearCount", Integer.valueOf(clearCount))
+		.put(Boolean.TRUE);
+```
+
+前端:
+
+```javascript
+var output = ruleContext.newOutputVo();
+var clearCount =100;//获取扩展参数
+var writelog = ruleContext.getInput("writelog");
+if(writelog){
+	clearCount = 999;
+}//输出返回值
+output.set("clearCount",clearCount);
+```
 
 ## **4.强烈建议**
 
