@@ -221,10 +221,36 @@ d\)增加扩展参数：扩展方式与demo的一样。
 <description>后台规则-清除实体数据，并且记录清除人</description>
 ```
 
-2\)修改插件注册器ClearEntityRegister.java\(增加入参和返回值，已经修改groupid等参数\)
+2\)修改插件注册器ClearEntityRegister.java\(增加入参和返回值，已经修改groupid等参数\)，注意要设置扩展的规则信息
+
+设置扩展的规则信息：
 
 ```java
+IRuleReferenceBuilder refBuilder = ruleBuilder.newReference()
+	.setGroupId("com.toone.v3.platform")
+	.setComponentCode("Serverrule_ClearEntityData")
+	.setPluginCode("ClearEntityData");
+```
+
+```java
+import java.util.Collections;
+import java.util.List;
+
+import com.yindangu.v3.plugin.vds.reg.api.IRegisterPlugin;
+import com.yindangu.v3.plugin.vds.reg.api.builder.IRuleBuilder;
+import com.yindangu.v3.plugin.vds.reg.api.builder.IRuleBuilder.IRuleReferenceBuilder;
+import com.yindangu.v3.plugin.vds.reg.api.model.IComponentProfileVo;
+import com.yindangu.v3.plugin.vds.reg.api.model.IPluginProfileVo;
+import com.yindangu.v3.plugin.vds.reg.api.model.IRuleProfileVo;
+import com.yindangu.v3.plugin.vds.reg.api.model.VariableType;
+import com.yindangu.v3.plugin.vds.reg.common.RegVds;
+
+/**
+ * @Author xugang
+ * @Date 2021/5/27 11:23
+ */
 public class ClearEntityRegister implements IRegisterPlugin {
+	
     @Override
     public IComponentProfileVo getComponentProfile() {
         return RegVds.getPlugin()
@@ -246,25 +272,36 @@ public class ClearEntityRegister implements IRegisterPlugin {
     	IRuleBuilder ruleBuilder = RegVds.getPlugin().getRulePlugin();
     	IRuleBuilder.IRuleInputBuilder rulePlog = ruleBuilder.newInput()
     			.setCode(ClearEntityData.D_PARAM_WRITELOG)
-				  .setName("需要写日志标志").setType(VariableType.Boolean);
+				.setName("需要写日志标志").setType(VariableType.Boolean);
     	IRuleBuilder.IRuleOutputBuilder ruleOut = ruleBuilder.newOutput()
     			.setCode(ClearEntityData.D_PARAM_ClearCount)
     			.setName("返回清除记录数")
     			.setType(VariableType.Integer);
     	
+    	IRuleReferenceBuilder refBuilder = ruleBuilder.newReference()
+    			.setGroupId("com.toone.v3.platform")
+    			.setComponentCode("Serverrule_ClearEntityData")
+    			.setPluginCode("ClearEntityData");
+    	
     	ruleBuilder.setAuthor("jiqj")
-           .setCode(ClearEntityData.D_RULE_CODE)//这3个元素按需要修改
-           .setDesc(ClearEntityData.D_RULE_DESC)
-           .setName(ClearEntityData.D_RULE_NAME)
-           .setEntry(ClearEntityData.class)
-           .addInput(rulePlog.build())//增加入参
-           .addOutput(ruleOut.build()); //增加返回值
+                .setCode(ClearEntityData.D_RULE_CODE)//这3个元素按需要修改
+                .setDesc(ClearEntityData.D_RULE_DESC)
+                .setName(ClearEntityData.D_RULE_NAME)
+                .setEntry(ClearEntityData.class)
+                .addInput(rulePlog.build())//增加入参
+                .addOutput(ruleOut.build()) //增加返回值
+                .setReference(refBuilder.build()) //设置扩展的规则信息
+                ;
+    	
         return ruleBuilder.build();
     }
 }
+
 ```
 
+编译安装都开发系统会显示【原始配置】、【扩展配置】
 
+![&#x6269;&#x5C55;&#x914D;&#x7F6E;](../../.gitbook/assets/image%20%2834%29.png)
 
 ## **4.强烈建议**
 
