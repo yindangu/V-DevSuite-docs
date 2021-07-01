@@ -338,7 +338,7 @@ description: V-DevSuite对默认通用类规则、函数、控件插件进行源
 {% endtab %}
 {% endtabs %}
 
-### 3. 开源改造中的插件
+### 3. 准备开源的插件
 
 {% tabs %}
 {% tab title="前端规则" %}
