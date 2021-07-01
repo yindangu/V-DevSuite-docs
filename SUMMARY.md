@@ -21,7 +21,7 @@
       * [控件插件开发](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/kong-jian-plugin-dev.md)
       * [属性编辑器定义](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/shu-xing-bian-ji-qi-ding-yi.md)
     * [替换和扩展](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/ti-huan-he-kuo-zhan.md)
-    * [平台插件源码公开](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/ping-tai-cha-jian-yuan-ma-gong-kai.md)
+    * [源码公开](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/ping-tai-cha-jian-yuan-ma-gong-kai.md)
     * [API文档](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/api-wen-dang.md)
     * [FAQ](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/faq.md)
 
