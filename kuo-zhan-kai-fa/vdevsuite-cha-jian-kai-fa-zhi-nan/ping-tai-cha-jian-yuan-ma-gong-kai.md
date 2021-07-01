@@ -1,7 +1,5 @@
 ---
-description: >-
-  V-DevSuite对默认插件进行源码开源，平台开源的通用类规则、函数、控件插件的开源协议基于LGPL（GNU Lesser General Public
-  License）。
+description: V-DevSuite对默认通用类规则、函数、控件插件进行源码公开
 ---
 
 # 源码公开
