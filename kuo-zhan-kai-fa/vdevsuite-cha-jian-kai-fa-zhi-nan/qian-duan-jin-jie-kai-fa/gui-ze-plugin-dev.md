@@ -139,9 +139,9 @@ description: >-
       <td style="text-align:left">none</td>
       <td style="text-align:left">
         <p>&#x4E8B;&#x52A1;&#x7C7B;&#x578B;,&#x679A;&#x4E3E;&#x503C;:</p>
-        <p>transaction(&#x6709;&#x4E8B;&#x52A1;),</p>
-        <p>none(&#x65E0;&#x4E8B;&#x52A1;),</p>
-        <p>unknown(&#x672A;&#x77E5;)</p>
+        <p>transaction&#xFF1A;&#x6709;&#x4E8B;&#x52A1;&#xFF0C;&#x5982;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x5230;&#x6570;&#x636E;&#x5E93;&#x6216;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x5E93;&#x8BB0;&#x5F55;&#x7B49;&#x7B49;</p>
+        <p>none&#xFF1A;&#x65E0;&#x4E8B;&#x52A1;&#xFF0C;&#x5982;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#x3001;&#x8BBE;&#x7F6E;&#x63A7;&#x4EF6;&#x5C5E;&#x6027;&#x7B49;&#x7B49;</p>
+        <p>unknown&#xFF1A;&#x672A;&#x77E5;&#xFF0C;&#x4E0D;&#x80FD;&#x660E;&#x786E;&#x5F53;&#x524D;&#x89C4;&#x5219;&#x662F;&#x5426;&#x6709;&#x4E8B;&#x52A1;&#xFF0C;&#x5982;&#x6267;&#x884C;&#x65B9;&#x6CD5;</p>
       </td>
     </tr>
     <tr>
@@ -163,7 +163,7 @@ description: >-
 
 ### inputs属性
 
-        inputs属性值为数据组，方便属性在编辑器中显示时，进行排序，但此顺序不是最高优先级，最高优先级为属性采用的属性编辑器，规则配置界面中，优先按照属性编辑器进行分组，按照内定的顺序进行排序，统一组内再按照属性定义中的顺序进行排序，即：先根据属性编辑器进行分组，组内再按照inputs中的顺序进行排序；该属性为可选属性，如未设置，则代表规则无任何属性；inputs属性值中每一个数组元素定义一个控件属性，其中规则属性包括以下信息：
+        inputs属性值为数据组，方便输入配置在编辑器中显示时进行排序，该属性为可选属性，如未设置，则代表规则无任何配置信息；inputs属性值中每一个数组元素定义一个规则输入配置，其中规则输入配置包括以下信息：
 
 <table>
   <thead>
@@ -181,14 +181,14 @@ description: >-
       <td style="text-align:left">String</td>
       <td style="text-align:left">&#x662F;</td>
       <td style="text-align:left"></td>
-      <td style="text-align:left">&#x89C4;&#x5219;&#x5C5E;&#x6027;&#x7F16;&#x7801;&#xFF0C;&#x5728;&#x63A7;&#x4EF6;&#x4E2D;&#x5E94;&#x4FDD;&#x6301;&#x552F;&#x4E00;</td>
+      <td style="text-align:left">&#x89C4;&#x5219;&#x8F93;&#x5165;&#x914D;&#x7F6E;&#x7F16;&#x7801;&#xFF0C;&#x5728;&#x89C4;&#x5219;&#x4E2D;&#x5E94;&#x4FDD;&#x6301;&#x552F;&#x4E00;</td>
     </tr>
     <tr>
       <td style="text-align:left">name</td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">&#x662F;</td>
       <td style="text-align:left"></td>
-      <td style="text-align:left">&#x89C4;&#x5219;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#xFF0C;&#x5E94;&#x7B80;&#x8981;&#x660E;&#x786E;&#x8BF4;&#x660E;&#x5C5E;&#x6027;&#x7528;&#x9014;</td>
+      <td style="text-align:left">&#x89C4;&#x5219;&#x8F93;&#x5165;&#x914D;&#x7F6E;&#x540D;&#x79F0;&#xFF0C;&#x5E94;&#x7B80;&#x8981;&#x660E;&#x786E;&#x8BF4;&#x660E;&#x8F93;&#x5165;&#x914D;&#x7F6E;&#x7528;&#x9014;</td>
     </tr>
     <tr>
       <td style="text-align:left">type</td>
@@ -196,7 +196,7 @@ description: >-
       <td style="text-align:left">&#x5426;</td>
       <td style="text-align:left">text</td>
       <td style="text-align:left">
-        <p>&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#xFF1A;</p>
+        <p>&#x8F93;&#x5165;&#x914D;&#x7F6E;&#x7C7B;&#x578B;&#xFF1A;</p>
         <p>char-&#x6587;&#x672C;&#xFF0C;</p>
         <p>text-&#x957F;&#x6587;&#x672C;&#xFF0C;</p>
         <p>number-&#x5C0F;&#x6570;&#xFF0C;</p>
@@ -212,14 +212,14 @@ description: >-
       <td style="text-align:left">String</td>
       <td style="text-align:left">&#x5426;</td>
       <td style="text-align:left"></td>
-      <td style="text-align:left">&#x89C4;&#x5219;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#xFF0C;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#x63A7;&#x4EF6;&#x5C5E;&#x6027;&#x7528;&#x9014;</td>
+      <td style="text-align:left">&#x89C4;&#x5219;&#x8F93;&#x5165;&#x914D;&#x7F6E;&#x63CF;&#x8FF0;&#xFF0C;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#x89C4;&#x5219;&#x8F93;&#x5165;&#x914D;&#x7F6E;&#x7528;&#x9014;</td>
     </tr>
     <tr>
       <td style="text-align:left">default</td>
       <td style="text-align:left">Any</td>
       <td style="text-align:left">&#x5426;</td>
       <td style="text-align:left">null</td>
-      <td style="text-align:left">&#x89C4;&#x5219;&#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x503C;</td>
+      <td style="text-align:left">&#x89C4;&#x5219;&#x8F93;&#x5165;&#x914D;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;</td>
     </tr>
     <tr>
       <td style="text-align:left">editor</td>
@@ -387,7 +387,7 @@ com.yindangu.client.rule.moneyToChinese = function(ruleContext){
 
 ## 规则使用
 
-        待开发系统安装完成后，二次开发规则的使用方法与平台内部提供的规则一样，在方法编辑中直接选取使用，如下图：
+        待开发系统安装完成后，二次开发规则的使用方法与平台内部提供的规则一样，在方法编辑器中直接选取使用，如下图：
 
 ![](../../../.gitbook/assets/image%20%2810%29.png)
 
