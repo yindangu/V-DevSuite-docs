@@ -282,6 +282,34 @@ description: V-DevSuite对默认通用类规则、函数、控件插件进行源
 ### 2. 测试验证中的插件
 
 {% tabs %}
+{% tab title="后端规则" %}
+| 规则编码 |
+| :--- |
+| ExecuteRuleSet |
+| DataBaseDataToInterfaceEntity |
+| CopyRecordBetweenEntity |
+| UpdateRecord |
+| ModifyDataBaseRecord |
+| DeleteConditionRelationData |
+| EntityConditionRemove |
+| EntityRecordRecycling |
+| CallWebApi |
+| ImportExcelToDBOrEntity |
+| ExportDBOrEntityDataToExcel |
+| ServerGenerateXMLOrJSON |
+| ServerRestoreXMLOrJSON |
+| ServPrintDataTrans |
+| CallWebService |
+| ImportProjectToDBOrEntity |
+| ExecuteVoidQuery |
+| CopyRecordBetweenTables |
+| ThemeOperation |
+{% endtab %}
+
+{% tab title="后端函数" %}
+已测完
+{% endtab %}
+
 {% tab title="前端规则" %}
 | 规则编码 |
 | :--- |
@@ -313,34 +341,6 @@ description: V-DevSuite对默认通用类规则、函数、控件插件进行源
 | JGTimer |
 | JGHyperLink |
 | JGLinkLabel |
-{% endtab %}
-
-{% tab title="后端规则" %}
-| 规则编码 |
-| :--- |
-| ExecuteRuleSet |
-| DataBaseDataToInterfaceEntity |
-| CopyRecordBetweenEntity |
-| UpdateRecord |
-| ModifyDataBaseRecord |
-| DeleteConditionRelationData |
-| EntityConditionRemove |
-| EntityRecordRecycling |
-| CallWebApi |
-| ImportExcelToDBOrEntity |
-| ExportDBOrEntityDataToExcel |
-| ServerGenerateXMLOrJSON |
-| ServerRestoreXMLOrJSON |
-| ServPrintDataTrans |
-| CallWebService |
-| ImportProjectToDBOrEntity |
-| ExecuteVoidQuery |
-| CopyRecordBetweenTables |
-| ThemeOperation |
-{% endtab %}
-
-{% tab title="后端函数" %}
-无
 {% endtab %}
 {% endtabs %}
 
