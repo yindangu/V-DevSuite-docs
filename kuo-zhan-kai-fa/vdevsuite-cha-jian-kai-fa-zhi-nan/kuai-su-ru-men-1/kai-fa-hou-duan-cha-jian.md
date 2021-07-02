@@ -419,7 +419,13 @@ public IComponentProfileVo getComponentProfile() {
 
 打包好jar后，就要使用V-AppDesigner进行构件的部署，[《零代码软件开发工具套件》](http://www.yindangu.com/module-operation!executeOperation?componentCode=yindangu_officialwebsite&windowCode=Form_Product_VDevSuite&token=%7B%22data%22%3A%7B%22inputParam%22%3A%7B%22variable%22%3A%7B%22formulaOpenMode%22%3A%22locationHref%22%7D%7D%7D%7D)
 
-![&#x5F00;&#x53D1;&#x7CFB;&#x7EDF;&#x4E0A;&#x4F20;&#x6784;&#x4EF6;](../../../.gitbook/assets/dev-upload1.png)
+![&#x4E91;&#x7F16;&#x8BD1;&#x6784;&#x4EF6;](../../../.gitbook/assets/deploy-jar.png)
+
+【发布云空间】编译成功后，可以直接提交到对应的任务的。
+
+【发布到本地】编译成功后，把jar包下载到本地。
+
+![](../../../.gitbook/assets/deploy-jar2.png)
 
 返回每个插件的状态,只要有一个不成功，就整个构件发布不成功
 
@@ -427,7 +433,7 @@ public IComponentProfileVo getComponentProfile() {
 
 ## 使用插件
 
-上传部署成功后，在开发系统如图点击项目刷新后，就可以在V-AppDesigner的规则链配置中选择使用已部署的规则函件、函数插件了。
+上传部署成功后，在开发系统如图点击云更新后，就可以在V-AppDesigner的规则链配置中选择使用已部署的规则函件、函数插件了。
 
 ![&#x5237;&#x65B0;&#x9879;&#x76EE;](../../../.gitbook/assets/jar-user1.png)
 
