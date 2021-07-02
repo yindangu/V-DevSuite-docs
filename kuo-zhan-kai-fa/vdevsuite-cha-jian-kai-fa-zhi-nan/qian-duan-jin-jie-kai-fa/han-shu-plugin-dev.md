@@ -65,7 +65,7 @@ description: >-
       <td style="text-align:left">&#x679A;&#x4E3E;</td>
       <td style="text-align:left">&#x662F;</td>
       <td style="text-align:left"></td>
-      <td style="text-align:left">&#x524D;&#x7AEF;&#x51FD;&#x6570;&#x4E3A;function</td>
+      <td style="text-align:left">&#x51FD;&#x6570;&#x4E3A;function</td>
     </tr>
     <tr>
       <td style="text-align:left">code</td>
@@ -150,15 +150,31 @@ description: >-
       <td style="text-align:left">&#x662F;</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">
-        <p>&#x5165;&#x53C2;&#x7C7B;&#x578B;&#xFF0C;&#x679A;&#x4E3E;&#x9879;&#xFF1A;</p>
+        <p>&#x5165;&#x53C2;&#x7C7B;&#x578B;&#xFF0C;&#x5F53;&#x679A;&#x4E3E;&#x503C;&#x4E3A;range&#x65F6;&#xFF0C;&#x5219;&#x4F7F;&#x7528;typeRange&#x5C5E;&#x6027;&#x503C;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x8303;&#x56F4;</p>
+        <p>&#x679A;&#x4E3E;&#x9879;&#xFF1A;</p>
         <p>char-&#x6587;&#x672C;&#xFF0C;</p>
         <p>text-&#x957F;&#x6587;&#x672C;&#xFF0C;</p>
         <p>number-&#x5C0F;&#x6570;&#xFF0C;</p>
         <p>boolean-&#x5E03;&#x5C14;&#xFF0C;</p>
         <p>date-&#x65E5;&#x671F;&#xFF0C;</p>
         <p>longDate-&#x957F;&#x65E5;&#x671F;&#xFF0C;</p>
-        <p>integer-&#x6574;&#x578B;</p>
+        <p>integer-&#x6574;&#x578B;,</p>
+        <p>range-&#x6307;&#x5B9A;&#x8303;&#x56F4;</p>
       </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">typeRange</td>
+      <td style="text-align:left">Array</td>
+      <td style="text-align:left">&#x5426;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x8303;&#x56F4;&#x3001;&#x5165;&#x53C2;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4E3A;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x79CD;&#xFF0C;&#x679A;&#x4E3E;&#x9879;&#x4E3A;&#x4E0A;&#x8FF0;type&#x679A;&#x4E3E;&#x503C;&#xFF0C;&#x9664;&#x53BB;range</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">index</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">&#x5426;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x9002;&#x7528;&#x4E0B;&#x6807;&#x8303;&#x56F4;&#xFF0C;&#x91C7;&#x7528;&#x6570;&#x5B66;&#x533A;&#x95F4;&#x8868;&#x793A;,&#x5982;[0,3)&#xFF1B;&#x5982;&#x672A;&#x8BBE;&#x7F6E;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x914D;&#x7F6E;&#x6240;&#x5728;inputs&#x5C5E;&#x6027;&#x503C;&#x4E2D;&#x7684;&#x4E0B;&#x6807;&#x503C;</td>
     </tr>
     <tr>
       <td style="text-align:left">desc</td>
