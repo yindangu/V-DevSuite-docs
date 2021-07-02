@@ -435,7 +435,7 @@ public IComponentProfileVo getComponentProfile() {
 
 上传部署成功后，在开发系统如图点击云更新后，就可以在V-AppDesigner的规则链配置中选择使用已部署的规则函件、函数插件了。
 
-![&#x5237;&#x65B0;&#x9879;&#x76EE;](../../../.gitbook/assets/jar-user1.png)
+![](../../../.gitbook/assets/deploy-jar3.png)
 
 插件的使用
 
