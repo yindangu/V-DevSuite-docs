@@ -489,10 +489,6 @@ description: V-DevSuite对默认通用类规则、函数、控件插件进行源
 {% tab title="前端控件" %}
 | 控件编码 |
 | :--- |
-| JGButton |
-| JGImage |
-| JGTimer |
-| JGLinkLabel |
 | JGButtonGroup |
 | JGWebBrowser |
 | JGActivityPanel |
