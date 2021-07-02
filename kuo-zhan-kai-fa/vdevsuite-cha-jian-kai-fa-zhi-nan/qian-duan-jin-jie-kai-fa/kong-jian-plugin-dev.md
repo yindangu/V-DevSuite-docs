@@ -378,6 +378,8 @@ properties属性值为数据组，方便属性在编辑器中显示时进行排�
 | readable | Boolean | true | 描述该属性是否能在规则中读取 |
 | writable | Boolean | true | 描述该属性是否能在规则中编辑 |
 
+**注意：如该属性设置在规则中可访问，应提供get、set方法；例：获取、设置标题属性\(title\)，控件应提供setTitle和getTitle实例方法。**
+
 **web设计器（webDesigner）**
 
 详细描述web设计器中该属性的访问权限信息（tips:如设计器完全web化后，此配置应与designer合并）。详情如下：
