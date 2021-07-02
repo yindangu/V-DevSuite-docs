@@ -20,6 +20,8 @@ description: V-DevSuite对默认通用类规则、函数、控件插件进行源
 
 [后端函数](https://github.com/opensource-vplatform/vplatform-plugin-function-server)
 
+_注：release branch为正式版，main branch为开发版_
+
 ## 开源进度
 
 ### 1. 已开源的插件
