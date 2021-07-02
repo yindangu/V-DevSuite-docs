@@ -242,11 +242,7 @@ description: >-
       <td style="text-align:left">Boolean</td>
       <td style="text-align:left">&#x5426;</td>
       <td style="text-align:left">true</td>
-      <td style="text-align:left">
-        <p>&#x662F;&#x5426;&#x5728;&#x8BBE;&#x8BA1;&#x5668;&#x4E2D;&#x663E;&#x793A;&#xFF0C;</p>
-        <p>&#x5982;&#x679C;&#x4E0D;&#x663E;&#x793A;&#xFF0C;</p>
-        <p>&#x5219;properties&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;</p>
-      </td>
+      <td style="text-align:left">&#x662F;&#x5426;&#x5728;&#x7A97;&#x4F53;&#x8BBE;&#x8BA1;&#x5668;&#x4E2D;&#x663E;&#x793A;</td>
     </tr>
     <tr>
       <td style="text-align:left">defineUrl</td>
@@ -274,7 +270,7 @@ description: >-
 
 ### properties属性
 
-properties属性值为数据组，方便属性在编辑器中显示时，进行排序，首先根据属性分类信息进行分组，组内再按照数组中的位置进行排序。其中属性分类信息优先使用属性catalog值，如未设置，则使用编辑器中的分类信息。该属性为可选属性，如未设置，则代表控件无任何属性；properties属性值中每一个数组元素定义一个控件属性，其中控件属性包括以下信息：
+properties属性值为数据组，方便属性在编辑器中显示时进行排序，首先根据属性分类信息进行分组，组内再按照数组中的位置进行排序。其中属性分类信息优先使用属性catalog值，如未设置，则使用编辑器中的分类信息。该属性为可选属性，如未设置，则代表控件无任何属性；properties属性值中每一个数组元素定义一个控件属性，其中控件属性包括以下信息：
 
 定义属性编号，名称，描述及默认值信息；该属性为必填属性，详情如下：
 
@@ -344,6 +340,13 @@ properties属性值为数据组，方便属性在编辑器中显示时，进行�
       <td style="text-align:left"></td>
       <td style="text-align:left"><a href="https://yindangu.gitbook.io/v-devsuite/kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/shu-xing-bian-ji-qi-ding-yi">&#x7F16;&#x8F91;&#x5668;&#x4FE1;&#x606F;</a>
       </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">compatible</td>
+      <td style="text-align:left">Object</td>
+      <td style="text-align:left">&#x5426;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x517C;&#x5BB9;&#x914D;&#x7F6E;&#xFF0C;&#x65E7;&#x5E73;&#x53F0;&#x63A7;&#x4EF6;&#x672A;&#x4F7F;&#x7528;&#x8BE5;&#x4E8C;&#x6B21;&#x5F00;&#x53D1;&#x89C4;&#x8303;&#x5F00;&#x53D1;&#xFF0C;&#x9700;&#x8981;&#x6709;&#x4E9B;&#x517C;&#x5BB9;&#x914D;&#x7F6E;&#xFF0C;&#x65B0;&#x63A7;&#x4EF6;&#x65E0;&#x9700;&#x5173;&#x6CE8;&#x6B64;&#x914D;&#x7F6E;&#x3002;</td>
     </tr>
   </tbody>
 </table>
