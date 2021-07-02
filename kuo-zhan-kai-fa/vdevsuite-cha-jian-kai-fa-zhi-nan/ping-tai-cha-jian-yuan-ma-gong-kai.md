@@ -306,7 +306,13 @@ description: V-DevSuite对默认通用类规则、函数、控件插件进行源
 {% endtab %}
 
 {% tab title="前端控件" %}
-暂无...
+| 控件编码 |
+| :--- |
+| JGButton |
+| JGImage |
+| JGTimer |
+| JGHyperLink |
+| JGLinkLabel |
 {% endtab %}
 
 {% tab title="后端规则" %}
