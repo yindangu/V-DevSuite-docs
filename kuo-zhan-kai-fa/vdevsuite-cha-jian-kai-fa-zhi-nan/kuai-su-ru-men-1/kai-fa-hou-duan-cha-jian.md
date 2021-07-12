@@ -187,8 +187,8 @@ V-DevSuite之后会陆续放出更多的插件供开发人员进行扩展实现�
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin><!-- 把依赖的包导出来，方便发布构件时选择 -->
