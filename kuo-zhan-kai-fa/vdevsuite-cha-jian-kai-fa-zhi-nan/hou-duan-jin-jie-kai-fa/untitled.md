@@ -232,7 +232,7 @@
 
 把上传云编译、安装构件、更新构件的步骤集成在执行系统，最后执行一步操作就完成所有动作。注意：这个功能只是为调试时能快速发布到执行系统，只对开发阶段开放，正式发布构件请开发系统的发布构件功能。
 
-打个包过程是跟平常一样，使用mavn或其他工具打包成标准jar包，详细参考《把原始jar包部署到云空间》一节。打包好jar文件后，请登录到执行系统后台，去到插件管理模块编译 jar文件，例如:[http://10.1.28.163:8080/system/settings/index.html\#/portal/:-system-console-vpluginManager](http://10.1.28.163:8080/system/settings/index.html#/portal/:-system-console-vpluginManager)
+打个包过程是跟平常一样，使用mavn或其他工具打包成标准jar包，详细参考《把原始jar包部署到云空间》一节。打包好标准jar文件后，请登录到执行系统后台，去到插件管理模块编译 jar文件，[http://IP:PROT/system/settings/index.html\#/portal/:-system-console-vpluginManager](http://10.1.28.163:8080/system/settings/index.html#/portal/:-system-console-vpluginManager)
 
 ![&#x7F16;&#x8BD1;&#x53CA;&#x53D1;&#x5E03;&#x6784;&#x4EF6;](../../../.gitbook/assets/image%20%2835%29.png)
 
