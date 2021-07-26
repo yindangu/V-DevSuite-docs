@@ -28,7 +28,7 @@ _注：release branch为正式版，main branch为开发版_
 
 {% tabs %}
 {% tab title="后端规则" %}
-SetEntityVarControlValue--给界面实体/控件/变量赋值 ,AbortRule--中断规则 ,AddTableRecord--新增实体记录 ,SetLoopVariant--给循环变量赋值 ,ExecExpression--执行函数表达式 ,ClearEntityData--清除实体记录 ,ExceptionAbort--异常中断 ,AbortLoop--中断循环 ,DeleteConditionRelationData-删除数据库中的记录 ,EntityConditionRemove-删除实体记录 ,EntityRecordRecycling-实体记录循环处理 ,GenerateXMLOrJSON-配置数据生成 ,UpdateRecord-保存实体到数据
+SetEntityVarControlValue--给界面实体/控件/变量赋值, AbortRule--中断规则, AddTableRecord--新增实体记录, SetLoopVariant--给循环变量赋值, ExecExpression--执行函数表达式, ClearEntityData--清除实体记录, ExceptionAbort--异常中断, AbortLoop--中断循环 , DeleteConditionRelationData-删除数据库中的记录, EntityConditionRemove-删除实体记录, EntityRecordRecycling-实体记录循环处理, GenerateXMLOrJSON-配置数据生成, UpdateRecord-保存实体到数据
 {% endtab %}
 
 {% tab title="后端函数" %}
@@ -52,7 +52,7 @@ JGButton ,JGImage ,JGTimer ,JGHyperLink
 
 {% tabs %}
 {% tab title="后端规则" %}
-CallWebApi-调用webapi ,CallWebService-调用webservice ,ServerRestoreXMLOrJSON-配置数据还原 ,DataBaseDataToInterfaceEntity-从数据库获取数据到实体 ,ModifyDataBaseRecord-修改数据库中的记录
+CallWebApi-调用webapi, CallWebService-调用webservice, ServerRestoreXMLOrJSON-配置数据还原, DataBaseDataToInterfaceEntity-从数据库获取数据到实体, ModifyDataBaseRecord-修改数据库中的记录, ExecuteVoidQuery-执行无返回值的查询, ImportProjectToDBOrEntity-Project导入到数据库表或实体, DataBaseDataToInterfaceEntity-从数据库获取数据到实体, CopyRecordBetweenEntity-实体间复制记录, ServPrintDataTrans-报表打印数据转换, CopyRecordBetweenTables-表间数据复制
 {% endtab %}
 
 {% tab title="后端函数" %}
@@ -76,7 +76,7 @@ JGBaseDictBox, JGComboBox, JGDateTimePicker, JGIntegerBox, JGCheckBoxGroup, JGRa
 
 {% tabs %}
 {% tab title="后端规则" %}
-ExecuteRuleSet ,DataBaseDataToInterfaceEntity ,CopyRecordBetweenEntity ,ModifyDataBaseRecord ,ImportExcelToDBOrEntity ,ExportDBOrEntityDataToExcel ,ServPrintDataTrans ,ImportProjectToDBOrEntity ,ExecuteVoidQuery ,CopyRecordBetweenTables
+ExecuteRuleSet, DataBaseDataToInterfaceEntity, CopyRecordBetweenEntity, ModifyDataBaseRecord, ImportExcelToDBOrEntity, ExportDBOrEntityDataToExcel, ServPrintDataTrans, CopyRecordBetweenTables
 {% endtab %}
 
 {% tab title="后端函数" %}
