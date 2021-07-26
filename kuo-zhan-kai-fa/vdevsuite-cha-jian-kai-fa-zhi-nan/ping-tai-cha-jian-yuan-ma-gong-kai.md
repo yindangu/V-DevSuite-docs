@@ -60,7 +60,7 @@ CallWebApi-调用webapi, CallWebService-调用webservice, ServerRestoreXMLOrJSON
 {% endtab %}
 
 {% tab title="前端规则" %}
-RefreshControlItems--刷新控件的候选项 ,PrintOperation--打印及预览操作 ,TreeGridStatistics-树表数值字段向上汇总 ,TreeDisplayOper--树节点展开折叠 ,UpdateRecord--保存实体到数据库 ,Webrule\_CalculateToColumn--计算公式的值并赋值给指定字段 ,Webrule\_ClearInterfaceEntityData--清除界面实体中的记录 ,Webrule\_CopyTreeDataBetweenEntities--树形结构实体间数据复制 ,Webrule\_CursorJumpControl--光标跳转控制 ,Webrule\_DeleteListSelectRow--删除实体记录 ,SetEntityVarControlValue--给界面实体/控件/变量赋值 ,AddDataBaseRecord--新增数据库记录 ,InterfaceEntityRecordRecycling---界面实体记录循环处理 ,MakeCertPic--生成数据验证码 ,ModifyDataBaseRecord--修改数据库中的记录 ,RecordReferenceCheck--记录引用检查 ,RestoreXMLOrJSON--配置数据还原 ,VucRedirector--统一认证跳转 ,GetRecordCount--获取数据库表中的记录 ,I18nOperation--多语言操作 ,ImportExcelToDB--Excel导入到数据库表 ,JGStepsOperation 步骤条操作
+RefreshControlItems--刷新控件的候选项, PrintOperation--打印及预览操作, TreeGridStatistics-树表数值字段向上汇总, TreeDisplayOper--树节点展开折叠, UpdateRecord--保存实体到数据库, Webrule\_CalculateToColumn--计算公式的值并赋值给指定字段, Webrule\_ClearInterfaceEntityData--清除界面实体中的记录, Webrule\_CopyTreeDataBetweenEntities--树形结构实体间数据复制, Webrule\_CursorJumpControl--光标跳转控制, Webrule\_DeleteListSelectRow--删除实体记录, SetEntityVarControlValue--给界面实体/控件/变量赋值, AddDataBaseRecord--新增数据库记录, InterfaceEntityRecordRecycling---界面实体记录循环处理, MakeCertPic--生成数据验证码, ModifyDataBaseRecord--修改数据库中的记录, RecordReferenceCheck--记录引用检查, RestoreXMLOrJSON--配置数据还原, VucRedirector--统一认证跳转, GetRecordCount--获取数据库表中的记录, I18nOperation--多语言操作, ImportExcelToDB--Excel导入到数据库表, JGStepsOperation 步骤条操作
 {% endtab %}
 
 {% tab title="前端函数" %}
@@ -68,7 +68,7 @@ RefreshControlItems--刷新控件的候选项 ,PrintOperation--打印及预览�
 {% endtab %}
 
 {% tab title="前端控件" %}
-JGBaseDictBox, JGComboBox, JGDateTimePicker, JGIntegerBox, JGCheckBoxGroup, JGRadioGroup, JGLongDateTimePicker, JGPeriod, JGPercent
+JGCheckBox, JGFloatBox, JGLongTextBox, JGPassword, JGTextBox, JGBaseDictBox, JGComboBox, JGDateTimePicker, JGIntegerBox, JGCheckBoxGroup, JGRadioGroup, JGLongDateTimePicker, JGPeriod, JGPercent
 {% endtab %}
 {% endtabs %}
 
@@ -92,7 +92,7 @@ Webfunc\_ArgsToArray, Webfunc\_Decrypt, Webfunc\_DecryptFunc, Webfunc\_DeleteCoo
 {% endtab %}
 
 {% tab title="前端控件" %}
-JGLabel, JGTabControl, JGComponentContainer, JGQueryConditionPanel, JGButtonGroup, JGDiv, JGLinkLabel, JGNavigator, JGStartMenu, JGRichTextEditor, JGRichTextViewer, JGAttachment, JGDataGrid, JGLocateBox, JGTreeGrid, JGTreeView, JGChart, JGReport, JGRecordPaging, JGImagePlay, JGNewsList, JGActivityPanel, JGWorkFlowGraph, JGPropertyEditor, JGCalendar, JGSteps, JGPortal, JGPortalEdit, JGAnimation, JGWebBrowser, JGBarcode, JGCardLayout, JGContainer, JGFlowLayoutPanel, JGFormLayout, JGGroupBox, JGGroupPanel, JGImageCutter, JGPagination, JGPanel, JGQrcode, JGStepBar, JGWebWindowResource
+JGTabControl, JGComponentContainer, JGQueryConditionPanel, JGButtonGroup, JGDiv, JGNavigator, JGStartMenu, JGRichTextEditor, JGRichTextViewer, JGAttachment, JGDataGrid, JGTreeGrid, JGTreeView, JGChart, JGReport, JGRecordPaging, JGActivityPanel, JGWorkFlowGraph, JGPropertyEditor, JGCalendar, JGSteps, JGPortal, JGWebBrowser, JGFormLayout, JGGroupPanel, JGImageCutter
 {% endtab %}
 {% endtabs %}
 
