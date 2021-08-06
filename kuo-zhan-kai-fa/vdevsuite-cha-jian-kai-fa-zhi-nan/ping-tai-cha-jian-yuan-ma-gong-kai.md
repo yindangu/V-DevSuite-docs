@@ -36,7 +36,7 @@ ABS, Acos, AddThousandBits, AsciiToUnicode, Asin, Atan, AvgColumnFunc, Ceiling, 
 {% endtab %}
 
 {% tab title="前端规则" %}
-AbortLoop--中断循环, AbortRule--中断规则, AddTableRecord-新增实体记录, Webrule\_ShowMessageWhenChanged--判断指定实体的数据是否发生变化, Webrule\_ShowMessage--显示设设置提示信息, Webrule\_SetLoopVariant--给循环变量赋值, Webrule\_SetControlPropertys--控件属性设置, Webrule\_SelectionConfirm--退出窗体, Webrule\_ResetSelectedControlValue--清空控件数值, Webrule\_RefreshSystemVariable--刷新构建变量的值, Webrule\_Progress--进度条显示隐藏, Webrule\_MakeControlRVE--控制控件的只读、使能、显示, Webrule\_LocateSelectRecord--记录选中/取消选中, LocateCurrentRecord--记录定位, PageVisibleControl--页签显示控制, TreeNodeMoveUpDownEditor--实体树形操作
+AbortLoop--中断循环, AbortRule--中断规则, AddTableRecord-新增实体记录, Webrule\_ShowMessageWhenChanged--判断指定实体的数据是否发生变化, Webrule\_ShowMessage--显示设设置提示信息, Webrule\_SetLoopVariant--给循环变量赋值, Webrule\_SetControlPropertys--控件属性设置, Webrule\_SelectionConfirm--退出窗体, Webrule\_ResetSelectedControlValue--清空控件数值, Webrule\_RefreshSystemVariable--刷新构建变量的值, Webrule\_Progress--进度条显示隐藏, Webrule\_MakeControlRVE--控制控件的只读、使能、显示, Webrule\_LocateSelectRecord--记录选中/取消选中, LocateCurrentRecord--记录定位, PageVisibleControl--页签显示控制, TreeNodeMoveUpDownEditor--实体树形操作, RefreshControlItems--刷新控件的候选项, PrintOperation--打印及预览操作, TreeGridStatistics-树表数值字段向上汇总, TreeDisplayOper--树节点展开折叠, UpdateRecord--保存实体到数据库, Webrule\_CalculateToColumn--计算公式的值并赋值给指定字段, Webrule\_ClearInterfaceEntityData--清除界面实体中的记录, Webrule\_CopyTreeDataBetweenEntities--树形结构实体间数据复制, Webrule\_CursorJumpControl--光标跳转控制, Webrule\_DeleteListSelectRow--删除实体记录
 {% endtab %}
 
 {% tab title="前端函数" %}
@@ -52,15 +52,15 @@ JGButton ,JGImage ,JGTimer ,JGHyperLink
 
 {% tabs %}
 {% tab title="后端规则" %}
-CallWebApi-调用webapi, CallWebService-调用webservice, ServerRestoreXMLOrJSON-配置数据还原, DataBaseDataToInterfaceEntity-从数据库获取数据到实体, ModifyDataBaseRecord-修改数据库中的记录, ExecuteVoidQuery-执行无返回值的查询, ImportProjectToDBOrEntity-Project导入到数据库表或实体, DataBaseDataToInterfaceEntity-从数据库获取数据到实体, CopyRecordBetweenEntity-实体间复制记录, ServPrintDataTrans-报表打印数据转换, CopyRecordBetweenTables-表间数据复制
+CallWebApi-调用webapi, CallWebService-调用webservice, ServerRestoreXMLOrJSON-配置数据还原, DataBaseDataToInterfaceEntity-从数据库获取数据到实体, ModifyDataBaseRecord-修改数据库中的记录, ExecuteVoidQuery-执行无返回值的查询, ImportProjectToDBOrEntity-Project导入到数据库表或实体, DataBaseDataToInterfaceEntity-从数据库获取数据到实体, CopyRecordBetweenEntity-实体间复制记录, ServPrintDataTrans-报表打印数据转换, CopyRecordBetweenTables-表间数据复制, ExportDBOrEntityDataToExcel-导出数据库或实体数据到Excel, ImportExcelToDBOrEntity--Excel导入到数据库表或实体, Serverrule\_ExecuteRuleSet-执行方法
 {% endtab %}
 
 {% tab title="后端函数" %}
-已改造完毕
+已完成
 {% endtab %}
 
 {% tab title="前端规则" %}
-RefreshControlItems--刷新控件的候选项, PrintOperation--打印及预览操作, TreeGridStatistics-树表数值字段向上汇总, TreeDisplayOper--树节点展开折叠, UpdateRecord--保存实体到数据库, Webrule\_CalculateToColumn--计算公式的值并赋值给指定字段, Webrule\_ClearInterfaceEntityData--清除界面实体中的记录, Webrule\_CopyTreeDataBetweenEntities--树形结构实体间数据复制, Webrule\_CursorJumpControl--光标跳转控制, Webrule\_DeleteListSelectRow--删除实体记录, SetEntityVarControlValue--给界面实体/控件/变量赋值, AddDataBaseRecord--新增数据库记录, InterfaceEntityRecordRecycling---界面实体记录循环处理, MakeCertPic--生成数据验证码, ModifyDataBaseRecord--修改数据库中的记录, RecordReferenceCheck--记录引用检查, RestoreXMLOrJSON--配置数据还原, VucRedirector--统一认证跳转, GetRecordCount--获取数据库表中的记录, I18nOperation--多语言操作, ImportExcelToDB--Excel导入到数据库表, JGStepsOperation 步骤条操作
+SetEntityVarControlValue--给界面实体/控件/变量赋值, AddDataBaseRecord--新增数据库记录, InterfaceEntityRecordRecycling---界面实体记录循环处理, MakeCertPic--生成数据验证码, ModifyDataBaseRecord--修改数据库中的记录, RecordReferenceCheck--记录引用检查, RestoreXMLOrJSON--配置数据还原, VucRedirector--统一认证跳转, GetRecordCount--获取数据库表中的记录, I18nOperation--多语言操作, ImportExcelToDB--Excel导入到数据库表, JGStepsOperation 步骤条操作, Webrule\_ExportDataToExcel--导出数据库数据到Excel, Webrule\_DataValidationEditor--数据合法性校验, Webrule\_CopyEntityRecord--实体间复制记录, Webrule\_CompareEntityData--界面实体之间数据比较, Webrule\_CheckUnique--前后台唯一性检查, Webrule\_CheckCertCode--校验验证码, Webrule\_CancelCloseWindow--取消窗体关闭, Webrule\_Attachmentoperation--附件操作, Webrule\_GenerateXMLOrJSON--配置数据生成, Webrule\_HardwareOperation--移动设备硬件操作, Webrule\_GetLocalDBToEntity--从手机数据库获取数据到实体, Webrule\_SaveFileToAlbum--保存图片或视频到相册, Webrule\_SaveFile--保存图片, Webrule\_SaveEntityToLocalDB--保存实体到手机数据库, 单据编号生成（Webrule\_GenerateBillCode）, 导出表格数据到Excel（Webrule\_ExportTableData）, 执行函数/表达式（Webrule\_ExecExpression）, 加载动态交叉表到实体（Webrule\_DynamicCrossDataToInterfaceEntity）, 将表（及从表）数据插入到其它表（Webrule\_DocumentsConverted）, 删除数据库中的记录（Webrule\_DeleteConditionRelationData）, 从数据库获取数据到实体（Webrule\_DataBaseDataToInterfaceEntity）, 树形结构表间数据复制（Webrule\_CopyTreeDataBetweenTables）, 表间数据复制（Webrule\_CopyDataBetweenTables）, 界面实体与物理表数据比较（Webrule\_CompareEntityAndTableData）, 调用WebAPI（Webrule\_CallWebApi）, 计算公式的值并赋值给指定字段（Webrule\_CalculateToColumn）, 获取当前位置的经纬度（Webrule\_GetCurrentPosition）, 获取与指定经纬度最接近的经纬度（Webrule\_GetClosestPosition）, 获取当前App版本号（Webrule\_CheckAppVersion）, OpenComponentReturnData-打开窗体并返回数据, OpenLink-打开链接地址, 从数据库或实体获取数据到报表（Webrule\_DataBaseDataToReport）非已完成已完成
 {% endtab %}
 
 {% tab title="前端函数" %}
@@ -76,19 +76,15 @@ JGCheckBox, JGFloatBox, JGLongTextBox, JGPassword, JGTextBox, JGBaseDictBox, JGC
 
 {% tabs %}
 {% tab title="后端规则" %}
-ExecuteRuleSet, DataBaseDataToInterfaceEntity, CopyRecordBetweenEntity, ModifyDataBaseRecord, ImportExcelToDBOrEntity, ExportDBOrEntityDataToExcel, ServPrintDataTrans, CopyRecordBetweenTables
+已完成
 {% endtab %}
 
 {% tab title="后端函数" %}
-已改造完毕
+已完成
 {% endtab %}
 
 {% tab title="前端规则" %}
-ExecuteRuleSet ,OpenComponentReturnData ,OpenLink ,PrdOpenBizFrameReturnData ,Attachmentoperation ,CallWebApi ,CancelCloseWindow ,CheckAppVersion ,CheckCertCode ,CheckRequired ,CheckTableFieldValuesUnique ,CheckUnique ,CompareEntityAndTableData ,CompareEntityData ,CopyDataBetweenTables ,CopyEntityRecord ,CopyTreeDataBetweenTables ,DataBaseDataToInterfaceEntity ,DataBaseDataToReport ,DataValidationEditor ,DeleteConditionRelationData ,DocumentsConverted ,DynamicCrossDataToInterfaceEntity ,EntityColumnTurnRow ,ExecExpression ,ExecuteNativeMethod ,ExportData ,ExportDataToExcel ,ExportTableData ,GenerateBillCode ,GenerateXMLOrJSON ,GetClosestPosition
-{% endtab %}
-
-{% tab title="前端函数" %}
-Webfunc\_ArgsToArray, Webfunc\_Decrypt, Webfunc\_DecryptFunc, Webfunc\_DeleteCookie, Webfunc\_DeleteFileByFileId, Webfunc\_Encrypt, Webfunc\_EncryptFunc, Webfunc\_FindControl, Webfunc\_GenerateSequenceNumber, Webfunc\_GenerateSequenceNumberQuick, Webfunc\_GenerateTextByTemplate, , Webfunc\_GenerateUUID, Webfunc\_GetChartClickData, Webfunc\_GetComponentCode, Webfunc\_GetContextPath, Webfunc\_GetControlProperty, , Webfunc\_GetCookie, Webfunc\_GetCurrentCalendarMonth, Webfunc\_GetCurrentWindowInstanceCode, Webfunc\_GetDataBaseType, Webfunc\_GetDynamicColumnIdentity, GetFileInfo, GetGridComp, GetHost, GetImageUrlByFileId, GetIPAddress, GetloginUserNum, GetRequestParmByKey, GetSelectedDateToEntity, GetSerialNumber, GetTableData, GetTreeEntityIds, GetWidgetSize, GetWindowCode, HasRecord, IsExistWindowInstanceCode, IsLeaf, IsLogin, IsSelectedRecord, MD5Encrypt, MD5EncryptByUTF8, Null, NumberCodeAdd, RecyclingSequenceNumber, ScrollToPosition, SelectedDateFromEntity, SelectOrQuitAllRecords, SetControlProperty, , SetCookie, SetCurrentWindowTitle, SetGridColReadOnly, SetGridColTitle, SetGridColVisble, SetRecordValue, SetToolBarText, SetWindowState, StandardMD5Encrypt, TreeNodePath, VConvertEntityToJson, VConvertEntityToXML, VConvertKeyValueEntityToJson, VRestoreJsonToEntity, VRestoreXMLToEntity
+已完成已完成已完成对方的 func\_ArgsToArray, Webfunc\_Decrypt, Webfunc\_DecryptFunc, Webfunc\_DeleteCookie, Webfunc\_DeleteFileByFileId, Webfunc\_Encrypt, Webfunc\_EncryptFunc, Webfunc\_FindControl, Webfunc\_GenerateSequenceNumber, Webfunc\_GenerateSequenceNumberQuick, Webfunc\_GenerateTextByTemplate, , Webfunc\_GenerateUUID, Webfunc\_GetChartClickData, Webfunc\_GetComponentCode, Webfunc\_GetContextPath, Webfunc\_GetControlProperty, , Webfunc\_GetCookie, Webfunc\_GetCurrentCalendarMonth, Webfunc\_GetCurrentWindowInstanceCode, Webfunc\_GetDataBaseType, Webfunc\_GetDynamicColumnIdentity, GetFileInfo, GetGridComp, GetHost, GetImageUrlByFileId, GetIPAddress, GetloginUserNum, GetRequestParmByKey, GetSelectedDateToEntity, GetSerialNumber, GetTableData, GetTreeEntityIds, GetWidgetSize, GetWindowCode, HasRecord, IsExistWindowInstanceCode, IsLeaf, IsLogin, IsSelectedRecord, MD5Encrypt, MD5EncryptByUTF8, Null, NumberCodeAdd, RecyclingSequenceNumber, ScrollToPosition, SelectedDateFromEntity, SelectOrQuitAllRecords, SetControlProperty, , SetCookie, SetCurrentWindowTitle, SetGridColReadOnly, SetGridColTitle, SetGridColVisble, SetRecordValue, SetToolBarText, SetWindowState, StandardMD5Encrypt, TreeNodePath, VConvertEntityToJson, VConvertEntityToXML, VConvertKeyValueEntityToJson, VRestoreJsonToEntity, VRestoreXMLToEntity
 {% endtab %}
 
 {% tab title="前端控件" %}
