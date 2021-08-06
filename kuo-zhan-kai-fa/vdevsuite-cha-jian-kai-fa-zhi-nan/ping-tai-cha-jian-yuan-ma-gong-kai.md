@@ -44,7 +44,7 @@ Acos ,Add ,AsciiToUnicode ,Asin ,Atan ,BigMul ,Ceiling ,ChineseToUnicode ,Compar
 {% endtab %}
 
 {% tab title="前端控件" %}
-JGButton ,JGImage ,JGTimer ,JGHyperLink
+JGButton, JGImage, JGTimer, JGHyperLink, JGCheckBox, JGFloatBox, JGLongTextBox, JGPassword, JGTextBox, JGBaseDictBox, JGComboBox, JGDateTimePicker, JGIntegerBox, JGCheckBoxGroup, JGRadioGroup, JGLongDateTimePicker, JGPeriod, JGPercent, JGLinkLabel--链接标签, JGLabel--标签, JGSteps--步骤条
 {% endtab %}
 {% endtabs %}
 
@@ -68,7 +68,7 @@ SetEntityVarControlValue--给界面实体/控件/变量赋值, AddDataBaseRecord
 {% endtab %}
 
 {% tab title="前端控件" %}
-JGCheckBox, JGFloatBox, JGLongTextBox, JGPassword, JGTextBox, JGBaseDictBox, JGComboBox, JGDateTimePicker, JGIntegerBox, JGCheckBoxGroup, JGRadioGroup, JGLongDateTimePicker, JGPeriod, JGPercent
+JGTabContro--页签控件, JGAttachment--文件, JGChart-图表, JGCalendar--日历, JGRecordPaging--记录导航控件, JGWebBrowser--网页控件, JGLocateBox--检索控件, JGNewsList--新闻列表控件, JGGroupPanel--排列, JGReport--报表控件, JGRichTextEditor-富文本, JGButtonGroup--按钮组, JGStartMenu-开始菜单, JGDiv-自定义窗体, JGNavigator-导航菜单, JGActivityPanel活动面板
 {% endtab %}
 {% endtabs %}
 
@@ -84,11 +84,11 @@ JGCheckBox, JGFloatBox, JGLongTextBox, JGPassword, JGTextBox, JGBaseDictBox, JGC
 {% endtab %}
 
 {% tab title="前端规则" %}
-已完成已完成已完成对方的 func\_ArgsToArray, Webfunc\_Decrypt, Webfunc\_DecryptFunc, Webfunc\_DeleteCookie, Webfunc\_DeleteFileByFileId, Webfunc\_Encrypt, Webfunc\_EncryptFunc, Webfunc\_FindControl, Webfunc\_GenerateSequenceNumber, Webfunc\_GenerateSequenceNumberQuick, Webfunc\_GenerateTextByTemplate, , Webfunc\_GenerateUUID, Webfunc\_GetChartClickData, Webfunc\_GetComponentCode, Webfunc\_GetContextPath, Webfunc\_GetControlProperty, , Webfunc\_GetCookie, Webfunc\_GetCurrentCalendarMonth, Webfunc\_GetCurrentWindowInstanceCode, Webfunc\_GetDataBaseType, Webfunc\_GetDynamicColumnIdentity, GetFileInfo, GetGridComp, GetHost, GetImageUrlByFileId, GetIPAddress, GetloginUserNum, GetRequestParmByKey, GetSelectedDateToEntity, GetSerialNumber, GetTableData, GetTreeEntityIds, GetWidgetSize, GetWindowCode, HasRecord, IsExistWindowInstanceCode, IsLeaf, IsLogin, IsSelectedRecord, MD5Encrypt, MD5EncryptByUTF8, Null, NumberCodeAdd, RecyclingSequenceNumber, ScrollToPosition, SelectedDateFromEntity, SelectOrQuitAllRecords, SetControlProperty, , SetCookie, SetCurrentWindowTitle, SetGridColReadOnly, SetGridColTitle, SetGridColVisble, SetRecordValue, SetToolBarText, SetWindowState, StandardMD5Encrypt, TreeNodePath, VConvertEntityToJson, VConvertEntityToXML, VConvertKeyValueEntityToJson, VRestoreJsonToEntity, VRestoreXMLToEntity
+已完成
 {% endtab %}
 
 {% tab title="前端控件" %}
-JGTabControl, JGComponentContainer, JGQueryConditionPanel, JGButtonGroup, JGDiv, JGNavigator, JGStartMenu, JGRichTextEditor, JGRichTextViewer, JGAttachment, JGDataGrid, JGTreeGrid, JGTreeView, JGChart, JGReport, JGRecordPaging, JGActivityPanel, JGWorkFlowGraph, JGPropertyEditor, JGCalendar, JGSteps, JGPortal, JGWebBrowser, JGFormLayout, JGGroupPanel, JGImageCutter
+JGQueryConditionPanel, JGDataGrid, JGTreeGrid, JGTreeView, JGFormLayout
 {% endtab %}
 {% endtabs %}
 
