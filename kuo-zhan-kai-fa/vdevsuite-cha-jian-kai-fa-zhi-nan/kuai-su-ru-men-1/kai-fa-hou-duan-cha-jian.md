@@ -320,6 +320,8 @@ public IComponentProfileVo getComponentProfile() {
 
 **lib目录**:使用maven打包是不会自动生成lib目录的，如果有使用第三方jar包，需要手工创建lib目录，把它们手供加入到lib目录。建议使用maven的"maven-dependency-plugin"插件，该插件可以把当前工程依赖的第三方jar前输出到target，便于收集并的加入到jar的lib目录中。
 
+_验证依赖第三方是否发布成功，可以参考FAQ的《引用第三方jar》节点说明_
+
 **manifest.json：**如果打包的jar同时包含了前端的插件（允许前端、后端插件一起打包到一个jar的），就需要提供这个文件，后面前端插件开发的章节会详细描述这个文件如何编写，如果只是打包后台插件的jar包，则无需创建此文件。
 
 ## 发布插件
