@@ -22,7 +22,7 @@ description: V-DevSuite对默认通用类规则、函数、控件插件进行源
 
 _注：release branch为正式版，main branch为开发版_
 
-## 开源进度_（更新时间2021-07-26）_
+## 开源进度_（更新时间2021-08-06）_
 
 ### 1. 已开源的插件
 
@@ -64,7 +64,7 @@ SetEntityVarControlValue--给界面实体/控件/变量赋值, AddDataBaseRecord
 {% endtab %}
 
 {% tab title="前端函数" %}
-暂无...
+ScrollToPosition, SelectedDateFromEntity, SelectOrQuitAllRecords, SetControlProperty, SetCookie, SetCurrentWindowTitle, SetGridColReadOnly, SetGridColTitle, SetGridColVisble, SetToolBarText, SetWindowState
 {% endtab %}
 
 {% tab title="前端控件" %}
@@ -85,6 +85,10 @@ JGTabContro--页签控件, JGAttachment--文件, JGChart-图表, JGCalendar--日
 
 {% tab title="前端规则" %}
 已完成
+{% endtab %}
+
+{% tab title="前端函数" %}
+Webfunc\_DecryptFunc, Webfunc\_DeleteCookie, Webfunc\_DeleteFileByFileId, Webfunc\_EncryptFunc, Webfunc\_GenerateTextByTemplate, Webfunc\_GenerateUUID, Webfunc\_GetChartClickData, Webfunc\_GetComponentCode, Webfunc\_GetContextPath, Webfunc\_GetControlProperty, Webfunc\_GetCookie, Webfunc\_GetCurrentCalendarMonth, Webfunc\_GetCurrentWindowInstanceCode, Webfunc\_GetDynamicColumnIdentity, GetFileInfo, GetGridComp, StandardMD5Encrypt, TreeNodePath, VConvertEntityToJson, VConvertEntityToXML, VConvertKeyValueEntityToJson, VRestoreJsonToEntity, VRestoreXMLToEntity
 {% endtab %}
 
 {% tab title="前端控件" %}
