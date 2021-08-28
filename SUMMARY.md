@@ -23,6 +23,7 @@
       * [属性编辑器定义](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/qian-duan-jin-jie-kai-fa/shu-xing-bian-ji-qi-ding-yi.md)
     * [替换和扩展](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/ti-huan-he-kuo-zhan.md)
     * [源码公开\(代码\)](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/ping-tai-cha-jian-yuan-ma-gong-kai.md)
+    * [源码公开\(V配置窗体\)](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/yuan-ma-gong-kaivpei-zhi-chuang-ti.md)
     * [API文档](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/api-wen-dang.md)
     * [FAQ](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/faq.md)
 
