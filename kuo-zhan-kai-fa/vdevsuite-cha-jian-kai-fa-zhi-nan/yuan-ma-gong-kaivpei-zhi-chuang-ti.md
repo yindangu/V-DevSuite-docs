@@ -14,7 +14,7 @@ description: V-AppBase的窗体级源码公开
 
 基于LGPL（GNU Lesser General Public License）
 
-## 源码获取方式
+## 源码获取方式及替代方式
 
 ### 前提
 
