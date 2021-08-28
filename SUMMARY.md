@@ -26,4 +26,5 @@
     * [源码公开\(V配置窗体\)](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/yuan-ma-gong-kaivpei-zhi-chuang-ti.md)
     * [API文档](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/api-wen-dang.md)
     * [FAQ](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/faq.md)
+  * [系统评价指南](kuo-zhan-kai-fa/xi-tong-ping-jia-zhi-nan.md)
 
