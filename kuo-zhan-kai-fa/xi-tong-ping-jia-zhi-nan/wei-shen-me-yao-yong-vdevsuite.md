@@ -108,7 +108,7 @@
 
 ![&#x6D41;&#x7A0B;&#x8868;&#x5355;&#x7BA1;&#x7406;](../../.gitbook/assets/image%20%2876%29.png)
 
-### 温馨提示
+### 温馨提示！
 
 * 文中提到【V-DevSuite】简称V平台
 * 文中提到【VTeam】指银弹谷提供的软件开发协同工具，网址：[VTeam](http://team.yindangu.com)
