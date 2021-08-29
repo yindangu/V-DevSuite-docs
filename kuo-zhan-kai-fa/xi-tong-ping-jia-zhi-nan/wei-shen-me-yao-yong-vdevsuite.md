@@ -42,71 +42,71 @@
 
 ### 产品结构图
 
-![&#x4EA7;&#x54C1;&#x7ED3;&#x6784;&#x56FE;](../../.gitbook/assets/image%20%2865%29.png)
+![&#x4EA7;&#x54C1;&#x7ED3;&#x6784;&#x56FE;](../../.gitbook/assets/image%20%2873%29.png)
 
 ### 可视化开发
 
 * 可视化的功能界面开发
 
-![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x529F;&#x80FD;&#x754C;&#x9762;&#x5F00;&#x53D1;](../../.gitbook/assets/image%20%2870%29.png)
+![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x529F;&#x80FD;&#x754C;&#x9762;&#x5F00;&#x53D1;](../../.gitbook/assets/image%20%2878%29.png)
 
 * 可视化的业务逻辑开发
 
-![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5F00;&#x53D1;](../../.gitbook/assets/image%20%2856%29.png)
+![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5F00;&#x53D1;](../../.gitbook/assets/image%20%2860%29.png)
 
 * 可视化的界面实体字段设计
 
-![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x754C;&#x9762;&#x5B9E;&#x4F53;&#x5B57;&#x6BB5;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2862%29.png)
+![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x754C;&#x9762;&#x5B9E;&#x4F53;&#x5B57;&#x6BB5;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2869%29.png)
 
 * 可视化的物理表字段设计
 
-![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x7269;&#x7406;&#x8868;&#x5B57;&#x6BB5;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2854%29.png)
+![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x7269;&#x7406;&#x8868;&#x5B57;&#x6BB5;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2857%29.png)
 
 * 可视化的应用服务接口API注册与实现
 
-![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x63A5;&#x53E3;API&#x6CE8;&#x518C;&#x4E0E;&#x5B9E;&#x73B0;](../../.gitbook/assets/image%20%2860%29.png)
+![&#x53EF;&#x89C6;&#x5316;&#x7684;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x63A5;&#x53E3;API&#x6CE8;&#x518C;&#x4E0E;&#x5B9E;&#x73B0;](../../.gitbook/assets/image%20%2867%29.png)
 
 * 使用规则库实现业务逻辑的装配式开发
 
-![&#x4F7F;&#x7528;&#x89C4;&#x5219;&#x5E93;&#x5B9E;&#x73B0;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x88C5;&#x914D;&#x5F0F;&#x5F00;&#x53D1;](../../.gitbook/assets/image%20%2864%29.png)
+![&#x4F7F;&#x7528;&#x89C4;&#x5219;&#x5E93;&#x5B9E;&#x73B0;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x88C5;&#x914D;&#x5F0F;&#x5F00;&#x53D1;](../../.gitbook/assets/image%20%2872%29.png)
 
 * 拖、拉、拽的方式选取控件进行功能界面的装配式开发
 
-![&#x62D6;&#x3001;&#x62C9;&#x3001;&#x62FD;&#x7684;&#x65B9;&#x5F0F;&#x9009;&#x53D6;&#x63A7;&#x4EF6;&#x8FDB;&#x884C;&#x529F;&#x80FD;&#x754C;&#x9762;&#x7684;&#x88C5;&#x914D;&#x5F0F;&#x5F00;&#x53D1;](../../.gitbook/assets/image%20%2853%29.png)
+![&#x62D6;&#x3001;&#x62C9;&#x3001;&#x62FD;&#x7684;&#x65B9;&#x5F0F;&#x9009;&#x53D6;&#x63A7;&#x4EF6;&#x8FDB;&#x884C;&#x529F;&#x80FD;&#x754C;&#x9762;&#x7684;&#x88C5;&#x914D;&#x5F0F;&#x5F00;&#x53D1;](../../.gitbook/assets/image%20%2856%29.png)
 
 * 提供SQL查询语句的设计
 
-![&#x63D0;&#x4F9B;SQL&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x7684;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2859%29.png)
+![&#x63D0;&#x4F9B;SQL&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x7684;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2866%29.png)
 
 * 提供丰富的通用函数库进行业务逻辑的表达式编辑
 
-![&#x63D0;&#x4F9B;&#x4E30;&#x5BCC;&#x7684;&#x901A;&#x7528;&#x51FD;&#x6570;&#x5E93;&#x8FDB;&#x884C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x7F16;&#x8F91;](../../.gitbook/assets/image%20%2867%29.png)
+![&#x63D0;&#x4F9B;&#x4E30;&#x5BCC;&#x7684;&#x901A;&#x7528;&#x51FD;&#x6570;&#x5E93;&#x8FDB;&#x884C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x7F16;&#x8F91;](../../.gitbook/assets/image%20%2875%29.png)
 
 ### 业务基础平台
 
 * 用户首页
 
-![&#x57FA;&#x7840;&#x5E73;&#x53F0;&#x9ED8;&#x8BA4;&#x7528;&#x6237;&#x9996;&#x9875;](../../.gitbook/assets/image%20%2855%29.png)
+![&#x57FA;&#x7840;&#x5E73;&#x53F0;&#x9ED8;&#x8BA4;&#x7528;&#x6237;&#x9996;&#x9875;](../../.gitbook/assets/image%20%2859%29.png)
 
 * 流程审批页面
 
-![&#x6D41;&#x7A0B;&#x5BA1;&#x6279;&#x9875;&#x9762;](../../.gitbook/assets/image%20%2863%29.png)
+![&#x6D41;&#x7A0B;&#x5BA1;&#x6279;&#x9875;&#x9762;](../../.gitbook/assets/image%20%2871%29.png)
 
 * 组织机构人员设置
 
-![&#x7EC4;&#x7EC7;&#x673A;&#x6784;&#x4EBA;&#x5458;&#x8BBE;&#x7F6E;](../../.gitbook/assets/image%20%2852%29.png)
+![&#x7EC4;&#x7EC7;&#x673A;&#x6784;&#x4EBA;&#x5458;&#x8BBE;&#x7F6E;](../../.gitbook/assets/image%20%2855%29.png)
 
 * 菜单权限、功能权限、数据权限权限设置
 
-![&#x83DC;&#x5355;&#x6743;&#x9650;&#x3001;&#x529F;&#x80FD;&#x6743;&#x9650;&#x3001;&#x6570;&#x636E;&#x6743;&#x9650;&#x6743;&#x9650;&#x8BBE;&#x7F6E;](../../.gitbook/assets/image%20%2858%29.png)
+![&#x83DC;&#x5355;&#x6743;&#x9650;&#x3001;&#x529F;&#x80FD;&#x6743;&#x9650;&#x3001;&#x6570;&#x636E;&#x6743;&#x9650;&#x6743;&#x9650;&#x8BBE;&#x7F6E;](../../.gitbook/assets/image%20%2865%29.png)
 
 * 工作流设计
 
-![&#x5DE5;&#x4F5C;&#x6D41;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2869%29.png)
+![&#x5DE5;&#x4F5C;&#x6D41;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2877%29.png)
 
 * 流程表单管理
 
-![&#x6D41;&#x7A0B;&#x8868;&#x5355;&#x7BA1;&#x7406;](../../.gitbook/assets/image%20%2868%29.png)
+![&#x6D41;&#x7A0B;&#x8868;&#x5355;&#x7BA1;&#x7406;](../../.gitbook/assets/image%20%2876%29.png)
 
 ### 温馨提示
 
