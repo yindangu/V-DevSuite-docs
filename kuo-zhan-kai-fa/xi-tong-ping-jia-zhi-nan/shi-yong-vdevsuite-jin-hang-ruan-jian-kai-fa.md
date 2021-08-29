@@ -1,4 +1,4 @@
-# 使用V-DevSuite进行软件开发
+# 使用V-DevSuite进行开发
 
 ## 综述
 

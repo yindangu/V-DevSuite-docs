@@ -28,7 +28,7 @@
     * [FAQ](kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/faq.md)
   * [系统评价指南](kuo-zhan-kai-fa/xi-tong-ping-jia-zhi-nan/README.md)
     * [为什么要用V-DevSuite](kuo-zhan-kai-fa/xi-tong-ping-jia-zhi-nan/wei-shen-me-yao-yong-vdevsuite.md)
-    * [使用V-DevSuite进行软件开发](kuo-zhan-kai-fa/xi-tong-ping-jia-zhi-nan/shi-yong-vdevsuite-jin-hang-ruan-jian-kai-fa.md)
+    * [使用V-DevSuite进行开发](kuo-zhan-kai-fa/xi-tong-ping-jia-zhi-nan/shi-yong-vdevsuite-jin-hang-ruan-jian-kai-fa.md)
     * [软件生命周期的管理](kuo-zhan-kai-fa/xi-tong-ping-jia-zhi-nan/ruan-jian-sheng-ming-zhou-qi-de-guan-li.md)
     * [V-DevSuite的使用简介](kuo-zhan-kai-fa/xi-tong-ping-jia-zhi-nan/vdevsuite-de-shi-yong-jian-jie.md)
     * [系统架构](kuo-zhan-kai-fa/xi-tong-ping-jia-zhi-nan/xi-tong-jia-gou.md)
