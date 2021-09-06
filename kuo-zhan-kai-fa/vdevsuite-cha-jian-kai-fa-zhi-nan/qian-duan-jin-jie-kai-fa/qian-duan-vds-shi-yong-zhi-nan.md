@@ -33,5 +33,5 @@ vds.import("vds.ds.*","vds.mock.*");
 
 其中http://localhost:8080为平台执行系统服务地址。
 
-vds详细接口说明请参考：[前端vds说明文档](http://vstore-doc.yindangu.com/jsdoc/index.html)
+vds详细接口说明请参考：[前端vds说明文档](http://vstore-developer.yindangu.com/jsdoc/index.html)
 

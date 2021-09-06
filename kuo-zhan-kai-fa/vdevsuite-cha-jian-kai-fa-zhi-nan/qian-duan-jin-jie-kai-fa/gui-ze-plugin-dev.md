@@ -296,7 +296,7 @@ description: >-
 
 在本地开发前，首先需要了解平台对规则主入口方法定义规范：
 
-1、规则主入口方法入参为RuleContext实例，其定义参考[RuleContext接口说明文档](http://vstore-developer.yindangu.com/jsdoc/index.html)
+1、规则主入口方法入参为RuleContext实例，其定义参考[RuleContext接口说明文档](http://vstore-doc.yindangu.com/jsdoc/index.html)
 
 2、规则主入口方法返回值Promise实例，平台会解决其浏览器兼容性问题
 
