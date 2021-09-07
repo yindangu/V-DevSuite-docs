@@ -629,7 +629,7 @@ operation: 插件编码(IPluginProfileVo.code)
 groupId:公司id(IComponentProfileVo.groupId)
 bundleCode:构件编码(IComponentProfileVo.code)
 
-例如
+完整的URL例子：
 http://10.1.28.190:8899/module-operation!executeOperation?operation=mycmd&groupId=com.yindangu.plugin&bundleCode=mydemo
 ```
 
