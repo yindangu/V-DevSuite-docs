@@ -624,11 +624,14 @@ private IPluginProfileVo getHttpCommand() {
 
 **直接http访问**
 
-[http://\[ip\]:\[prot\]/module-operation!executeOperation?operation=com\_yindangu\_plugin\_xiezxTest\_mycmd](http://10.1.28.163:8080/module-operation!executeOperation?operation=com_yindangu_plugin_xiezxTest_mycmd)
+```java
+operation: 插件编码(IPluginProfileVo.code)
+groupId:公司id(IComponentProfileVo.groupId)
+bundleCode:构件编码(IComponentProfileVo.code)
 
-code对应请求的opertion
-
-![command&#x7684;&#x6548;&#x679C;](../../../.gitbook/assets/a.png)
+例如
+http://10.1.28.190:8899/module-operation!executeOperation?operation=mycmd&groupId=com.yindangu.plugin&bundleCode=mydemo
+```
 
 ## demo实例代码
 
