@@ -290,9 +290,7 @@ com.yindangu.client.function.moneyToChinese = function(money){
 
 ![&#x51FD;&#x6570;&#x538B;&#x7F29;&#x5305;](../../../.gitbook/assets/image%20%284%29.png)
 
-        此时函数二次开发工作已完成，进入开发系统（开发系统使用参考这里），在开始-》扩展管理-》上传中，选择函数压缩包即可，如下图：
-
-![&#x51FD;&#x6570;&#x90E8;&#x7F72;](../../../.gitbook/assets/image%20%281%29.png)
+        此时函数二次开发工作已完成，然后需要发布插件，操作请参考《发布插件》一节
 
 ## 函数安装
 
