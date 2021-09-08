@@ -326,9 +326,7 @@ _验证依赖第三方是否发布成功，可以参考FAQ的《引用第三方j
 
 ## 发布到执行系统
 
-请参考《发布插件》
-
-### 
+请参考[《发布插件》](https://yindangu.gitbook.io/v-devsuite/kuo-zhan-kai-fa/vdevsuite-cha-jian-kai-fa-zhi-nan/fa-bu-cha-jian)
 
 ## 使用插件
 
