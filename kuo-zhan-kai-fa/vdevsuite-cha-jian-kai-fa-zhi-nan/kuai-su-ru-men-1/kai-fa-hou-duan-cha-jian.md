@@ -631,5 +631,5 @@ _\(注：若点击无法下载，请右键选择“链接另存为”进行下�
 
 1\)API使用参考，2\)API例子覆盖面全，3\)API交流样本，更新时效。地址：
 
-git@github.com:opensource-vplatform/vplatform-plugin-example.git
+[ git@github.com:opensource-vplatform/vplatform-plugin-example.git](https://github.com/opensource-vplatform/vplatform-plugin-example.git)
 

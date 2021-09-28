@@ -22,7 +22,7 @@ description: V-DevSuite对默认通用类规则、函数、控件插件进行源
 
 _注：release branch为正式版，main branch为开发版_
 
-\*\*\*\*[**平台开发的测试代码**](https://github.com/opensource-vplatform/vplatform-plugin-example.git) ****git@github.com:opensource-vplatform/vplatform-plugin-example.git
+\*\*\*\*[**平台开发的测试代码**](https://github.com/opensource-vplatform/vplatform-plugin-example.git) ****
 
 ## 开源进度_（更新时间2021-08-29）_
 
