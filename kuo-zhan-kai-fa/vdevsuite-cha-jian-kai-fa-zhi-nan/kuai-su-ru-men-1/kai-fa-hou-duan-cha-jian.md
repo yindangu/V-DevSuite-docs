@@ -627,3 +627,9 @@ http://10.1.28.190:8899/module-operation!executeOperation?operation=mycmd&groupI
 
 _\(注：若点击无法下载，请右键选择“链接另存为”进行下载\)_
 
+另外在Git还有一份是平台开发时的调试例子，目的:
+
+1\)API使用参考，2\)API例子覆盖面全，3\)API交流样本，更新时效。地址：
+
+git@github.com:opensource-vplatform/vplatform-plugin-example.git
+
