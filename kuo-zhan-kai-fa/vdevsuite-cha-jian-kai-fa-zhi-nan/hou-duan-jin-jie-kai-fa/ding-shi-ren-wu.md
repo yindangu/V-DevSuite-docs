@@ -1,10 +1,8 @@
 ---
-description: 把一天分割以半小时为最小粒度的定时器
+description: 把一天分割以半小时为最小粒度的定时器(相当于一天24小时分为48粒度)，如果还有更高时间要求的场景，可能不合适使用这个定时器的设计范围。
 ---
 
 # 定时任务
-
-以半小时为最小粒度\(相当于一天24小时分为48粒度\)，如果还有更高时间要求的场景，可能不合适使用这个定时器的设计范围，需要另外设计。
 
 ## 任务场景
 
@@ -22,7 +20,25 @@ description: 把一天分割以半小时为最小粒度的定时器
 
 **执行多次的任务：**有些任务并不是明天执行的，可能是半小时，可能是一小时，或者四小时，或者每二天，或者每周。这情况都可以使用多次执行的任务接口，然后执行时自己定义执行逻辑就可以。但是小于半小时的，就需要自己设计了。
 
+实例代码
 
+```java
+	/**
+	 * 注册定时任务
+	 * @return
+	 */
+	private int doRegister() {
+		ITimerManager tm = VDS.getIntance().getTimerManager();//取得任务管理器
+		String[] tasks = {"repeatTask","singleTaskHalf","singleTask","distributedTask"};
+		int time =1;//凌晨1点
+		tm.registerRepeatTask(new RepeatTask(tasks[0])); //多次执行的任务
+		tm.registerSingleTaskHalf(new RepeatTask(tasks[1]),time); //凌晨1:30执行
+		tm.registerSingleTask(new RepeatTask(tasks[2]),time);//凌晨1:00执行
+		tm.registerSingleTask(new DistributedTask(tasks[3]),time);//凌晨1:00执行分布式任务
+		
+		return time;
+	}
+```
 
 
 
