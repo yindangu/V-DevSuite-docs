@@ -20,7 +20,9 @@ description: 把一天分割以半小时为最小粒度的定时器(相当于一
 
 **执行多次的任务：**有些任务并不是明天执行的，可能是半小时，可能是一小时，或者四小时，或者每二天，或者每周。这情况都可以使用多次执行的任务接口，然后执行时自己定义执行逻辑就可以。但是小于半小时的，就需要自己设计了。
 
-实例代码
+## 实例代码
+
+注册定时任务
 
 ```java
 	/**
@@ -31,14 +33,66 @@ description: 把一天分割以半小时为最小粒度的定时器(相当于一
 		ITimerManager tm = VDS.getIntance().getTimerManager();//取得任务管理器
 		String[] tasks = {"repeatTask","singleTaskHalf","singleTask","distributedTask"};
 		int time =1;//凌晨1点
-		tm.registerRepeatTask(new RepeatTask(tasks[0])); //多次执行的任务
-		tm.registerSingleTaskHalf(new RepeatTask(tasks[1]),time); //凌晨1:30执行
-		tm.registerSingleTask(new RepeatTask(tasks[2]),time);//凌晨1:00执行
+		tm.registerRepeatTask(new LocalTask(tasks[0])); //多次执行的任务
+		tm.registerSingleTaskHalf(new LocalTask(tasks[1]),time); //凌晨1:30执行
+		tm.registerSingleTask(new LocalTask(tasks[2]),time);//凌晨1:00执行
 		tm.registerSingleTask(new DistributedTask(tasks[3]),time);//凌晨1:00执行分布式任务
 		
 		return time;
 	}
 ```
 
+定义执行代码
 
+```java
+class LocalTask implements ITimerTask{ 
+	private static final Logger log = LoggerFactory.getLogger(LocalTask.class);
+	 
+	private final String taskName;
+	public LocalTask(String task) {
+		taskName = task;
+	}
+	@Override
+	public String getTaskName() { 
+		return taskName;
+	}
+	/**本地任务*/
+	@Override
+	public TaskScene getTaskScene() { 
+		return TaskScene.local;
+	}
+
+	@Override
+	public void run(ITimeVo vo) { 
+		String s =getTaskName() + "--start--" +  vo.getDate();
+		log.info(s); 
+		
+	}	
+}
+
+class DistributedTask implements ITimerTask{
+	private static final Logger log = LoggerFactory.getLogger(DistributedTask.class);
+	private final String taskName;
+	public DistributedTask(String task) {
+		taskName = task;
+	}
+	@Override
+	public String getTaskName() { 
+		return taskName;
+	}
+
+	/**分布式任务*/
+	@Override
+	public TaskScene getTaskScene() { 
+		return TaskScene.distributed;
+	}
+
+	@Override
+	public void run(ITimeVo vo) { 
+		String s =getTaskName() + "--start--" +  vo.getDate();
+		log.info(s);
+		
+	}	
+}
+```
 
