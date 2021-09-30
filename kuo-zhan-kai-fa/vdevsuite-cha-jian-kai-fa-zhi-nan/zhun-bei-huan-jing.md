@@ -34,7 +34,7 @@ V-DevSuite之后会陆续放出更多的插件供开发人员进行扩展实现�
 
 可自由选择自己熟悉的IDE进行开发，可构建maven工程进行打包，也可按照普通java工程进行打包，最终生成标准jar包就可以。这里重点介绍本地jar包引用与maven项目的开发模式。
 
-**本地开发模式：** 需要下载系统提供的jar包，[plugin-business-api 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210701/plugin-business-api-3.3.0.jar)\(必须\)、[plugin-register 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210701/plugin-register-3.3.0.jar)\(必须\) 、[plugin-utils下载 \(可选\)](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210701/plugin-utils-3.3.0.jar)，然后引入项目。_\(注：有些浏览器如果点击无法下载，请右键选择“链接另存为”进行下载\)_
+**本地开发模式：** 需要下载系统提供的jar包，[plugin-business-api 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210930/plugin-business-api-3.3.0.jar)\(必须\)、[plugin-register 下载](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210930/plugin-register-3.3.0.jar)\(必须\) 、[plugin-utils下载 \(可选\)](http://download.yindangu.com/yindangu-plugin/plugin-lib/20210930/plugin-utils-3.3.0.jar)，然后引入项目。_\(注：有些浏览器如果点击无法下载，请右键选择“链接另存为”进行下载\)_
 
 **maven模式：**V-DevSuite已经把依赖的jar发布到银弹谷的maven仓库，所以需要追加配置银弹谷的maven仓库的settings.xml配置。
 
